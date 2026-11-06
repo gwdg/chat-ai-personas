@@ -1,0 +1,10 @@
+{
+  "name": "chat-ai-personas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node _tests/run.mjs",
+    "test:list": "node _tests/run.mjs --list",
+    "test:dry": "node _tests/run.mjs --dry-run"
+  }
+}

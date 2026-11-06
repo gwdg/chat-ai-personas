@@ -1,0 +1,4 @@
+node_modules/
+_tests/report.json
+_tests/report.md
+.env
