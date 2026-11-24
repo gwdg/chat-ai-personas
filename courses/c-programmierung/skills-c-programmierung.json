@@ -1,0 +1,1182 @@
+{
+  "format": "gaia-skills",
+  "version": 1,
+  "topics": [
+    {
+      "key": "einleitung",
+      "unit": "Einleitung",
+      "name": "Einleitung und erste Schritte in C",
+      "description": "Grundbegriffe der Programmierung, Aufbau von C-Quellcode, das erste Hello-World-Programm, Kommentare und der Präprozessor."
+    },
+    {
+      "key": "typen_konstanten_variablen",
+      "unit": "Standarddatentypen, Konstanten und Variablen",
+      "name": "Typen, Konstanten und Variablen",
+      "description": "Binär- und Zahlendarstellung, Standarddatentypen, Konstanten, Namen und die Deklaration sowie Initialisierung von Variablen."
+    },
+    {
+      "key": "beispielprogramme",
+      "unit": "Beispielprogramme",
+      "name": "Beispielprogramme: Ein- und Ausgabe, Schleifen, Alternativen",
+      "description": "Formatierte Ein- und Ausgabe mit printf und scanf, Schleifen, Wertzuweisung, Dateiende-Erkennung, if/else, Felder und Kommandozeilenparameter."
+    },
+    {
+      "key": "ausdruecke_operatoren",
+      "unit": "Ausdrücke und Operatoren",
+      "name": "Ausdrücke und Operatoren",
+      "description": "Aufbau von Ausdrücken, arithmetische, Vergleichs- und logische Operatoren, Inkrementierung, Nebeneffekte, Typumwandlung, Cast und sizeof."
+    },
+    {
+      "key": "zeichen_strings",
+      "unit": "Zeichen und Strings",
+      "name": "Zeichen und Strings",
+      "description": "Darstellung von Strings über Felder mit Null-Zeichen, Arbeit mit Strings, Ein- und Ausgabe von Zeichen und Strings sowie Zeichenklassifizierung."
+    },
+    {
+      "key": "programmablauf",
+      "unit": "Steuerung des Programmablaufs",
+      "name": "Steuerung des Programmablaufs",
+      "description": "Anweisungen und Blöcke, if- und switch-Anweisung, Aufzählungstyp enum sowie while-, do- und for-Schleifen."
+    },
+    {
+      "key": "funktionen",
+      "unit": "Funktionen",
+      "name": "Funktionen",
+      "description": "Vereinbarung und Definition von Funktionen, Funktionswerte, Aufruf, call by value, Zeiger und Felder als Parameter, const, Rekursion und das Modulkonzept."
+    },
+    {
+      "key": "felder",
+      "unit": "Felder",
+      "name": "Felder",
+      "description": "Mehrdimensionale Felder und ihre Speicheranordnung, Felder als Parameter, Makros, Initialisierung von Feldern und der Zusammenhang von Zeigern und Feldern."
+    },
+    {
+      "key": "strukturierung",
+      "unit": "Strukturierung von Programmen",
+      "name": "Strukturierung von Programmen",
+      "description": "Gültigkeitsbereiche von Namen, interne und externe Größen, das Modulkonzept, lokale und globale Größen sowie statische und automatische Variablen."
+    },
+    {
+      "key": "zeiger",
+      "unit": "Zeiger",
+      "name": "Zeiger",
+      "description": "Parameter des Hauptprogramms, Zeiger und const, Zeigerarithmetik, Operationen mit Zeigern, Zeiger als Parameter, Zeigervektoren und Zeiger auf Zeiger."
+    },
+    {
+      "key": "heap",
+      "unit": "Speicher auf dem Heap",
+      "name": "Speicher auf dem Heap",
+      "description": "Speichertypen, Funktionen zur Heapverwaltung, Bereitstellung von Speicher, Matrizen auf dem Heap und Felder variabler Größe auf dem Heap."
+    },
+    {
+      "key": "strukturen",
+      "unit": "Strukturen",
+      "name": "Strukturen",
+      "description": "Typnamen mit typedef, Vereinbarung und Verwendung von Strukturen, Strukturen auf dem Heap, verkettete Listen und Verbunde."
+    },
+    {
+      "key": "rechnerarithmetik",
+      "unit": "Rechnerarithmetik",
+      "name": "Rechnerarithmetik",
+      "description": "Binär- und Zweierkomplementdarstellung, Überlauf und Unterlauf, Rundungsfehler, Auslöschung und numerisch bewusste Implementierung."
+    }
+  ],
+  "skills": [
+    {
+      "topic_key": "einleitung",
+      "key": "programmiersprache_syntax_semantik_unterscheiden",
+      "concept": "Programmiersprache, Syntax und Semantik",
+      "name": "Programmiersprache, Syntax und Semantik unterscheiden",
+      "description": "Du kannst Syntax als Aufbau gültiger Sätze von Semantik als deren Bedeutung abgrenzen und erklären, was eine Programmiersprache ausmacht.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "programmentwicklung_schritte_nennen",
+      "concept": "Programmentwicklung",
+      "name": "Schritte der Programmentwicklung nennen",
+      "description": "Du kannst die Schritte von der Aufgabenformulierung über Algorithmus und Codierung bis zum Übersetzen, Binden und Ausführen in der richtigen Reihenfolge angeben.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "compiler_linker_unterscheiden",
+      "concept": "Compiler und Linker",
+      "name": "Compiler und Linker unterscheiden",
+      "description": "Du kannst unterscheiden, welche Aufgabe der Compiler (Quellcode zu Objektcode) und welche der Linker (Zusammenbinden mit der Standardbibliothek) übernimmt.",
+      "prerequisites": ["programmentwicklung_schritte_nennen"]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "c_standard_einordnen",
+      "concept": "C-Standard",
+      "name": "C-Standard einordnen",
+      "description": "Du kannst die Entwicklung von C (K&R, ANSI-C/C89, C99, C11) zeitlich und inhaltlich einordnen und den verwendeten Standard benennen.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "zeichensatz_erkennen",
+      "concept": "Zeichensatz von C",
+      "name": "Zulässige Zeichen im Quelltext erkennen",
+      "description": "Du kannst graphische Zeichen von white spaces unterscheiden und angeben, welche Zeichen in einer Quelltextdatei vorkommen dürfen.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "quellcode_aufbau_beschreiben",
+      "concept": "Aufbau von C-Quellcode",
+      "name": "Aufbau von C-Quellcode beschreiben",
+      "description": "Du kannst erklären, dass ein C-Quellcode aus Funktionen besteht, dass genau eine Funktion main das Hauptprogramm realisiert und dass Funktionen nicht ineinander geschachtelt werden.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "hello_world_programm_erstellen",
+      "concept": "Erstes Programm",
+      "name": "Ein Hello-World-Programm erstellen und ausführen",
+      "description": "Du kannst ein Hello-World-Programm mit include, main, printf und return schreiben, mit gcc kompilieren und ausführen.",
+      "prerequisites": ["compiler_linker_unterscheiden", "quellcode_aufbau_beschreiben"]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "main_funktion_erklaeren",
+      "concept": "Hauptprogramm main",
+      "name": "Der Aufbau von main erklären",
+      "description": "Du kannst den Aufbau von main erklären, einschließlich des ganzzahligen Funktionswerts und der leeren Parameterliste int main(void).",
+      "prerequisites": ["quellcode_aufbau_beschreiben"]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "kommentare_verwenden",
+      "concept": "Kommentare",
+      "name": "Kommentare korrekt verwenden",
+      "description": "Du kannst Block- und Zeilenkommentare unterscheiden, ihre Verschachtelungsregeln anwenden und sinnvoll erläuternde Kommentare setzen.",
+      "prerequisites": ["hello_world_programm_erstellen"]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "praeprozessor_include_erklaeren",
+      "concept": "Präprozessor",
+      "name": "Präprozessor und include-Direktive erklären",
+      "description": "Du kannst erklären, dass eine Zeile, die mit # beginnt, eine Präprozessordirektive ist und was #include <stdio.h> bewirkt.",
+      "prerequisites": ["hello_world_programm_erstellen"]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "printf_und_return_erklaeren",
+      "concept": "printf und return",
+      "name": "printf und return im Hello-World erklären",
+      "description": "Du kannst erklären, dass printf eine Zeichenkette auf die Standardausgabe schreibt und die return-Anweisung einen Wert an die rufende Funktion zurückgibt.",
+      "prerequisites": ["hello_world_programm_erstellen"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "dezimalzahl_in_binaerzahl_umrechnen",
+      "concept": "Binärzahlen",
+      "name": "Dezimalzahlen in Binärzahlen umrechnen",
+      "description": "Du kannst eine nichtnegative Dezimalzahl als Binärzahl im Stellenwertsystem zur Basis 2 darstellen.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "oktal_und_hexadezimal_umrechnen",
+      "concept": "Oktal- und Hexadezimalzahlen",
+      "name": "Oktal- und Hexadezimaldarstellung verwenden",
+      "description": "Du kannst Dezimalzahlen in Oktal- und Hexadezimaldarstellung umrechnen und die einfache Umwandlung zur Binärdarstellung erklären.",
+      "prerequisites": ["dezimalzahl_in_binaerzahl_umrechnen"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "wertebereiche_limits_erklaeren",
+      "concept": "Wertebereiche und Mindestschranken",
+      "name": "Wertebereiche und Mindestschranken erklären",
+      "description": "Du kannst erklären, dass der Standard nur Mindestschranken für Wertebereiche vorgibt und benannte Konstanten in limits.h und float.h bereitstellt.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "ganzzahltyp_auswaehlen",
+      "concept": "Ganzzahlige Typen",
+      "name": "Geeigneten Ganzzahltyp auswählen",
+      "description": "Du kannst zwischen short, int, long, long long sowie signed und unsigned wählen und die Folgen der Wahl für den Wertebereich beurteilen.",
+      "prerequisites": ["wertebereiche_limits_erklaeren"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "ganzzahlkonstante_schreiben",
+      "concept": "Ganzzahlige Konstanten",
+      "name": "Ganzzahlige Konstanten schreiben",
+      "description": "Du kannst ganzzahlige Konstanten dezimal, oktal und hexadezimal notieren und ihren Typ über u-, l- und ll-Suffixe festlegen.",
+      "prerequisites": ["oktal_und_hexadezimal_umrechnen"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "typ_char_erklaeren",
+      "concept": "Der Typ char",
+      "name": "Den Typ char erklären",
+      "description": "Du kannst erklären, dass Zeichen als Teilmenge der ganzen Zahlen behandelt werden und wie char einer Speicherung über Ordnungszahlen dient.",
+      "prerequisites": ["ganzzahltyp_auswaehlen"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "escape_sequenzen_verwenden",
+      "concept": "Escape-Sequenzen",
+      "name": "Escape-Sequenzen verwenden",
+      "description": "Du kannst übliche Escape-Sequenzen benennen (etwa Rückwärtsschrägstrich n für Zeilenumbruch, Rückwärtsschrägstrich t für Tabulator, Rückwärtsschrägstrich vor Apostroph und Anführungszeichen) und sie in Zeichen- und Stringkonstanten korrekt einsetzen.",
+      "prerequisites": ["typ_char_erklaeren"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "zeichenkonstante_erklaeren",
+      "concept": "Zeichenkonstanten",
+      "name": "Zeichenkonstanten erklären",
+      "description": "Du kannst erklären, dass eine Zeichenkonstante die Ordnungszahl ihres Zeichens repräsentiert und dass '0' nicht die Ordnungszahl 0 ist.",
+      "prerequisites": ["typ_char_erklaeren"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "stringkonstante_erklaeren",
+      "concept": "Zeichenkettenkonstanten",
+      "name": "Zeichenkettenkonstanten von Zeichen unterscheiden",
+      "description": "Du kannst erklären, was eine Stringkonstante ist, warum 'x' und \"x\" verschieden sind und wie lange Stringkonstanten über mehrere Zeilen gefügt werden.",
+      "prerequisites": ["zeichenkonstante_erklaeren"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "gleitkommatyp_erklaeren",
+      "concept": "Gleitkommatypen",
+      "name": "Gleitkommatypen erklären",
+      "description": "Du kannst die Typen float, double und long double in Bezug auf Wertebereich und Dichte einordnen und konkrete Werte in float.h auffinden.",
+      "prerequisites": ["wertebereiche_limits_erklaeren"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "gleitkommazahl_notieren",
+      "concept": "Darstellung von Gleitkommazahlen",
+      "name": "Gleitkommazahlen notieren",
+      "description": "Du kannst Gleitkommakonstanten mit Dezimalpunkt und/oder Exponententeil schreiben und ihren Typ über f-, l- und L-Suffixe festlegen.",
+      "prerequisites": ["gleitkommatyp_erklaeren"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "symbolische_konstante_definieren",
+      "concept": "Symbolische Konstanten (#define)",
+      "name": "Symbolische Konstanten definieren",
+      "description": "Du kannst mit #define benannte Konstanten definieren, um magische Zahlen zu vermeiden, und die Textersetzung im Quellcode nachvollziehen.",
+      "prerequisites": ["ganzzahlkonstante_schreiben"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "namensregeln_anwenden",
+      "concept": "Namen und Bezeichner",
+      "name": "Namensregeln für Bezeichner anwenden",
+      "description": "Du kannst gültige Bezeichner bilden, Schlüsselwörter erkennen und die Groß-/Kleinschreibung als bedeutungsunterscheidend anwenden.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "variable_deklarieren",
+      "concept": "Deklaration von Variablen",
+      "name": "Variablen deklarieren",
+      "description": "Du kannst Variablen mit Typ und Namenliste deklarieren und erklären, welche Informationen der Compiler daraus ableitet.",
+      "prerequisites": ["namensregeln_anwenden"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "variable_initialisieren",
+      "concept": "Initialisierung",
+      "name": "Variablen initialisieren und zuweisen",
+      "description": "Du kannst Variablen bei der Deklaration Anfangswerte zuweisen und erklären, dass ohne Anfangswert kein wohldefinierter Wert vorliegt.",
+      "prerequisites": ["variable_deklarieren"]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "namenskonventionen_anwenden",
+      "concept": "Konventionen",
+      "name": "Namenskonventionen anwenden",
+      "description": "Du kannst sprechende und der Konvention folgende Namen wählen (Kleinbuchstaben für Variablen, Großbuchstaben für Konstanten) und kurze Bezeichner begründet einsetzen.",
+      "prerequisites": ["variable_deklarieren"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "printf_formatbeschreiber_verwenden",
+      "concept": "Formatierte Ausgabe",
+      "name": "printf mit Formatbeschreibern verwenden",
+      "description": "Du kannst mit printf formatierte Ausgaben erzeugen und passende Kennbuchstaben wie %d, %u, %o, %x, %f, %e, %c und %s zuordnen.",
+      "prerequisites": ["stringkonstante_erklaeren"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "scanf_adressoperator_verwenden",
+      "concept": "Formatierte Eingabe und Adressoperator",
+      "name": "scanf mit dem Adressoperator verwenden",
+      "description": "Du kannst scanf formatierte Werte einlesen und erklären, warum den Argumenten der Adressoperator & vorangestellt werden muss.",
+      "prerequisites": ["printf_formatbeschreiber_verwenden"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "eingabeformat_auswaehlen",
+      "concept": "Kennbuchstaben für Eingabeformate",
+      "name": "Passendes Eingabeformat auswählen",
+      "description": "Du kannst die Kennbuchstaben und Modifizierer von scanf (z. B. h, l, L) korrekt dem Variablentyp zuordnen.",
+      "prerequisites": ["scanf_adressoperator_verwenden"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "while_schleife_anwenden",
+      "concept": "while-Schleife",
+      "name": "while-Schleife anwenden",
+      "description": "Du kannst eine while-Schleife schreiben und erklären, dass vor jedem Durchlauf die Abbruchbedingung ausgewertet wird.",
+      "prerequisites": ["wertzuweisung_erklaeren"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "wertzuweisung_erklaeren",
+      "concept": "Wertzuweisung",
+      "name": "Die Wertzuweisung erklären",
+      "description": "Du kannst erklären, dass die Wertzuweisung den rechten Ausdruck berechnet und in der linken Variablen speichert und keine Gleichung im mathematischen Sinn ist.",
+      "prerequisites": ["variable_deklarieren"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "eof_erkennen",
+      "concept": "End of File (EOF)",
+      "name": "Das Dateiende mit scanf erkennen",
+      "description": "Du kannst den Funktionswert von scanf auswerten und mit der Konstanten EOF vergleichen, um bis zum Ende der Eingabe zu lesen.",
+      "prerequisites": ["scanf_adressoperator_verwenden"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "if_else_anwenden",
+      "concept": "if-Anweisung",
+      "name": "if-else-Anweisungen verwenden",
+      "description": "Du kannst mit if und optionalem else aus Alternativen auswählen und geschachtelte Verzweigungen korrekt formulieren.",
+      "prerequisites": ["vergleichsoperator_verwenden"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "vergleichsoperator_verwenden",
+      "concept": "Vergleichsoperatoren",
+      "name": "Vergleichsoperatoren verwenden",
+      "description": "Du kannst Vergleichsoperatoren wie ==, !=, <, <=, > und >= anwenden und den Unterschied zwischen == und = beachten.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "feld_deklarieren",
+      "concept": "Felder (Vektoren)",
+      "name": "Eindimensionale Felder deklarieren",
+      "description": "Du kannst einen Vektor deklarieren, dessen Komponentenzahl angeben und die Größe über eine benannte Konstante festlegen.",
+      "prerequisites": ["variable_deklarieren"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "feldkomponenten_ansprechen",
+      "concept": "Feldkomponenten",
+      "name": "Feldkomponenten über Indizes ansprechen",
+      "description": "Du kannst einzelne Komponenten eines Vektors über Indizes ansprechen und berücksichtigen, dass die Numerierung bei 0 beginnt.",
+      "prerequisites": ["feld_deklarieren"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "skalarprodukt_berechnen",
+      "concept": "Skalarprodukt",
+      "name": "Das Skalarprodukt zweier Vektoren berechnen",
+      "description": "Du kannst das Skalarprodukt zweier double-Vektoren in einer Schleife berechnen und ausgeben.",
+      "prerequisites": ["feldkomponenten_ansprechen", "while_schleife_anwenden"]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "kommandozeile_auslesen",
+      "concept": "Kommandozeilenparameter",
+      "name": "Kommandozeilenparameter auslesen",
+      "description": "Du kannst das Hauptprogramm mit argc und argv schreiben und Parameter wie einen Radius über argv und Konvertierungsfunktionen auswerten.",
+      "prerequisites": ["main_funktion_erklaeren"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "ausdruck_aufbauen",
+      "concept": "Aufbau von Ausdrücken",
+      "name": "Einfache Ausdrücke aufbauen",
+      "description": "Du kannst Ausdrücke aus Operanden, Operatoren und runden Klammern zusammensetzen.",
+      "prerequisites": ["variable_deklarieren"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "arithmetische_operatoren_anwenden",
+      "concept": "Arithmetische Operatoren",
+      "name": "Arithmetische Operatoren anwenden",
+      "description": "Du kannst Addition, Subtraktion, Multiplikation, Division und Modulo anwenden und die Ergebnisse ganzzahliger und nicht ganzzahliger Division unterscheiden.",
+      "prerequisites": ["ausdruck_aufbauen"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "operatorpraezedenz_anwenden",
+      "concept": "Punktrechnung und Präzedenz",
+      "name": "Operatorpräzedenz anwenden",
+      "description": "Du kannst die Hierarchie der Operatoren anwenden, Punktrechnung vor Strichrechnung setzen und Reihenfolgen mit Klammern steuern.",
+      "prerequisites": ["arithmetische_operatoren_anwenden"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "inkrement_dekrement_unterscheiden",
+      "concept": "Inkrementierung und Dekrementierung",
+      "name": "Präfix- und Postfix-Inkrementierung unterscheiden",
+      "description": "Du kannst ++ und -- in Präfix- und Postfix-Schreibweise anwenden und die unterschiedlichen Ausdruckswerte erklären.",
+      "prerequisites": ["arithmetische_operatoren_anwenden"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "logische_operatoren_anwenden",
+      "concept": "Logische Operatoren",
+      "name": "Logische Operatoren anwenden",
+      "description": "Du kannst die Operatoren &&, || und ! anwenden, Wahrheitstafeln nachvollziehen und Werte als wahr oder falsch interpretieren.",
+      "prerequisites": ["vergleichsoperator_verwenden"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "lazy_evaluation_erklaeren",
+      "concept": "Faule Auswertung",
+      "name": "Faule Auswertung logischer Ausdrücke erklären",
+      "description": "Du kannst erklären, wann die Auswertung eines logischen Ausdrucks vorzeitig beendet wird und wie sich das auf Nebeneffekte auswirkt.",
+      "prerequisites": ["logische_operatoren_anwenden"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "zusammengesetzte_zuweisung_verwenden",
+      "concept": "Zusammengesetzte Zuweisungsoperatoren",
+      "name": "Zusammengesetzte Zuweisungen verwenden",
+      "description": "Du kannst zusammengesetzte Zuweisungsoperatoren wie +=, -=, *=, /= und %= korrekt als Kurzform einer Wertzuweisung einsetzen.",
+      "prerequisites": ["wertzuweisung_erklaeren"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "kommaoperator_anwenden",
+      "concept": "Kommaoperator",
+      "name": "Den Kommaoperator anwenden",
+      "description": "Du kannst mit dem Kommaoperator mehrere Ausdrücke verbinden und erklären, dass der Wert des Gesamtausdrucks der des letzten Teilausdrucks ist.",
+      "prerequisites": ["ausdruck_aufbauen"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "nebenwirkung_erklaeren",
+      "concept": "Nebeneffekte",
+      "name": "Nebeneffekte erkennen und bewerten",
+      "description": "Du kannst Nebeneffekte als Nebenprodukt der Auswertung eines Ausdrucks erkennen und kritisch beurteilen, wann ihre Reihenfolge nicht festgelegt ist.",
+      "prerequisites": ["inkrement_dekrement_unterscheiden"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "implizite_typumwandlung_erklaeren",
+      "concept": "Implizite Typumwandlung",
+      "name": "Implizite Typumwandlung erklären",
+      "description": "Du kannst erklären, wie Operanden unterschiedlicher Typen vor einer Verknüpfung umgewandelt werden und dass char und short nach int aufgewertet werden.",
+      "prerequisites": ["ganzzahltyp_auswaehlen", "gleitkommatyp_erklaeren"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "castoperator_anwenden",
+      "concept": "Castoperatoren",
+      "name": "Castoperatoren gezielt einsetzen",
+      "description": "Du kannst mit einem Cast eine gezielte Typumwandlung erzwingen, um etwa eine ungewollte ganzzahlige Division zu vermeiden.",
+      "prerequisites": ["implizite_typumwandlung_erklaeren"]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "sizeof_operator_anwenden",
+      "concept": "sizeof-Operator",
+      "name": "Den sizeof-Operator anwenden",
+      "description": "Du kannst den Speicherbedarf von Typen und Ausdrücken mit sizeof ermitteln, die Maßgabe sizeof(char) == 1 und den Typ size_t erklären.",
+      "prerequisites": ["implizite_typumwandlung_erklaeren"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "null_zeichen_erklaeren",
+      "concept": "Null-Zeichen",
+      "name": "Das Null-Zeichen erklären",
+      "description": "Du kannst erklären, dass Strings als Felder von char realisiert sind und durch ein abschließendes Null-Zeichen \\0 gekennzeichnet werden.",
+      "prerequisites": ["feld_deklarieren", "zeichenkonstante_erklaeren"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "stringvariable_deklarieren",
+      "concept": "Stringvariablen",
+      "name": "Stringvariablen deklarieren",
+      "description": "Du kannst Stringvariablen deklarieren und beim Dimensionieren das abschließende Null-Zeichen mitzählen oder die Länge vom Compiler bestimmen lassen.",
+      "prerequisites": ["null_zeichen_erklaeren"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "string_laenge_bestimmen",
+      "concept": "Arbeiten mit Strings",
+      "name": "Die Länge eines Strings bestimmen",
+      "description": "Du kannst die Länge eines Strings über das Null-Zeichen ermitteln und einen String mit einer Schleife durchlaufen.",
+      "prerequisites": ["stringvariable_deklarieren"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "string_kopieren",
+      "concept": "Kopieren von Strings",
+      "name": "Einen String korrekt kopieren",
+      "description": "Du kannst einen String in ein ausreichend großes Zielfeld kopieren und das Null-Zeichen am Ende korrekt setzen.",
+      "prerequisites": ["string_laenge_bestimmen"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "getchar_putchar_verwenden",
+      "concept": "Ein- und Ausgabe von Zeichen",
+      "name": "getchar und putchar verwenden",
+      "description": "Du kannst Zeichen von der Standardeingabe lesen und auf die Standardausgabe schreiben, inklusive der Beachtung des EOF-Werts.",
+      "prerequisites": ["zeichenkonstante_erklaeren"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "string_ein_ausgabe_verwenden",
+      "concept": "Ein- und Ausgabe von Strings",
+      "name": "Strings mit %s und Schleifen ein- und ausgeben",
+      "description": "Du kannst Strings mit dem Formatbeschreiber %s bzw. zeichenweise einlesen und ausgeben und die Grenzen sicherer Eingabe beurteilen.",
+      "prerequisites": ["stringvariable_deklarieren", "getchar_putchar_verwenden"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "zeichen_klassifizieren",
+      "concept": "Zeichenklassifizierung (ctype.h)",
+      "name": "Zeichen mit ctype.h klassifizieren",
+      "description": "Du kannst Funktionen wie isalpha, isdigit, isspace, tolower und toupper anwenden, um Zeichen zu klassifizieren und umzuwandeln.",
+      "prerequisites": ["getchar_putchar_verwenden"]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "zuordnung_zeichen_zahl_erklaeren",
+      "concept": "Zeichenordnung und Ordnungszahlen",
+      "name": "Die Zuordnung von Zeichen zu Ordnungszahlen erklären",
+      "description": "Du kannst erklären, dass Zeichenkonstanten wie '0' nicht ihre Ziffernordnung, sondern eine vom Zeichensatz abhängige Ordnungszahl repräsentieren.",
+      "prerequisites": ["zeichenkonstante_erklaeren"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "anweisung_und_block_unterscheiden",
+      "concept": "Anweisungen und Blöcke",
+      "name": "Anweisungen und Blöcke unterscheiden",
+      "description": "Du kannst Ausdrucksanweisungen und leere Anweisungen schreiben und mehrere Anweisungen zu einem Block zusammenfassen.",
+      "prerequisites": ["ausdruck_aufbauen"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "if_mit_else_zuordnen",
+      "concept": "Schachtelung von if und dangling-else",
+      "name": "else korrekt dem if zuordnen",
+      "description": "Du kannst erklären, wie der Compiler ein else dem passenden if zuordnet, und geschachtelte if-Anweisungen durch Blöcke eindeutig machen.",
+      "prerequisites": ["if_else_anwenden"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "enum_aufzaehlungstyp_verwenden",
+      "concept": "Aufzählungstyp enum",
+      "name": "Den Aufzählungstyp enum verwenden",
+      "description": "Du kannst enum-Typen deklarieren, Konstanten automatisch oder explizit nummerieren und Variablen dieses Typs verwenden.",
+      "prerequisites": ["ganzzahltyp_auswaehlen"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "switch_anweisung_verwenden",
+      "concept": "switch-Anweisung",
+      "name": "Die switch-Anweisung verwenden",
+      "description": "Du kannst mit switch aus mehreren Ganzzahlwerten auswählen, case und default einsetzen und Fallstricke wie fehlendes break erklären.",
+      "prerequisites": ["enum_aufzaehlungstyp_verwenden"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "switch_break_anwenden",
+      "concept": "break in switch",
+      "name": "Durchbruchverhalten von switch mit break steuern",
+      "description": "Du kannst mit break die switch-Anweisung gezielt beenden und das Durchrutschen in folgende case-Zweige erklären oder bewusst nutzen.",
+      "prerequisites": ["switch_anweisung_verwenden"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "while_schleife_schreiben",
+      "concept": "while-Schleife",
+      "name": "while-Schleifen für Wiederholungen schreiben",
+      "description": "Du kannst while-Schleifen so schreiben, dass die Abbruchbedingung vor jedem Durchlauf geprüft und der Schleifenzähler korrekt aktualisiert wird.",
+      "prerequisites": ["while_schleife_anwenden"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "do_while_schleife_verwenden",
+      "concept": "do-Schleife",
+      "name": "do-while-Schleifen verwenden",
+      "description": "Du kannst eine do-while-Schleife schreiben und den Unterschied zur while-Schleife erklären, dass der Rumpf mindestens einmal ausgeführt wird.",
+      "prerequisites": ["while_schleife_schreiben"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "for_schleife_verwenden",
+      "concept": "for-Schleife",
+      "name": "for-Schleifen mit Zählvariable verwenden",
+      "description": "Du kannst for-Schleifen mit Initialisierungs-, Bedingungs- und Aktualisierungsteil schreiben und auf Feldern einsetzen.",
+      "prerequisites": ["while_schleife_schreiben"]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "schleifenart_auswaehlen",
+      "concept": "Wahl der Schleifenanweisung",
+      "name": "Die passende Schleifenart auswählen",
+      "description": "Du kannst begründet zwischen while-, do-while- und for-Schleife wählen, etwa for bei bekannter Durchlaufanzahl und do bei mindestens einem Durchlauf.",
+      "prerequisites": ["do_while_schleife_verwenden", "for_schleife_verwenden"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "funktion_deklarieren_definieren",
+      "concept": "Deklaration und Definition von Funktionen",
+      "name": "Funktionen deklarieren und definieren",
+      "description": "Du kannst Funktionsprototypen deklarieren, Funktionen definieren und den Unterschied zwischen Deklaration und Definition erklären.",
+      "prerequisites": ["namensregeln_anwenden"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "funktionswert_mit_return_zurueckgeben",
+      "concept": "Funktionswerte und return",
+      "name": "Einen Funktionswert mit return zurückgeben",
+      "description": "Du kannst den Rückgabetyp einer Funktion festlegen, mit return einen Wert liefern und Funktionen ohne Wert mit void kennzeichnen.",
+      "prerequisites": ["funktion_deklarieren_definieren"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "funktion_aufrufen",
+      "concept": "Aufruf von Funktionen",
+      "name": "Funktionen korrekt aufrufen",
+      "description": "Du kannst Funktionen mit passender Anzahl und passenden Typen von Argumenten aufrufen und ihren Rückgabewert verwenden.",
+      "prerequisites": ["funktion_deklarieren_definieren"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "call_by_value_erklaeren",
+      "concept": "call by value",
+      "name": "call by value erklären",
+      "description": "Du kannst erklären, dass Parameter wie lokale Variablen arbeiten, in die Werte der Argumente kopiert werden, und dass Änderungen am Parameter die Umwelt nicht verändern.",
+      "prerequisites": ["funktion_aufrufen"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "zeiger_parameter_verwenden",
+      "concept": "Zeiger als Parameter",
+      "name": "Zeiger als Parameter verwenden",
+      "description": "Du kannst über Zeigerparameter Werte der rufenden Funktion verändern und call by reference in C nachbilden.",
+      "prerequisites": ["call_by_value_erklaeren"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "feld_parameter_erklaeren",
+      "concept": "Felder als Parameter",
+      "name": "Felder als Parameter erklären",
+      "description": "Du kannst erklären, dass für Felder nur die Anfangsadresse übergeben wird, und Funktionen für Felder mit oder ohne Längenparameter deklarieren.",
+      "prerequisites": ["zeiger_parameter_verwenden", "feldkomponenten_ansprechen"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "const_parameter_verwenden",
+      "concept": "Das Attribut const",
+      "name": "const bei Parameter verwenden",
+      "description": "Du kannst Parameter mit const kennzeichnen, um versehentliche Änderungen an übergebenen Feldern zu verhindern.",
+      "prerequisites": ["feld_parameter_erklaeren"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "rekursive_funktion_entwerfen",
+      "concept": "Rekursion",
+      "name": "Rekursive Funktionen entwerfen",
+      "description": "Du kannst eine rekursive Funktion mit Basisfall und rekursivem Schritt schreiben, etwa zur Fakultät, und ihre Terminierung begründen.",
+      "prerequisites": ["funktionswert_mit_return_zurueckgeben"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "rekursion_iteration_vergleichen",
+      "concept": "Rekursion versus Iteration",
+      "name": "Rekursion und Iteration vergleichen",
+      "description": "Du kannst eine rekursiv formulierte Aufgabe auch iterativ mit einer Schleife lösen und beurteilen, welche Form im Einzelfall angemessen ist.",
+      "prerequisites": ["rekursive_funktion_entwerfen", "for_schleife_verwenden"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "modul_header_implementation_trennen",
+      "concept": "Modulkonzept",
+      "name": "Modul in Header und Implementation trennen",
+      "description": "Du kannst ein Modul verstehen, indem du Deklarationen in eine Headerdatei (.h) und Definitionen in eine Implementation (.c) legst und beide Binde-Ebene des Linkers berücksichtigst.",
+      "prerequisites": ["funktion_deklarieren_definieren"]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "separat_kompilieren",
+      "concept": "Separate Compilation",
+      "name": "Module separat kompilieren und binden",
+      "description": "Du kannst mehrere Quelldateien getrennt zu Objektdateien kompilieren und mit dem Linker zu einem ausführbaren Programm zusammenbinden.",
+      "prerequisites": ["modul_header_implementation_trennen"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_mehrdimensional_deklarieren",
+      "concept": "Mehrdimensionale Felder",
+      "name": "Mehrdimensionale Felder deklarieren",
+      "description": "Du kannst zweidimensionale Felder beziehungsweise Matrizen deklarieren und auf ihre Elemente mit mehreren Indizes zugreifen.",
+      "prerequisites": ["feld_deklarieren"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_variabler_groesse_verwenden",
+      "concept": "Variable Length Arrays",
+      "name": "Felder variabler Größe verwenden",
+      "description": "Du kannst lokale Felder verwenden, deren Größe erst zur Laufzeit feststeht, und ihre Grenzen kennen (lokal, ab C99).",
+      "prerequisites": ["feld_deklarieren"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_speicheranordnung_erklaeren",
+      "concept": "Speicheranordnung von Feldern",
+      "name": "Die Speicheranordnung von Feldern erklären",
+      "description": "Du kannst erklären, dass Felder zusammenhängend im Speicher liegen und wie bei Matrizen die Speicherabbildungsfunktion Zeilenindex und Zeilenlänge verknüpft.",
+      "prerequisites": ["feld_mehrdimensional_deklarieren"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "speicherabbildungsfunktion_berechnen",
+      "concept": "Speicherabbildungsfunktion",
+      "name": "Die Speicherabbildungsfunktion einer Matrix berechnen",
+      "description": "Du kannst den Abstand eines Matrixelements vom Feldanfang über Zeilenindex, Zeilenlänge und Spaltenindex berechnen.",
+      "prerequisites": ["feld_speicheranordnung_erklaeren"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "indexueberschreitung_beurteilen",
+      "concept": "Indexüberschreitung",
+      "name": "Folgen der Indexüberschreitung beurteilen",
+      "description": "Du kannst erklären, dass C keine Feldgrenzen kontrolliert, und die möglichen Folgen einer Indexüberschreitung kritisch einschätzen.",
+      "prerequisites": ["feldkomponenten_ansprechen"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_als_parameter_uebergeben",
+      "concept": "Felder als Parameter",
+      "name": "Felder mit Längenparameter an Funktionen übergeben",
+      "description": "Du kannst Felder an Funktionen übergeben und erklären, warum die Länge meist als weiterer Parameter mitgegeben werden muss.",
+      "prerequisites": ["feld_parameter_erklaeren"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "matrix_als_parameter_deklarieren",
+      "concept": "Mehrdimensionale Felder als Parameter",
+      "name": "Matrizen als Parameter deklarieren",
+      "description": "Du kannst im Funktionsprototyp mehrdimensionale Felder deklarieren und die Längenangaben aller Dimensionen außer der ersten angeben.",
+      "prerequisites": ["feld_als_parameter_uebergeben"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "makro_definieren",
+      "concept": "Makros (#define)",
+      "name": "Makros mit Parametern definieren",
+      "description": "Du kannst Makros mit Parametern definieren und ihre Textersetzung nachvollziehen, einschließlich der Notwendigkeit von Klammern.",
+      "prerequisites": ["symbolische_konstante_definieren"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "makro_funktion_unterscheiden",
+      "concept": "Makros versus Funktionen",
+      "name": "Makros und Funktionen unterscheiden",
+      "description": "Du kannst Unterschiede zwischen Makros und Funktionen (Typenlosigkeit, mehrfacher Code, fehlende Sprünge, Nebeneffekte bei Argumenten) erklären.",
+      "prerequisites": ["makro_definieren", "funktion_aufrufen"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_initialisieren",
+      "concept": "Initialisierung von Feldern",
+      "name": "Felder initialisieren",
+      "description": "Du kannst eindimensionale und mehrdimensionale Felder mit Anfangswerten initialisieren und das Nullsetzen fehlender Komponenten erklären.",
+      "prerequisites": ["feld_mehrdimensional_deklarieren"]
+    },
+    {
+      "topic_key": "felder",
+      "key": "matrixprodukt_implementieren",
+      "concept": "Matrixprodukt",
+      "name": "Ein Matrixprodukt implementieren",
+      "description": "Du kannst das Produkt zweier Matrizen berechnen und dabei die Speicherabbildungsfunktion beziehungsweise geeignete Parametrisierung anwenden.",
+      "prerequisites": ["speicherabbildungsfunktion_berechnen"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "gueltigkeitsbereich_erklaeren",
+      "concept": "Gültigkeitsbereiche von Namen",
+      "name": "Gültigkeitsbereiche von Namen erklären",
+      "description": "Du kannst erklären, dass Namen innerhalb eines Blocks deklariert werden können und nur dort bekannt sind, während externe Namen ab ihrer Deklaration gelten.",
+      "prerequisites": ["variable_deklarieren"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "intern_extern_unterscheiden",
+      "concept": "Interne und externe Größen",
+      "name": "Interne und externe Größen unterscheiden",
+      "description": "Du kannst interne Größen (innerhalb einer Funktion definiert) von externen Größen (außerhalb definiert) unterscheiden und die Konsequenzen für die Sichtbarkeit erklären.",
+      "prerequisites": ["gueltigkeitsbereich_erklaeren"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "verschattung_erklaeren",
+      "concept": "Verschattung",
+      "name": "Verschattung von Namen erklären",
+      "description": "Du kannst erklären, wie eine Deklaration innerhalb eines Blocks gleichnamige Größen außerhalb verschattet, und daraus resultierende Fehler erkennen.",
+      "prerequisites": ["gueltigkeitsbereich_erklaeren"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "modul_abstrakter_datentyp_realisieren",
+      "concept": "Modulkonzept und abstrakter Datentyp",
+      "name": "Einen abstrakten Datentyp als Modul realisieren",
+      "description": "Du kannst einen Stapelspeicher oder ähnliche Datentypen als Modul mit Header und Implementation aufbauen und die zentralen Operationen bereitstellen.",
+      "prerequisites": ["modul_header_implementation_trennen"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "lokale_globale_groessen_gegenueberstellen",
+      "concept": "Lokale und globale Größen",
+      "name": "Lokale und globale Größen einander gegenüberstellen",
+      "description": "Du kannst die Vor- und Nachteile lokaler gegenüber globaler (externer) Variablen abwägen und begründen, warum externe Variablen sparsam einzusetzen sind.",
+      "prerequisites": ["intern_extern_unterscheiden"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "static_attribut_verwenden",
+      "concept": "Attribut static",
+      "name": "Das Attribut static zur Lokalisierung verwenden",
+      "description": "Du kannst externe Größen und Hilfsfunktionen mit static versehen, um sie innerhalb eines Moduls zu verstecken.",
+      "prerequisites": ["lokale_globale_groessen_gegenueberstellen"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "statische_automatische_variable_unterscheiden",
+      "concept": "Statische und automatische Variablen",
+      "name": "Statische und automatische Variablen unterscheiden",
+      "description": "Du kannst den Unterschied erklären zwischen statischen Variablen (fester Speicherplatz über die Laufzeit) und automatischen Variablen (Speicher nur während des Blocks).",
+      "prerequisites": ["intern_extern_unterscheiden"]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "static_lokale_variable_erklaeren",
+      "concept": "static bei lokalen Variablen",
+      "name": "Lokale Variablen mit static erklären",
+      "description": "Du kannst erklären, wie eine lokale Variable mit static ihren Wert zwischen Aufrufen behält, und solche Fälle von automatischen Variablen unterscheiden.",
+      "prerequisites": ["statische_automatische_variable_unterscheiden"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "nullzeiger_verwenden",
+      "concept": "Nullzeiger NULL",
+      "name": "Den Nullzeiger NULL verwenden",
+      "description": "Du kannst Zeigervariablen als ohne Wert mit NULL markieren und erklären, dass man immer NULL statt der Zahl 0 verwenden sollte.",
+      "prerequisites": ["zeiger_parameter_verwenden"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_argv_erklaeren",
+      "concept": "Parameter von main (argc, argv)",
+      "name": "argc und argv des Hauptprogramms erklären",
+      "description": "Du kannst erklären, dass main beim Aufruf argc und argv erhält, wobei argv ein Vektor von Zeigern auf die Einträge der Aufrufzeile ist.",
+      "prerequisites": ["main_funktion_erklaeren"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "argv_mit_zeigern_durchlaufen",
+      "concept": "argv und Zeigerarithmetik",
+      "name": "Aufrufzeilen-Einträge über argv durchlaufen",
+      "description": "Du kannst die Einträge der Aufrufzeile über Indizes oder Nullzeiger beziehungsweise Zeigerarithmetik auflisten.",
+      "prerequisites": ["zeiger_argv_erklaeren"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "const_bei_zeigern_unterscheiden",
+      "concept": "Zeiger und const",
+      "name": "Die Position von const bei Zeigern unterscheiden",
+      "description": "Du kannst unterscheiden, ob const links oder rechts vom Stern steht, und damit angeben, ob die referenzierten Werte oder die Zeigervariable konstant sind.",
+      "prerequisites": ["nullzeiger_verwenden"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeigerarithmetik_anwenden",
+      "concept": "Zeigerarithmetik",
+      "name": "Zeigerarithmetik auf Feldern anwenden",
+      "description": "Du kannst über Zeiger mit Inkrementierung und Addition Feldkomponenten adressieren und *(v+7) als Zugriff auf v[7] verstehen.",
+      "prerequisites": ["feldkomponenten_ansprechen"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_feldformulierung_umwandeln",
+      "concept": "Zeiger- und Feldformulierungen",
+      "name": "Feld- und Zeigerformulierungen ineinander umwandeln",
+      "description": "Du kannst äquivalente Feld- und Zeigerschreibweisen unterscheiden und wiedergeben, etwa bei Funktionen wie der Summe eines Vektors.",
+      "prerequisites": ["zeigerarithmetik_anwenden"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_vergleich_anwenden",
+      "concept": "Zeigervergleich",
+      "name": "Zeiger vergleichen",
+      "description": "Du kannst Zeiger auf Komponenten desselben Vektors vergleichen und das Ergebnis wie einen Indexvergleich interpretieren.",
+      "prerequisites": ["zeigerarithmetik_anwenden"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "string_mit_zeigern_kopieren",
+      "concept": "Zeiger als Parameter (II)",
+      "name": "Strings mit Zeigern kopieren",
+      "description": "Du kannst einen String kompakt mit Zeigern kopieren, etwa in der Form while (*s++ = *t++);",
+      "prerequisites": ["zeiger_parameter_verwenden", "string_kopieren"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeigervektoren_verwenden",
+      "concept": "Zeigervektoren",
+      "name": "Vektoren von Zeigern verwenden",
+      "description": "Du kannst einen Vektor von Zeigern auf Strings verwenden, um Speicher zu sparen, und die Unterscheidung zu einem zweidimensionalen Zeichenfeld erklären.",
+      "prerequisites": ["stringkonstante_erklaeren"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_auf_zeiger_erklaeren",
+      "concept": "Zeiger auf Zeiger",
+      "name": "Zeiger auf Zeiger erklären",
+      "description": "Du kannst erklären, was ein Zeiger auf einen Zeiger (etwa char **) bedeutet und wie er für Vektoren von Zeigern eingesetzt wird.",
+      "prerequisites": ["zeigervektoren_verwenden"]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "matrix_als_zeiger_auf_zeiger_deuten",
+      "concept": "Mehrdimensionale Felder und Zeiger",
+      "name": "Matrizen als Zeiger auf Zeiger deuten",
+      "description": "Du kannst erklären, dass mehrdimensionale Felder Zeigern auf Zeiger entsprechen und wie sich daraus äquivalente Indexierungsformen ableiten.",
+      "prerequisites": ["zeiger_auf_zeiger_erklaeren"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "speichertypen_unterscheiden",
+      "concept": "Speichertypen (statisch, Stack, Heap)",
+      "name": "Statischen, Stack- und Heap-Speicher unterscheiden",
+      "description": "Du kannst statischen Speicher, automatische Variablen auf dem Stack und den Heap voneinander abgrenzen und ihre Lebensdauer erklären.",
+      "prerequisites": ["statische_automatische_variable_unterscheiden"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "malloc_verwenden",
+      "concept": "malloc",
+      "name": "Speicher mit malloc anfordern",
+      "description": "Du kannst mit malloc zusammenhängenden Speicher anfordern, die benötigte Größe angeben und den Wert in einer passenden Zeigervariablen speichern.",
+      "prerequisites": ["speichertypen_unterscheiden", "sizeof_operator_anwenden"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "malloc_null_pruefen",
+      "concept": "Fehlerprüfung bei malloc",
+      "name": "Den Rückgabewert von malloc auf NULL prüfen",
+      "description": "Du kannst erklären, dass malloc NULL liefern kann, wenn kein Speicher verfügbar ist, und die Rückgabe vor der Verwendung prüfen.",
+      "prerequisites": ["malloc_verwenden"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "free_verwenden",
+      "concept": "free",
+      "name": "Heap-Speicher mit free freigeben",
+      "description": "Du kannst zuvor mit malloc beschafften Speicher mit free wieder freigeben und erklären, dass free(NULL) nichts bewirkt.",
+      "prerequisites": ["malloc_verwenden"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "speicherleck_erklaeren",
+      "concept": "Speicherleck",
+      "name": "Speicherlecks erklären und vermeiden",
+      "description": "Du kannst erklären, wie un-freed heap-Speicher zu einem Speicherleck führt, und die Verantwortung für die Freigabe korrekt zuordnen.",
+      "prerequisites": ["free_verwenden"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "heap_vektor_bereitstellen",
+      "concept": "Vektoren auf dem Heap",
+      "name": "Vektoren auf dem Heap bereitstellen",
+      "description": "Du kannst einen Vektor zur Laufzeit auf dem Heap bereitstellen, füllen und nach der Nutzung wieder freigeben.",
+      "prerequisites": ["malloc_verwenden"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "heap_matrix_bereitstellen",
+      "concept": "Matrizen auf dem Heap",
+      "name": "Matrizen auf dem Heap bereitstellen",
+      "description": "Du kannst eine Matrix auf dem Heap als Zeiger auf Zeiger (Vektor von Zeilen) bereitstellen, indizieren und in umgekehrter Reihenfolge freigeben.",
+      "prerequisites": ["heap_vektor_bereitstellen", "matrix_als_zeiger_auf_zeiger_deuten"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "speicheruebergabe_verantwortung_erklaeren",
+      "concept": "Speicherübergabe",
+      "name": "Verantwortung bei der Speicherübergabe erklären",
+      "description": "Du kannst erklären, dass eine Funktion Speicher übergeben kann und dann die rufende Funktion für die Freigabe verantwortlich ist (z. B. beim String-Kopieren).",
+      "prerequisites": ["speicherleck_erklaeren"]
+    },
+    {
+      "topic_key": "heap",
+      "key": "heidenspeicher_matrix_optimieren",
+      "concept": "Optimierung der Matrixbereitstellung",
+      "name": "Matrixbereitstellung auf dem Heap optimieren",
+      "description": "Du kannst beurteilen, warum ein einziger malloc-Aufruf für die gesamte Matrix mit anschließender Aufteilung günstiger sein kann als viele Einzelaufrufe.",
+      "prerequisites": ["heap_matrix_bereitstellen"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "typedef_typname_verwenden",
+      "concept": "typedef",
+      "name": "Eigene Typnamen mit typedef definieren",
+      "description": "Du kannst mit typedef Typen benennen und erklären, dass dabei keine neuen Typen, sondern nur Namen entstehen.",
+      "prerequisites": ["namensregeln_anwenden"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "struktur_deklarieren",
+      "concept": "Vereinbarung von Strukturen",
+      "name": "Strukturtypen deklarieren",
+      "description": "Du kannst Strukturtypen mit struct deklarieren, Komponenten unterschiedlicher Typen zusammenfassen und Variablen des Strukturtyps definieren.",
+      "prerequisites": ["typedef_typname_verwenden"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "strukturkomponente_ansprechen",
+      "concept": "Zugriff auf Strukturkomponenten",
+      "name": "Strukturkomponenten mit Punkt und Pfeil ansprechen",
+      "description": "Du kannst auf Komponenten einer Struktur über die Variable (. ) und über einen Zeiger ( ->) zugreifen.",
+      "prerequisites": ["struktur_deklarieren"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "struktur_als_parameter_verwenden",
+      "concept": "Strukturen als Parameter",
+      "name": "Strukturen als Parameter und Funktionswerte verwenden",
+      "description": "Du kannst Strukturen als Parameter übergeben und zurückgeben und die Überlegung anstellen, stattdessen einen Zeiger auf die Struktur zu übergeben.",
+      "prerequisites": ["struktur_deklarieren"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "struktur_auf_dem_heap_anlegen",
+      "concept": "Strukturen auf dem Heap",
+      "name": "Strukturen auf dem Heap anlegen",
+      "description": "Du kannst Speicher für eine Struktur mit sizeof und malloc auf dem Heap bereitstellen und über einen Zeiger darauf zugreifen.",
+      "prerequisites": ["malloc_verwenden", "strukturkomponente_ansprechen"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "sizeof_struktur_erklaeren",
+      "concept": "sizeof und Speicherlayout von Strukturen",
+      "name": "Das Speicherlayout von Strukturen erklären",
+      "description": "Du kannst erklären, dass Strukturkomponenten nicht lückenlos aufeinanderfolgen müssen und sizeof daher Lücken berücksichtigt.",
+      "prerequisites": ["struktur_auf_dem_heap_anlegen"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "verkettete_liste_aufbauen",
+      "concept": "Verkettete Listen",
+      "name": "Eine einfach verkettete Liste aufbauen",
+      "description": "Du kannst eine verkettete Liste mit Strukturen und Zeigern definieren und Elemente einfügen, ausgeben und wieder freigeben.",
+      "prerequisites": ["struktur_auf_dem_heap_anlegen"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "liste_operationen_implementieren",
+      "concept": "Operationen auf verketteten Listen",
+      "name": "Standardoperationen auf Listen implementieren",
+      "description": "Du kannst Operationen wie Einfügen, Suchen und Entfernen an einer verketteten Liste korrekt implementieren und Speicher freigeben.",
+      "prerequisites": ["verkettete_liste_aufbauen"]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "verbund_union_erklaeren",
+      "concept": "Verbunde (union)",
+      "name": "Verbunde (union) von Strukturen abgrenzen",
+      "description": "Du kannst erklären, dass bei einem Verbund alle Komponenten an derselben Adresse beginnen und dass sein Gebrauch fehleranfällig ist.",
+      "prerequisites": ["struktur_deklarieren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "zahlen_binaer_codieren",
+      "concept": "Binärdarstellung ganzer Zahlen",
+      "name": "Ganze Zahlen binär codieren",
+      "description": "Du kannst vorzeichenlose ganze Zahlen als Binärzahlen fester Länge codieren und zwischen Dezimal- und Binärdarstellung umrechnen.",
+      "prerequisites": ["dezimalzahl_in_binaerzahl_umrechnen"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "zweierkomplement_anwenden",
+      "concept": "Zweierkomplement",
+      "name": "Negative Zahlen im Zweierkomplement darstellen",
+      "description": "Du kannst vorzeichenbehaftete Zahlen im Zweierkomplement codieren und decodieren.",
+      "prerequisites": ["zahlen_binaer_codieren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "ueberlauf_ganzzahlig_erklaeren",
+      "concept": "Überlauf bei ganzen Zahlen",
+      "name": "Ganzzahligen Überlauf erklären",
+      "description": "Du kannst erklären, dass ganzzahliger Überlauf zu falschen Werten weiterrechnet und dass das Ergebnis von der Interpretation als signed oder unsigned abhängt.",
+      "prerequisites": ["zweierkomplement_anwenden"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "ueberlauf_verhindern",
+      "concept": "Überlauf verhindern",
+      "name": "Ganzzahligen Überlauf vorab verhindern",
+      "description": "Du kannst vor einer riskanten Rechnung prüfen, ob ein Überlauf droht, etwa über einen Vergleich mit INT_MAX, statt erst danach zu testen.",
+      "prerequisites": ["ueberlauf_ganzzahlig_erklaeren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "gleitkomma_ueber_unterlauf_erklaeren",
+      "concept": "Überlauf und Unterlauf bei Gleitkommazahlen",
+      "name": "Überlauf und Unterlauf bei Gleitkommazahlen erklären",
+      "description": "Du kannst erklären, was bei Gleitkommazahlen Überlauf, Unterlauf und das Runden in eine Lücke bedeuten und wie üblich darauf reagiert wird.",
+      "prerequisites": ["gleitkommatyp_erklaeren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "assoziationsgesetz_ablehnen",
+      "concept": "Assoziativ- und Kommutativgesetz",
+      "name": "Gesetze bei Gleitkommarechnung hinterfragen",
+      "description": "Du kannst beurteilen, dass Assoziativ- und Kommutativgesetz für Gleitkommazahlen nicht gelten und dass die Auswertungsreihenfolge das Ergebnis verändert.",
+      "prerequisites": ["gleitkomma_ueber_unterlauf_erklaeren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "rundungsfehler_erklaeren",
+      "concept": "Rundungsfehler",
+      "name": "Rundungsfehler bei Gleitkommazahlen erklären",
+      "description": "Du kannst erklären, dass Rundungsfehler bereits bei der Umwandlung von Dezimaldarstellung in Binärdarstellung entstehen und sich anhäufen können.",
+      "prerequisites": ["gleitkomma_ueber_unterlauf_erklaeren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "rundungsfehler_reduzieren",
+      "concept": "Fehlerarmes Rechnen",
+      "name": "Rundungsfehler durch geeignete Formulierung reduzieren",
+      "description": "Du kannst Ausdrücke so formulieren, dass der Einfluss von Rundungsfehlern sinkt, etwa durch direkte Berechnung von Tabellierungspunkten statt fortlaufender Schrittweite.",
+      "prerequisites": ["rundungsfehler_erklaeren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "ausloeschung_erklaeren",
+      "concept": "Auslöschung",
+      "name": "Auslöschung erklären und bewerten",
+      "description": "Du kannst erklären, dass beim Subtrahieren beinahe gleich großer Zahlen führende Nullen entstehen, die nach Rundung zu stark verfälschten Ergebnissen führen können.",
+      "prerequisites": ["rundungsfehler_erklaeren"]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "taylorreihe_implementieren",
+      "concept": "Implementation der Taylorreihe",
+      "name": "Die Exponentialfunktion über die Taylorreihe implementieren",
+      "description": "Du kannst die Taylorreihe für exp so implementieren, dass Summanden rekursiv aus dem Vorgänger berechnet werden, negative Exponenten über die Reziproke behandelt und eine geeignete Abbruchbedingung verwendet wird.",
+      "prerequisites": ["ausloeschung_erklaeren", "for_schleife_verwenden"]
+    }
+  ]
+}

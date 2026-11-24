@@ -1,0 +1,6043 @@
+{
+  "format": "gaia-quiz",
+  "version": 1,
+  "questions": [
+    {
+      "type": "single_choice",
+      "question": "Welche Aussage grenzt Syntax und Semantik korrekt ab?",
+      "answers": [
+        "Syntax ist die Bedeutung, Semantik der Aufbau von Sätzen.",
+        "Syntax und Semantik bezeichnen denselben Aspekt einer Sprache.",
+        "Syntax legt den Wertebereich der Datentypen fest.",
+        "Syntax ist der zulässige Aufbau gültiger Sätze, Semantik ihre Bedeutung."
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "programmiersprache_syntax_semantik_unterscheiden"
+      ],
+      "tags": [
+        "programmiersprache"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen gelten für eine Programmiersprache?",
+      "answers": [
+        "Sie legt fest, welche Sätze grammatisch zulässig sind (Syntax).",
+        "Sie legt die Bedeutung gültiger Sätze fest (Semantik).",
+        "Sie ist völlig unabhängig von einer Spezifikation.",
+        "Sie enthält ausschließlich verschlüsselte Binärbefehle."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "skills": [
+        "programmiersprache_syntax_semantik_unterscheiden"
+      ],
+      "tags": [
+        "programmiersprache"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "In welcher Reihenfolge verläuft die Programmentwicklung üblicherweise?",
+      "answers": [
+        "Codierung → Aufgabenformulierung → Übersetzen → Ausführen",
+        "Algorithmus → Codierung → Aufgabenformulierung → Binden",
+        "Aufgabenformulierung → Algorithmus → Codierung → Übersetzen → Binden → Ausführen",
+        "Ausführen → Übersetzen → Codierung → Algorithmus → Aufgabenformulierung"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "programmentwicklung_schritte_nennen"
+      ],
+      "tags": [
+        "programmentwicklung"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Nenne die Hauptschritte der Programmentwicklung in korrekter Reihenfolge (1–2 Wörter je Schritt).",
+      "answers": [
+        "Aufgabenformulierung, Algorithmus, Codierung, Übersetzen/Kompilieren, Binden/Linken, Ausführen/Testen."
+      ],
+      "correct": [],
+      "skills": [
+        "programmentwicklung_schritte_nennen"
+      ],
+      "tags": [
+        "programmentwicklung"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aufgaben übernimmt der Compiler?",
+      "answers": [
+        "Er übersetzt C-Quellcode in Objektcode.",
+        "Er führt das Programm aus.",
+        "Er meldet Syntaxfehler im Quelltext.",
+        "Er erzeugt aus Quelltext direkt das ausführbare Programm."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "skills": [
+        "compiler_linker_unterscheiden"
+      ],
+      "tags": [
+        "compiler"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum entsteht aus einem Programm mit printf erst nach dem Linken ein lauffähiges Programm?",
+      "answers": [
+        "Der Compiler erzeugt es direkt.",
+        "Der Quellcode enthält die printf-Implementierung selbst.",
+        "Das Betriebssystem ergänzt printf erst beim Ausführen.",
+        "Der Linker fügt die printf-Implementierung aus der Standardbibliothek hinzu."
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "compiler_linker_unterscheiden"
+      ],
+      "tags": [
+        "compiler"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist ein typisches Produkt des Compilers, bevor der Linker tätig wird?",
+      "answers": [
+        "Ein ausführbares Programm.",
+        "Eine Objektdatei (Objektcode).",
+        "Ein Quelltext.",
+        "Ein Dokumentationsbericht."
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "compiler_linker_unterscheiden"
+      ],
+      "tags": [
+        "compiler"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie ist die zeitliche Abfolge der C-Standards korrekt geordnet?",
+      "answers": [
+        "K&R → ANSI-C/C89 → C99 → C11",
+        "C11 → C99 → ANSI-C → K&R",
+        "ANSI-C → K&R → C11 → C99",
+        "C99 → K&R → C11 → ANSI-C"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "c_standard_einordnen"
+      ],
+      "tags": [
+        "c"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über einen Sprachstandard sind richtig?",
+      "answers": [
+        "Er legt Syntax und Semantik der Sprache verbindlich fest.",
+        "Er garantiert fehlerfreie Programme.",
+        "Er legt den einzig erlaubten Editor fest.",
+        "Compiler beziehen sich auf diesen Standard."
+      ],
+      "correct": [
+        1,
+        4
+      ],
+      "skills": [
+        "c_standard_einordnen"
+      ],
+      "tags": [
+        "c"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche davon zählen zu den 'white spaces'?",
+      "answers": [
+        "Buchstaben a–z",
+        "Leerzeichen",
+        "Tabulator",
+        "Ziffern 0–9"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "skills": [
+        "zeichensatz_erkennen"
+      ],
+      "tags": [
+        "zeichensatz"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Nenne zwei graphische Zeichenarten, die in einer C-Quelltextdatei vorkommen dürfen.",
+      "answers": [
+        "Buchstaben und Ziffern (beziehungsweise Satzzeichen/Operatoren) – alle sichtbaren Zeichen außer white spaces."
+      ],
+      "correct": [],
+      "skills": [
+        "zeichensatz_erkennen"
+      ],
+      "tags": [
+        "zeichensatz"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Aussage über den Aufbau eines C-Programms ist richtig?",
+      "answers": [
+        "Es besteht aus genau einer Funktion main.",
+        "Funktionen werden stets ineinander geschachtelt definiert.",
+        "main darf in mehreren Dateien je einmal vorkommen.",
+        "Es besteht aus Funktionen; genau eine heißt main und realisiert das Hauptprogramm."
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "quellcode_aufbau_beschreiben"
+      ],
+      "tags": [
+        "quellcode"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre in 1–2 Sätzen, welche besondere Rolle main in einem C-Programm hat.",
+      "answers": [
+        "main ist das Hauptprogramm – dort beginnt die Ausführung; genau eine solche Funktion gibt es, und ohne sie ist kein Programm ausführbar."
+      ],
+      "correct": [],
+      "skills": [
+        "quellcode_aufbau_beschreiben"
+      ],
+      "tags": [
+        "quellcode"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Mit welchem Befehl erzeugt man aus hello.c ein ausführbares Programm?",
+      "answers": [
+        "print hello.c",
+        "gcc hello.c",
+        "run hello.c",
+        "edit hello.c"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "hello_world_programm_erstellen"
+      ],
+      "tags": [
+        "hello"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Schreibe ein minimales Hello-World-Programm in C, das 'Hallo Welt' ausgibt (vollständiger Code).",
+      "answers": [
+        "#include <stdio.h>\nint main(void) {\n    printf(\"Hallo Welt\\n\");\n    return 0;\n}"
+      ],
+      "correct": [],
+      "skills": [
+        "hello_world_programm_erstellen"
+      ],
+      "tags": [
+        "hello"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wozu dient die return 0;-Anweisung am Ende von main?",
+      "answers": [
+        "Sie beendet main sofort ohne Funktionswert.",
+        "Sie führt main erneut aus.",
+        "Sie liefert den ganzzahligen Funktionswert von main (häufig 0 für Erfolg) zurück.",
+        "Sie gibt Speicher frei."
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "main_funktion_erklaeren"
+      ],
+      "tags": [
+        "main"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bedeutet int main(void)?",
+      "answers": [
+        "main erwartet einen int als Parameter.",
+        "main liefert keinen Wert.",
+        "main ist void und benötigt einen int.",
+        "main liefert einen ganzzahligen Funktionswert und erwartet keine Parameter."
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "main_funktion_erklaeren"
+      ],
+      "tags": [
+        "main"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Aussage über Blockkommentare (/* ... */) ist richtig?",
+      "answers": [
+        "Sie dürfen nur einzeilig sein.",
+        "Sie werden vom Compiler in Maschinencode übersetzt.",
+        "Sie enden beim ersten */ und lassen sich nicht verschachteln.",
+        "Sie können verschachtelt werden."
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "kommentare_verwenden"
+      ],
+      "tags": [
+        "kommentare"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über Kommentare sind richtig?",
+      "answers": [
+        "Kommentare werden vom Compiler in Maschinencode übersetzt.",
+        "Kommentare dienen der Dokumentation von Absicht und Kontext.",
+        "Blockkommentare können weitere Blockkommentare enthalten (verschachtelt).",
+        "Kommentare erläutern den Code, ohne die Ausführung zu beeinflussen."
+      ],
+      "correct": [
+        2,
+        4
+      ],
+      "skills": [
+        "kommentare_verwenden"
+      ],
+      "tags": [
+        "kommentare"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Woran erkennt man eine Präprozessordirektive im Quelltext?",
+      "answers": [
+        "Sie beginnt in der Regel mit #.",
+        "Sie steht in geschweiften Klammern.",
+        "Sie endet mit einem Semikolon.",
+        "Sie enthält immer main."
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "praeprozessor_include_erklaeren"
+      ],
+      "tags": [
+        "praeprozessor"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über #include <stdio.h> sind richtig?",
+      "answers": [
+        "#include ist eine Präprozessordirektive.",
+        "Es bettet die Ein-/Ausgabe-Deklarationen der Standardbibliothek in den Quelltext ein.",
+        "Die Direktive beginnt mit #.",
+        "Es startet das Programm."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "praeprozessor_include_erklaeren"
+      ],
+      "tags": [
+        "praeprozessor"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "An wen bzw. wohin kehrt die return-Anweisung unter main zurück?",
+      "answers": [
+        "An die Funktion printf.",
+        "main wird beendet und der Funktionswert an die rufende Instanz (hier das System) zurückgegeben.",
+        "An eine Variable.",
+        "An das Netzwerk."
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "printf_und_return_erklaeren"
+      ],
+      "tags": [
+        "printf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche dieser Aussagen über printf ist richtig?",
+      "answers": [
+        "printf schreibt eine Zeichenkette auf die Standardausgabe.",
+        "printf gibt dynamisch Speicher frei.",
+        "printf liest Eingaben von der Tastatur.",
+        "printf beendet das Programm."
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "printf_und_return_erklaeren"
+      ],
+      "tags": [
+        "printf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Binärzahl entspricht der Dezimalzahl 13?",
+      "answers": [
+        "1101",
+        "1010",
+        "1110",
+        "1011"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "dezimalzahl_in_binaerzahl_umrechnen"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Angaben sind korrekte binäre Darstellungen?",
+      "answers": [
+        "1010 ist die Binärdarstellung von 9 (Dezimal).",
+        "1100 ist die Binärdarstellung von 12 (Dezimal).",
+        "1110 ist die Binärdarstellung von 13 (Dezimal).",
+        "1010 ist die Binärdarstellung von 12 (Dezimal)."
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "dezimalzahl_in_binaerzahl_umrechnen"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Hexadezimaldarstellung entspricht der Dezimalzahl 15?",
+      "answers": [
+        "15",
+        "F",
+        "E",
+        "10"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "oktal_und_hexadezimal_umrechnen"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über die Oktal- und Hexadezimaldarstellung sind richtig?",
+      "answers": [
+        "Hexadezimal ist ohne führende Null als 0x erkennbar.",
+        "Oktale Zahlen enden immer auf 0.",
+        "Hexadezimal nutzt die Ziffern 0–9 und A–F.",
+        "Oktal nutzt die Ziffern 0–7."
+      ],
+      "correct": [
+        3,
+        4
+      ],
+      "skills": [
+        "oktal_und_hexadezimal_umrechnen"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was beschreibt das Makro INT_MAX?",
+      "answers": [
+        "Den kleinsten möglichen int-Wert.",
+        "Die Anzahl der int-Variablen im Programm.",
+        "Den größten möglichen int-Wert.",
+        "Den Speicherbedarf von int in Bytes."
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "wertebereiche_limits_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Gründe sprechen für die Makros aus <limits.h>?",
+      "answers": [
+        "Die Wertebereiche sind implementierungsabhängig.",
+        "<limits.h> liefert die für die Plattform gültigen Grenzwerte.",
+        "Die Makros garantieren auf allen Plattformen dieselben Wertebereiche.",
+        "Die Makros machen den Code zwingend schneller."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "skills": [
+        "wertebereiche_limits_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welchen Ganzzahltyp wählt man, wenn nur nicht-negative Werte bis 100.000 gespeichert werden sollen und Speicher nicht knapp ist?",
+      "answers": [
+        "char",
+        "unsigned short",
+        "double",
+        "int"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "ganzzahltyp_auswaehlen"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über unsigned sind richtig?",
+      "answers": [
+        "Es erlaubt nur nicht-negative Werte.",
+        "Es verdoppelt den Speicherbedarf.",
+        "Es verschiebt den Wertebereich nach oben.",
+        "Es erlaubt negative Werte."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "skills": [
+        "ganzzahltyp_auswaehlen"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie schreibt man in C eine Ganzzahlkonstante in hexadezimaler Darstellung?",
+      "answers": [
+        "mit führender 0 (z. B. 017)",
+        "mit führender 0x (z. B. 0x1F)",
+        "ohne Präfix (z. B. 31)",
+        "mit angehängtem h (z. B. 1Fh)"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "ganzzahlkonstante_schreiben"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen zu oktalen Ganzzahlkonstanten in C sind richtig?",
+      "answers": [
+        "Eine oktale Konstante beginnt mit einer führenden 0 (z. B. 020).",
+        "Oktalkonstanten enthalten die Ziffern 0–9.",
+        "020 ist identisch mit der Dezimalzahl 20.",
+        "020 ist die oktale Darstellung der Dezimalzahl 16."
+      ],
+      "correct": [
+        1,
+        4
+      ],
+      "skills": [
+        "ganzzahlkonstante_schreiben"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über den Typ char sind richtig?",
+      "answers": [
+        "char ist ein Ganzzahltyp.",
+        "char stellt Zeichen über ihren Zeichencode dar.",
+        "char speichert immer genau ein Zeichen als Text und kann nur Buchstaben speichern.",
+        "Ob char mit Vorzeichen ist, ist implementierungsabhängig."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "typ_char_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über char sind richtig?",
+      "answers": [
+        "char entspricht einem kleinen Ganzzahltyp.",
+        "char speichert immer Unicode-Zeichen direkt.",
+        "Ob char mit Vorzeichen ist, ist implementierungsabhängig.",
+        "char speichert Zeichen über deren Zeichencode."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "typ_char_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wofür steht die Escape-Sequenz \\n in C?",
+      "answers": [
+        "einen Tabulator",
+        "eine Null am Ende",
+        "einen Rückwertsschritt",
+        "einen Zeilenumbruch"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "escape_sequenzen_verwenden"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Angaben zu Escape-Sequenzen sind richtig?",
+      "answers": [
+        "Escape-Sequenzen beginnen mit einem Schrägstrich (/).",
+        "\\\" stellt ein doppeltes Anführungszeichen dar.",
+        "\\n steht für einen Zeilenumbruch.",
+        "Escape-Sequenzen dürfen auch ohne Backslash geschrieben werden."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "skills": [
+        "escape_sequenzen_verwenden"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Darstellung ist eine gültige Zeichenkonstante in C?",
+      "answers": [
+        "'A'",
+        "\"A\"",
+        "A",
+        "char A"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "zeichenkonstante_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über Zeichenkonstanten sind richtig?",
+      "answers": [
+        "'AB' ist eine gültige Zeichenkonstante.",
+        "Eine Zeichenkonstante steht in einfachen Hochkommata.",
+        "'\\n' ist eine gültige Zeichenkonstante.",
+        "Eine Zeichenkonstante hat den Typ int."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "zeichenkonstante_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie unterscheidet sich eine Zeichenkettenkonstante (String) von einer Zeichenkonstante?",
+      "answers": [
+        "Ein String steht in einfachen, ein Zeichen in doppelten Hochkommata.",
+        "Ein String steht in doppelten Hochkommata und endet mit dem Null-Zeichen; ein Zeichen in einfachen.",
+        "Ein String ist immer genau ein Zeichen lang.",
+        "Ein Zeichen kann mehrere Strings enthalten."
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "stringkonstante_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über Zeichenkettenkonstanten sind richtig?",
+      "answers": [
+        "Eine Zeichenkette wird durch das Null-Zeichen '\\0' abgeschlossen.",
+        "Die Länge einer Zeichenkette lässt sich so beim Durchlaufen erkennen.",
+        "Das Null-Zeichen gehört beim Speichern mit hinzu.",
+        "Eine Zeichenkette braucht kein Ende-Marker."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "stringkonstante_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welcher dieser Typen gehört zu den Gleitkommatypen?",
+      "answers": [
+        "int",
+        "char",
+        "double",
+        "unsigned"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "gleitkommatyp_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden sind Gleitkommatypen?",
+      "answers": [
+        "long int",
+        "float",
+        "unsigned",
+        "double"
+      ],
+      "correct": [
+        2,
+        4
+      ],
+      "skills": [
+        "gleitkommatyp_erklaeren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Schreibweise ist in C eine gültige Gleitkommakonstante?",
+      "answers": [
+        "3.5",
+        "3;5",
+        "3_5",
+        "3,5"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "gleitkommazahl_notieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden sind gültige Gleitkommakonstanten in C?",
+      "answers": [
+        "1200",
+        "1,2e3",
+        "1.2e3",
+        "12e2"
+      ],
+      "correct": [
+        3,
+        4
+      ],
+      "skills": [
+        "gleitkommazahl_notieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über symbolische Konstanten (#define) sind richtig?",
+      "answers": [
+        "Sie werden mit #define definiert.",
+        "Sie werden vom Präprozessor ersetzt.",
+        "Sie sind zur Laufzeit veränderbar.",
+        "Sie benötigen keinen Datentyp."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "symbolische_konstante_definieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen zur Abgrenzung von #define gegenüber const sind richtig?",
+      "answers": [
+        "#define ersetzt den Namen bereits zur Übersetzungszeit textuell durch den Wert.",
+        "const wird vom Präprozessor ersetzt, bevor der Compiler läuft.",
+        "const führt einen benannten Wert mit einem Typ ein, der zur Laufzeit nicht geändert wird.",
+        "Ein #define-Makro besitzt keinen Datentyp."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "symbolische_konstante_definieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Namen sind in C zulässige Bezeichner?",
+      "answers": [
+        "_wert",
+        "summe2",
+        "zwei-Werte",
+        "2wert"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "skills": [
+        "namensregeln_anwenden"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über Bezeichner-Namen in C sind richtig?",
+      "answers": [
+        "Bezeichner dürfen ein Leerzeichen enthalten.",
+        "Bezeichner dürfen mit einem Unterstrich beginnen.",
+        "Bezeichner dürfen Ziffern in der Mitte enthalten.",
+        "Schlüsselwörter wie int dürfen nicht als Bezeichner verwendet werden."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "namensregeln_anwenden"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Zeile deklariert eine Variable vom Typ int?",
+      "answers": [
+        "zaehler = 5;",
+        "int zaehler = ;",
+        "variable int zaehler;",
+        "int zaehler;"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "variable_deklarieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Anweisungen sind gültige Deklarationen?",
+      "answers": [
+        "double x, y; deklariert zwei double-Variablen.",
+        "double x, y; deklariert x und initialisiert y mit 0.",
+        "double x = 0.0; deklariert und initialisiert eine Variable.",
+        "x, y double; ist eine gültige C-Deklaration."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "skills": [
+        "variable_deklarieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist der Unterschied zwischen Deklaration und Initialisierung?",
+      "answers": [
+        "Initialisierung gibt der Variablen einen Anfangswert; Deklaration legt nur Typ und Namen fest.",
+        "Sie sind dasselbe.",
+        "Deklaration gibt immer einen Wert vor.",
+        "Initialisierung legt nur den Namen fest."
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "variable_initialisieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Formen deklarieren und initialisieren eine int-Variable x mit 3?",
+      "answers": [
+        "int x = 3;",
+        "int x; x = 3;",
+        "int x = 3",
+        "x int = 3;"
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "variable_initialisieren"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Namenskonvention ist in vielen C-Projekten für Variable üblich?",
+      "answers": [
+        "alle Großbuchstaben",
+        "nur eine Kleinbuchstabe",
+        "lower_case_mit_unterstrich oder camelCase",
+        "Großbuchstaben mit Leerzeichen"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "namenskonventionen_anwenden"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Warum werden einheitliche Namenskonventionen in größeren C-Projekten empfohlen?",
+      "answers": [
+        "Sie erhöhen die Lesbarkeit und erleichtern Wartung und Zusammenarbeit, weil Namen vorhersagbar und konsistent sind."
+      ],
+      "correct": [],
+      "skills": [
+        "namenskonventionen_anwenden"
+      ],
+      "tags": [
+        "typen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welcher Formatbeschreiber gibt einen int-Wert in %d aus?",
+      "answers": [
+        "%f",
+        "%c",
+        "%s",
+        "%d"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "printf_formatbeschreiber_verwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Mit welchem Formatbeschreiber gibt printf eine Gleitkommazahl als double aus?",
+      "answers": [
+        "%f",
+        "%i",
+        "%d",
+        "%p"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "printf_formatbeschreiber_verwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden printf-Aufrufe geben den int n und einen Zeilenumbruch aus?",
+      "answers": [
+        "printf(\"%d\\n\", n);",
+        "printf(\"%d \", n);",
+        "printf(\"%f\\n\", n);",
+        "printf(\"Wert: %d\\n\", n);"
+      ],
+      "correct": [
+        1,
+        4
+      ],
+      "skills": [
+        "printf_formatbeschreiber_verwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über scanf sind richtig?",
+      "answers": [
+        "scanf schreibt den Wert über die Adresse der Variablen.",
+        "Dazu übergibt man &x.",
+        "scanf liefert den Wert direkt als Funktionswert.",
+        "Ohne & kann der Wert nicht in x geschrieben werden."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "scanf_adressoperator_verwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Angaben zu scanf sind richtig?",
+      "answers": [
+        "Zum Einlesen eines int nutzt man scanf(\"%d\", &x).",
+        "Bei scanf schreibt man den Variablennamen ohne &.",
+        "Der Adressoperator & übergibt die Adresse der Variablen.",
+        "Ohne & kann der eingelesene Wert nicht in x geschrieben werden."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "scanf_adressoperator_verwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Zuordnungen von scanf-Formaten sind richtig?",
+      "answers": [
+        "%lf liest einen long double.",
+        "%d liest einen int.",
+        "%c liest ein Zeichen.",
+        "%f liest einen double."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "skills": [
+        "eingabeformat_auswaehlen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Zuordnungen von Formatbeschreibern sind richtig?",
+      "answers": [
+        "%s liest eine einzelne Zahl.",
+        "%c liest ein einzelnes Zeichen.",
+        "%d liest einen int.",
+        "%lf liest einen double."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "eingabeformat_auswaehlen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie oft wird der Schleifenkörper ausgeführt, wenn die while-Bedingung von Anfang an falsch ist?",
+      "answers": [
+        "1-mal",
+        "unendlich oft",
+        "so oft wie angegeben",
+        "0-mal"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "while_schleife_anwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Schleifen geben 1 2 3 4 5 aus?",
+      "answers": [
+        "for (i=0; i<5; i=i+1) printf(\"%d\", i);",
+        "for (i=1; i<=5; i=i+1) printf(\"%d\", i);",
+        "int i=1; do { printf(\"%d\", i); i=i+1; } while (i<5);",
+        "int i=1; while (i<=5) { printf(\"%d\", i); i=i+1; }"
+      ],
+      "correct": [
+        2,
+        4
+      ],
+      "skills": [
+        "while_schleife_anwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bewirkt die Zuweisung x = x + 1;?",
+      "answers": [
+        "Der aktuelle Wert von x wird um 1 erhöht und x zugeschrieben.",
+        "x wird auf 1 gesetzt.",
+        "x wird mit x multipliziert.",
+        "Die Zuweisung ist ungültig."
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "wertzuweisung_erklaeren"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "In welche Richtung wirkt die Zuweisung a = b;?",
+      "answers": [
+        "Der Wert von a wird b zugewiesen.",
+        "Der Wert von b wird a zugewiesen.",
+        "beide werden 0.",
+        "Die Variablen tauschen immer."
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "wertzuweisung_erklaeren"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welchen Rückgabewert liefert scanf beim Dateiende (EOF)?",
+      "answers": [
+        "1",
+        "0",
+        "EOF (negativ)",
+        "eine Zufallszahl"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "eof_erkennen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über das Erkennen des Dateiendes mit scanf sind richtig?",
+      "answers": [
+        "scanf liefert beim Dateiende den Wert EOF.",
+        "Man vergleicht den Rückgabewert von scanf mit EOF.",
+        "Eine gebräuchliche Form ist while (scanf(\"%d\", &x) != EOF) { ... }.",
+        "EOF ist stets 0."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "eof_erkennen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über if-else sind richtig?",
+      "answers": [
+        "Der else-Zweig läuft, wenn die Bedingung falsch ist.",
+        "Mit Blöcken { } kann man mehrere Anweisungen je Zweig ausführen.",
+        "else läuft immer zusammen mit then.",
+        "else ist optional."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "if_else_anwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Code-Fragmente geben für x<0 \"negativ\", sonst \"nicht negativ\" aus?",
+      "answers": [
+        "if (x < 0) printf(\"negativ\"); else printf(\"nicht negativ\");",
+        "if (x < 0) printf(\"nicht negativ\"); else printf(\"negativ\");",
+        "if (x >= 0) printf(\"nicht negativ\"); else printf(\"negativ\");",
+        "if (x < 0) { printf(\"negativ\"); } else { printf(\"nicht negativ\"); }"
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "if_else_anwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über Vergleichsoperatoren sind richtig?",
+      "answers": [
+        "== weist einen Wert zu.",
+        "== prüft auf Gleichheit.",
+        "= ist eine Zuweisung, kein Vergleich.",
+        "!= prüft auf Ungleichheit."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "vergleichsoperator_verwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Bedingungen sind wahr, wenn a <= b gilt?",
+      "answers": [
+        "a < b || a == b",
+        "b >= a",
+        "!(a > b)",
+        "a >= b"
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "vergleichsoperator_verwenden"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden sind gültige Feld-Deklarationen?",
+      "answers": [
+        "int a[5];",
+        "int b[3];",
+        "int d();",
+        "int c[100];"
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "feld_deklarieren"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Deklariere ein Feld v mit 10 Elementen vom Typ double.",
+      "answers": [
+        "double v[10];"
+      ],
+      "correct": [],
+      "skills": [
+        "feld_deklarieren"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welcher Index adressiert das erste Element eines Feldes a?",
+      "answers": [
+        "1",
+        "-1",
+        "a.length",
+        "0"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "feldkomponenten_ansprechen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Anweisung weist dem dritten Element des Feldes a den Wert 7 zu?",
+      "answers": [
+        "a[2] = 7;",
+        "a[3] = 7;",
+        "a[7] = 3;",
+        "a = 7;"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "feldkomponenten_ansprechen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Beschreibe in Worten, wie man das Skalarprodukt zweier gleich langer Vektoren (Felder) berechnet.",
+      "answers": [
+        "Man multipliziert die einander entsprechenden Komponenten (gleicher Index) und summiert alle Produkte auf."
+      ],
+      "correct": [],
+      "skills": [
+        "skalarprodukt_berechnen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Schleife eignet sich, um über alle Komponenten zweier gleich langer Felder zu laufen?",
+      "answers": [
+        "eine do-while-Schleife ohne Bedingung",
+        "eine for-Schleife mit Zählindex von 0 bis < Länge",
+        "eine while-Schleife, die immer falsch ist",
+        "eine if-Anweisung"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "skalarprodukt_berechnen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie lautet die übliche Signatur von main, um Kommandozeilenargumente zu erhalten?",
+      "answers": [
+        "int main(void)",
+        "void main()",
+        "int main(int argc, char *argv[])",
+        "int fopen(...)"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "kommandozeile_auslesen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was enthält argc?",
+      "answers": [
+        "die Länge jedes Arguments",
+        "den Inhalt des ersten Arguments",
+        "den Rückgabewert von main",
+        "die Anzahl der Kommandozeilenargumente (inkl. Programmname)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "kommandozeile_auslesen"
+      ],
+      "tags": [
+        "beispiel"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Woraus besteht ein arithmetischer Ausdruck in C?",
+      "answers": [
+        "Operanden und Operatoren",
+        "nur aus Variablen",
+        "ausschließlich aus Konstanten",
+        "nur aus Klammern"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "ausdruck_aufbauen"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Bilde einen C-Ausdruck, der das Doppelte von x plus 1 berechnet.",
+      "answers": [
+        "2 * x + 1 (auch (2*x)+1)."
+      ],
+      "correct": [],
+      "skills": [
+        "ausdruck_aufbauen"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welchen Wert liefert der Ausdruck 7 / 2 bei ganzzahligen Operanden in C?",
+      "answers": [
+        "3.5",
+        "3",
+        "3.0",
+        "4"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "arithmetische_operatoren_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welchen Wert liefert 7 % 2 in C?",
+      "answers": [
+        "3.5",
+        "3",
+        "1",
+        "0.5"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "arithmetische_operatoren_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Was ist der Unterschied zwischen / und % bei ganzzahligen Operanden?",
+      "answers": [
+        "/ liefert den ganzzahligen Quotienten (Rest wird abgeschnitten), % den Divisionsrest."
+      ],
+      "correct": [],
+      "skills": [
+        "arithmetische_operatoren_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über Operator-Präzedenz sind richtig?",
+      "answers": [
+        "* bindet stärker als +.",
+        "+ bindet stärker als *.",
+        "* bindet stärker als ==.",
+        "= bindet am schwächsten von diesen."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "operatorpraezedenz_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie wird der Ausdruck 2 + 3 * 4 ausgewertet?",
+      "answers": [
+        "2 + (3*4) = 14",
+        "(2+3)*4 = 20",
+        "(2*3)+4 = 10",
+        "2 + 3 * 4 = 24"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "operatorpraezedenz_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist der Unterschied zwischen ++i und i++?",
+      "answers": [
+        "es gibt keinen Unterschied",
+        "++i erhöht i vor der Verwendung, i++ nach der Verwendung des alten Werts",
+        "++i erhöht um 2",
+        "i++ erniedrigt i"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "inkrement_dekrement_unterscheiden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Gib den Wert des Ausdrucks i++ an, wenn i=5 ist (der Wert, der aus dem Ausdruck resultiert).",
+      "answers": [
+        "5 (der abgelegte Wert; i selbst wird danach 6)."
+      ],
+      "correct": [],
+      "skills": [
+        "inkrement_dekrement_unterscheiden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über logische Operatoren sind richtig?",
+      "answers": [
+        "&& ist der bitweise UND-Operator.",
+        "&& ist der logische UND-Operator.",
+        "|| ist der logische ODER-Operator.",
+        "! ist die logische Negation."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "logische_operatoren_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist das Ergebnis von (1 < 2) || (5 < 3)?",
+      "answers": [
+        "falsch",
+        "1 < 3",
+        "nicht definiert",
+        "wahr"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "logische_operatoren_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bedeutet faule (kurzschluss-) Auswertung bei &&?",
+      "answers": [
+        "Ist der linke Operand falsch, wird der rechte nicht mehr ausgewertet.",
+        "Erst ein Operand wird immer ausgewertet.",
+        "beide Operanden werden immer ausgewertet.",
+        "&& wird als bitweises UND ausgewertet."
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "lazy_evaluation_erklaeren"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welcher Ausdruck nutzt die Kurzschluss-Auswertung von || sinnvoll?",
+      "answers": [
+        "x * y",
+        "(x != 0) || berechne(x)",
+        "x + y",
+        "printf(\"%d\", x)"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "lazy_evaluation_erklaeren"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Anweisung entspricht x = x * 3; in zusammengesetzter Schreibweise?",
+      "answers": [
+        "x += 3;",
+        "x =* 3;",
+        "x *= 3;",
+        "x ** 3;"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "zusammengesetzte_zuweisung_verwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Schreibe x = x + 7; in zusammengesetzter Schreibweise.",
+      "answers": [
+        "x += 7;"
+      ],
+      "correct": [],
+      "skills": [
+        "zusammengesetzte_zuweisung_verwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist der Wert eines Komma-Ausdrucks wie (a, b, c)?",
+      "answers": [
+        "der Wert von a",
+        "die Summe aller",
+        "nicht definiert",
+        "der Wert von c (der letzte Ausdruck)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "kommaoperator_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über den Komma-Operator sind richtig?",
+      "answers": [
+        "Er wertet mehrere Ausdrücke von links nach rechts aus.",
+        "Das Ergebnis ist der Wert des letzten Ausdrucks.",
+        "Er wird oft in for-Schleifenköpfen genutzt.",
+        "Er ist identisch mit dem Semikolon."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "kommaoperator_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bezeichnet man als Nebeneffekt eines Ausdrucks?",
+      "answers": [
+        "Änderungen am Zustand, z. B. einer Variablen, neben der Ergebnisberechnung",
+        "den Rückgabewert",
+        "das Einlesen einer Konstanten",
+        "die Angabe des Typs"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "nebenwirkung_erklaeren"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welcher der folgenden Ausdrücke hat einen Nebeneffekt?",
+      "answers": [
+        "x + y",
+        "x++",
+        "a * b",
+        "c - d"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "nebenwirkung_erklaeren"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "In welche Richtung wandelt C bei 5 / 2.0 üblicherweise um?",
+      "answers": [
+        "double zu int",
+        "char zu double",
+        "int zu double (der int wird zum double befördert)",
+        "gar nicht"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "implizite_typumwandlung_erklaeren"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist das Ergebnis der Divisierung 1 / 2 in C (beide int)?",
+      "answers": [
+        "0.5",
+        "1",
+        "2",
+        "0"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "implizite_typumwandlung_erklaeren"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie wandelt man in C eine int-Variable a explizit in double um?",
+      "answers": [
+        "(double) a",
+        "double(a)",
+        "a double",
+        "a->double"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "castoperator_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Ausdrücke ergeben 0.5 (Gleitkomma-Division)?",
+      "answers": [
+        "2 / 1",
+        "1 / 2",
+        "(double)1 / 2",
+        "1 / 2.0"
+      ],
+      "correct": [
+        3,
+        4
+      ],
+      "skills": [
+        "castoperator_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was liefert sizeof(int)?",
+      "answers": [
+        "den Wert von int",
+        "die Größe (Bytes) eines int auf der Plattform",
+        "die Anzahl der int-Variablen",
+        "die Adresse von int"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "sizeof_operator_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über sizeof sind richtig?",
+      "answers": [
+        "sizeof(a) liefert die Gesamtgröße des Feldes in Bytes.",
+        "sizeof(a[0]) liefert die Größe eines Elements.",
+        "Die Elementanzahl ergibt sich aus sizeof(a[0])/sizeof(a).",
+        "sizeof ist eine Laufzeitfunktion."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "skills": [
+        "sizeof_operator_anwenden"
+      ],
+      "tags": [
+        "ausdruecke"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welches Zeichen beendet eine Zeichenkette in C?",
+      "answers": [
+        "'\\n'",
+        "'0'",
+        "'\\0' (Null-Zeichen)",
+        "' ' (Leerzeichen)"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "null_zeichen_erklaeren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über das Null-Zeichen sind richtig?",
+      "answers": [
+        "In C wird die Länge eines Strings nicht separat mitgeführt.",
+        "Das Null-Zeichen '\\0' markiert das Ende der Zeichenkette.",
+        "Das Null-Zeichen ist dasselbe wie die Ziffer '0'.",
+        "Ohne das Null-Zeichen wüsste man nicht, wo der String endet."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "null_zeichen_erklaeren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie deklariert man ein Feld, das einen Text von bis zu 19 Zeichen speichern kann?",
+      "answers": [
+        "char s[19];",
+        "string s;",
+        "char *s[19];",
+        "char s[20];"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "stringvariable_deklarieren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum benötigt ein Feld für einen String mit n Zeichen meist n+1 Plätze?",
+      "answers": [
+        "wegen eines zusätzlichen Null-Zeichens",
+        "wegen Rundungsfehlern",
+        "wegen des Typs int",
+        "gar nicht"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "stringvariable_deklarieren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Zuordnungen der String-Bibliothek sind richtig?",
+      "answers": [
+        "strlen liefert die Länge ohne Null-Zeichen.",
+        "strlen kopiert eine Zeichenkette.",
+        "strcpy kopiert eine Zeichenkette.",
+        "strcat hängt eine Zeichenkette an."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "string_laenge_bestimmen"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Was ist der Unterschied zwischen der Größe des Feldes (sizeof) und der Länge eines Strings (strlen)?",
+      "answers": [
+        "sizeof ist der Speicherbedarf des Feldes, strlen die Anzahl der Zeichen bis (ohne) das Null-Zeichen."
+      ],
+      "correct": [],
+      "skills": [
+        "string_laenge_bestimmen"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum darf man einen String nicht einfach mit s2 = s1; kopieren?",
+      "answers": [
+        "Weil das immer einen Speicherfehler gibt.",
+        "Weil Strings nur Zahlen sind.",
+        "Weil Felder nicht per Zuweisung kopiert werden können (Zuweisung pflanzt nur die Adresse).",
+        "Das ist vollkommen erlaubt."
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "string_kopieren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Funktion kopiert eine Zeichenkette?",
+      "answers": [
+        "strlen",
+        "getchar",
+        "scanf",
+        "strcpy"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "string_kopieren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über getchar/putchar sind richtig?",
+      "answers": [
+        "getchar() gibt ein Zeichen aus.",
+        "getchar() liest ein Zeichen von der Standardeingabe.",
+        "putchar(c) gibt das Zeichen c aus.",
+        "beide arbeiten auf stdin bzw. stdout."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "getchar_putchar_verwenden"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was tut putchar(c)?",
+      "answers": [
+        "liest ein Zeichen",
+        "gibt das Zeichen c aus",
+        "beendet das Programm",
+        "gibt die Adresse von c aus"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "getchar_putchar_verwenden"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Mit welchem Formatbeschreiber gibt printf eine Zeichenkette aus?",
+      "answers": [
+        "%c",
+        "%d",
+        "%s",
+        "%f"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "string_ein_ausgabe_verwenden"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Schleifen geben einen String zeichenweise bis zum Null-Zeichen aus?",
+      "answers": [
+        "for (i=0; s[i] != '\\0'; i++) putchar(s[i]);",
+        "for (i=0; s[i]; i++) putchar(s[i]);",
+        "while (s[i]) { putchar(s[i]); i++; }",
+        "for (i=0; i<=strlen(s); i++) putchar(s[i]);"
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "string_ein_ausgabe_verwenden"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über ctype-Funktionen sind richtig?",
+      "answers": [
+        "Sie stehen in <ctype.h>.",
+        "isdigit('5') liefert einen Wert ungleich 0.",
+        "Sie stehen in <stdio.h>.",
+        "isalpha prüft, ob ein Zeichen ein Buchstabe ist."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "zeichen_klassifizieren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was liefert isdigit('5')?",
+      "answers": [
+        "einen Wert ungleich 0 (wahr)",
+        "0 (falsch)",
+        "den Wert 5",
+        "nicht definiert"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "zeichen_klassifizieren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie wird ein Zeichen wie 'A' intern im Rechner dargestellt?",
+      "answers": [
+        "als Bilddatei",
+        "als Zeichencode (z. B. ASCII) als Ganzzahl",
+        "als Gleitkommazahl",
+        "als Boolescher Wert"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "zuordnung_zeichen_zahl_erklaeren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen zur Zeichencodierung sind richtig?",
+      "answers": [
+        "'0' ist ein Zeichen mit eigenem Zeichencode (z. B. 48 in ASCII).",
+        "'0' und die Zahl 0 sind im Speicher identisch.",
+        "'0' hat nicht den numerischen Wert 0.",
+        "'0' - '0' ergibt den Wert 0."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "zuordnung_zeichen_zahl_erklaeren"
+      ],
+      "tags": [
+        "zeichen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist ein Block in C?",
+      "answers": [
+        "eine einzelne Anweisung",
+        "eine Funktion",
+        "mehrere Anweisungen in geschweiften Klammern { ... }",
+        "ein Kommentar"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "anweisung_und_block_unterscheiden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre den Unterschied zwischen einer einzelnen Anweisung und einem Block.",
+      "answers": [
+        "Eine Anweisung ist ein einzelner Schritt; ein Block fasst mehrere Anweisungen in geschweifte Klammern, sodass sie gemeinsam z. B. in if/while verwendet werden können."
+      ],
+      "correct": [],
+      "skills": [
+        "anweisung_und_block_unterscheiden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "An welches if bindet ein else ohne Klammern in C?",
+      "answers": [
+        "an das nächste if im Programm",
+        "an jedes if",
+        "an das erste if der Datei",
+        "an das nächstgelegene vorangehende if, das noch kein else hat"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "if_mit_else_zuordnen"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie vermeidet man die mehrdeutige Zuordnung bei verschachtelten if ohne else?",
+      "answers": [
+        "durch geschweifte Klammern",
+        "durch Kommentare",
+        "durch Semikolons",
+        "gar nicht"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "if_mit_else_zuordnen"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie deklariert man einen Aufzählungstyp mit den Werten ROT, GRUEN, BLAU?",
+      "answers": [
+        "enum {1,2,3};",
+        "enum farbe {ROT, GRUEN, BLAU};",
+        "#define ROT 1; GRUEN 2;",
+        "typedef ROT, GRUEN, BLAU;"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "enum_aufzaehlungstyp_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über enum sind richtig?",
+      "answers": [
+        "Der erste Wert ist standardmäßig 1.",
+        "Der erste Wert ist standardmäßig 0.",
+        "Weitere Werte erhöhen sich meist um 1.",
+        "enum-Werte sind ganzzahlig."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "enum_aufzaehlungstyp_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wofür eignet sich eine switch-Anweisung besonders?",
+      "answers": [
+        "für wiederholte Schleifen",
+        "für Gleitkommavergleiche",
+        "für Rekursion",
+        "für die Auswahl zwischen mehreren festen Werten"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "switch_anweisung_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Auf welchen Typ kann die switch-Anweisung direkt verzweigen?",
+      "answers": [
+        "auf int (und char)",
+        "auf double",
+        "auf float",
+        "auf beliebige Strings"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "switch_anweisung_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was passiert ohne break am Ende eines case-Zweigs?",
+      "answers": [
+        "das Programm endet",
+        "der nächste case wird ebenfalls ausgeführt (Durchbruch)",
+        "ein Fehler tritt auf",
+        "nichts"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "switch_break_anwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über break im switch sind richtig?",
+      "answers": [
+        "Es beendet die switch-Anweisung.",
+        "Ohne break tritt Durchbruch (fall-through) auf.",
+        "break wirkt nur innerhalb von switch/Schleifen.",
+        "break führt den nächsten case immer aus."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "switch_break_anwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über die while-Schleife sind richtig?",
+      "answers": [
+        "Sie prüft die Bedingung vor dem Körper.",
+        "Ist die Bedingung anfangs falsch, läuft sie 0-mal.",
+        "Sie läuft immer mindestens einmal.",
+        "Sie läuft, solange die Bedingung wahr ist."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "while_schleife_schreiben"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Schreibe eine while-Schleife, die zählt, wie oft die Ziffer i vorkommt, bis eine Bedingung gestoppt wird – vereinfacht: zähle von 10 abwärts bis 1.",
+      "answers": [
+        "int i = 10; while (i >= 1) { printf(\"%d \", i); i = i - 1; }"
+      ],
+      "correct": [],
+      "skills": [
+        "while_schleife_schreiben"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über do-while sind richtig?",
+      "answers": [
+        "Sie prüft die Bedingung nach dem Körper.",
+        "Sie prüft die Bedingung vor dem Körper.",
+        "Der Körper läuft mindestens einmal.",
+        "Ist die Bedingung anfangs falsch, läuft sie trotzdem einmal."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "do_while_schleife_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Gib eine Situation an, in der man do-while einer while vorzieht.",
+      "answers": [
+        "Wenn der Schleifenkörper mindestens einmal ausgeführt werden muss, z. B. eine Eingabe, die erst nach Ausführung geprüft wird."
+      ],
+      "correct": [],
+      "skills": [
+        "do_while_schleife_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Aus welchen drei Teilen besteht der Kopf einer for-Schleife?",
+      "answers": [
+        "Start; Ende; Ergebnis",
+        "Initialisierung; Bedingung; Inkrementierung/Update",
+        "Typ; Name; Wert",
+        "if; else; return"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "for_schleife_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie oft läuft for (i=0; i<5; i++)?",
+      "answers": [
+        "4-mal",
+        "6-mal",
+        "5-mal",
+        "unendlich"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "for_schleife_verwenden"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Schleife wählt man für eine bekannte Anzahl von Wiederholungen mit Zählvariable?",
+      "answers": [
+        "while",
+        "do-while",
+        "switch",
+        "for"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "schleifenart_auswaehlen"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Schleife wählt man, wenn die Anzahl der Durchläufe von einer Bedingung abhängt, die vor dem Körper geprüft wird?",
+      "answers": [
+        "while",
+        "for",
+        "do-while",
+        "alle gleich"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "schleifenart_auswaehlen"
+      ],
+      "tags": [
+        "ablauf"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist der Unterschied zwischen Deklaration und Definition einer Funktion?",
+      "answers": [
+        "Sie sind identisch.",
+        "Die Deklaration nennt Signatur (Prototyp), die Definition enthält den Funktionskörper.",
+        "Definition nennt nur den Namen.",
+        "Die Deklaration enthält den Körper."
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "funktion_deklarieren_definieren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Schreibe einen Funktionsprototyp für eine Funktion summe, die zwei int-Parameter nimmt und int zurückgibt.",
+      "answers": [
+        "int summe(int a, int b);"
+      ],
+      "correct": [],
+      "skills": [
+        "funktion_deklarieren_definieren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie gibt eine Funktion einen Wert an den Aufrufer zurück?",
+      "answers": [
+        "mit printf",
+        "mit break",
+        "mit return",
+        "mit int"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "funktionswert_mit_return_zurueckgeben"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was passiert, wenn eine Funktion vom Typ int keinen return hat?",
+      "answers": [
+        "es gibt immer 0",
+        "ein Compilerfehler ist garantiert",
+        "der Wert von main",
+        "der Rückgabewert ist undefiniert"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "funktionswert_mit_return_zurueckgeben"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Aufrufe einer Funktion quadrat sind gültig?",
+      "answers": [
+        "quadrat = y;",
+        "y = quadrat(4);",
+        "double z = quadrat(x);",
+        "printf(\"%d\", quadrat(3));"
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "funktion_aufrufen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Rufe die Funktion max mit den Argumenten a und b auf und weise das Ergebnis z zu.",
+      "answers": [
+        "z = max(a, b);"
+      ],
+      "correct": [],
+      "skills": [
+        "funktion_aufrufen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über die Parameterübergabe in C sind richtig?",
+      "answers": [
+        "Skalare werden per call by value übergeben.",
+        "Eine C-Funktion kann mehrere Werte direkt als Rückgabe liefern.",
+        "Felder werden als Zeiger übergeben.",
+        "Alle Argumente werden per Referenz übergeben."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "skills": [
+        "call_by_value_erklaeren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was passiert, wenn man den Parameter in einer Funktion per call by value ändert?",
+      "answers": [
+        "die Originalvariable ändert sich",
+        "ein Fehler tritt auf",
+        "die übergebene Originalvariable bleibt unverändert",
+        "der Compiler stoppt"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "call_by_value_erklaeren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Warum kann eine Funktion per call by value den Wert der aufrufenden Variablen nicht verändern?",
+      "answers": [
+        "Weil der Parameter eine Kopie des Werts ist; Änderungen betreffen nur die Kopie, nicht die Originalvariable."
+      ],
+      "correct": [],
+      "skills": [
+        "call_by_value_erklaeren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie muss ein Parameter typisiert sein, um eine Variable per Adresse verändern zu können?",
+      "answers": [
+        "als int",
+        "als Kopie",
+        "als const",
+        "als Zeiger auf den Typ (z. B. int *p)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "zeiger_parameter_verwenden"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie ruft man eine Funktion setze auf, die einen int per Zeiger ändert?",
+      "answers": [
+        "setze(&x);",
+        "setze(x);",
+        "setze(*x);",
+        "setze = &x;"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "zeiger_parameter_verwenden"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie wird ein Feld an eine Funktion übergeben?",
+      "answers": [
+        "als Kopie des gesamten Feldes",
+        "als Zeiger auf das erste Element",
+        "als Wert",
+        "als globales Feld"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "feld_parameter_erklaeren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum übergibt man bei Feldern meist zusätzlich die Länge?",
+      "answers": [
+        "Weil die Länge nie bekannt ist",
+        "um Speicher zu sparen",
+        "Weil die Funktion sonst das Feldende nicht kennt (außer bei Strings mit Null-Zeichen).",
+        "gar nicht"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "feld_parameter_erklaeren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bewirkt const bei einem Parameter?",
+      "answers": [
+        "Der Parameter wird kopiert.",
+        "Der Parameter wird größer.",
+        "Nichts.",
+        "Der Parameter darf in der Funktion nicht verändert werden."
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "const_parameter_verwenden"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum markiert man unveränderte Parameter (z. B. ein Feld) mit const?",
+      "answers": [
+        "um Absicht zu dokumentieren und versehentliche Änderungen zu verhindern",
+        "um den Code zu kürzen",
+        "um Speicher freizugeben",
+        "um Rekursion zu ermöglichen"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "const_parameter_verwenden"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was braucht eine rekursive Funktion zwingend?",
+      "answers": [
+        "eine Schleife",
+        "einen Rekursionsabbruch (Basisfall)",
+        "eine globale Variable",
+        "einen Zeiger"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "rekursive_funktion_entwerfen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden sind korrekte bzw. typische Basisfälle einer Fakultäts-Rekursion?",
+      "answers": [
+        "if (n <= 1) return 1;",
+        "if (n == 0) return 1;",
+        "return n * fak(n-1); als rekursiver Schritt",
+        "if (n == 0) return 0;"
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "rekursive_funktion_entwerfen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist ein Nachteil tiefer Rekursion gegenüber Iteration?",
+      "answers": [
+        "ständig weniger Lesbarkeit",
+        "keine Rückgabewerte",
+        "hoher Stack-Verbrauch, möglicher Stapelüberlauf",
+        "Rekursion ist immer langsamer bei gleichem Stack"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "rekursion_iteration_vergleichen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Nenne einen Fall, in dem Rekursion gegenüber Iteration natürlich/eleganter ist.",
+      "answers": [
+        "Bei rekursiv definierten Strukturen und Problemen, z. B. Baumdurchlauf oder Fakultät, wo die Lösung direkt als Selbstaufruf formuliert werden kann."
+      ],
+      "correct": [],
+      "skills": [
+        "rekursion_iteration_vergleichen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Dateien entstehen typischerweise bei der Modularisierung?",
+      "answers": [
+        "nur eine .c-Datei",
+        "eine .txt und eine .log-Datei",
+        "eine .exe-Datei",
+        "eine Header-Datei (.h) und eine Implementierungsdatei (.c)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "modul_header_implementation_trennen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Inhalte gehören typischerweise in eine Header-Datei?",
+      "answers": [
+        "Funktionsprototypen (Deklarationen)",
+        "nötige Typdefinitionen",
+        "die vollständige Implementierung aller Funktionen",
+        "Include-Schutz (#ifndef / #define)"
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "modul_header_implementation_trennen"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum übersetzt man Module separat?",
+      "answers": [
+        "um bei Änderungen nur das betroffene Modul neu zu übersetzen und sie mit dem Linker zu verbinden",
+        "um den Code zu verschlüsseln",
+        "weil es schneller zu schreiben ist",
+        "um Fehler zu verstecken"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "separat_kompilieren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über den Linker sind richtig?",
+      "answers": [
+        "Er verbindet Objektdateien der Module.",
+        "Er übersetzt Quelltext in Objektcode.",
+        "Er bindet Bibliotheken ein.",
+        "Er erzeugt daraus ein ausführbares Programm."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "separat_kompilieren"
+      ],
+      "tags": [
+        "funktionen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie deklariert man eine 3×4-Matrix vom Typ int?",
+      "answers": [
+        "int m[3,4];",
+        "int m[3][4];",
+        "int[3][4] m;",
+        "matrix m; int 3,4;"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "feld_mehrdimensional_deklarieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Deklariere eine 2-dimensionale Matrix vom Typ double mit 5 Zeilen und 6 Spalten.",
+      "answers": [
+        "double m[5][6];"
+      ],
+      "correct": [],
+      "skills": [
+        "feld_mehrdimensional_deklarieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Seit welchem C-Standard sind Felder variabler Länge (VLA) mit Laufzeitgröße möglich?",
+      "answers": [
+        "K&R C",
+        "C89",
+        "C99 (und später, eingeschränkt)",
+        "C11 nur statisch"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "feld_variabler_groesse_verwenden"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Gründe sprechen dagegen, sehr große VLA (Variable Length Arrays) unbedacht einzusetzen?",
+      "answers": [
+        "Sie sind immer die schnellste Lösung.",
+        "Sie liegen auf dem Stack, der begrenzt ist.",
+        "Zu große Größen können zu Stapelüberlauf führen.",
+        "VLAs sind nicht in allen Standards/Umgebungen verfügbar."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "feld_variabler_groesse_verwenden"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie sind die Elemente eines eindimensionalen Feldes im Speicher angeordnet?",
+      "answers": [
+        "verstreut",
+        "mit Lücken pro Element",
+        "in einer verknüpften Liste",
+        "lückenlos hintereinander"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "feld_speicheranordnung_erklaeren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Bei einer int m[2][3] liegen die Elemente in welcher Reihenfolge im Speicher?",
+      "answers": [
+        "zeilenweise (row-major): m[0][0],m[0][1],m[0][2],m[1][0],...",
+        "spaltenweise (column-major)",
+        "zufällig",
+        "nicht definiert"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "feld_speicheranordnung_erklaeren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Bei einer zeilenweise gespeicherten Matrix int m[R][S] liegt m[i][j] an welchem Offset (in Elementen) ab m[0][0]?",
+      "answers": [
+        "i + j*S",
+        "i*S + j",
+        "i*R + j",
+        "i*S + j*R"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "speicherabbildungsfunktion_berechnen"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre, wie man bei zeilenweiser Speicherung den Index eines Elements m[i][j] mit Spaltenzahl S berechnet.",
+      "answers": [
+        "Offset = i*S + j (Zeile i liefert i ganze Zeilen à S Elemente, dazu Spalte j)."
+      ],
+      "correct": [],
+      "skills": [
+        "speicherabbildungsfunktion_berechnen"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was passiert in C, wenn man auf ein Feld außerhalb seiner Grenzen zugreift (int a[5]; a[10]=1;)?",
+      "answers": [
+        "garantiert ein Laufzeitfehler mit Meldung",
+        "der Compiler fängt es immer ab",
+        "undefiniertes Verhalten, potenzieller Speicherfehler",
+        "das Programm endet sicher"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "indexueberschreitung_beurteilen"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum prüft C die Feldgrenzen standardmäßig nicht automatisch?",
+      "answers": [
+        "weil Grenzen unbekannt sind",
+        "weil es unmöglich ist",
+        "weil alle Felder unendlich sind",
+        "aus Effizienzgründen und historischer Sparsamkeit; der Programmierer ist verantwortlich"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "indexueberschreitung_beurteilen"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie übergibt man ein int-Feld mit fester Größe zusammen mit seiner Länge an eine Funktion?",
+      "answers": [
+        "f(int a[], int n)",
+        "f(int a, int n)",
+        "f([]int a, n)",
+        "f(int n, int a)"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "feld_als_parameter_uebergeben"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über Felder als Funktionsparameter sind richtig?",
+      "answers": [
+        "Beim Übergeben zerfällt ein Feld zu einem Zeiger auf das erste Element.",
+        "Die Funktion kennt die tatsächliche Länge nicht selbst.",
+        "Deshalb übergibt man die Länge oft als zusätzlichen Parameter.",
+        "Die Funktion erhält automatisch eine Kopie des ganzen Feldes."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "feld_als_parameter_uebergeben"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie deklariert man eine Funktion, die eine Matrix m mit fester Spaltenzahl S als Parameter erhält?",
+      "answers": [
+        "f(int m, int zeilen)",
+        "f(int m[][S], int zeilen)",
+        "f(int[][] m)",
+        "f(int m[S][][])"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "matrix_als_parameter_deklarieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum muss bei einer Matrix als Parameter die Spaltenzahl (meist) angegeben werden?",
+      "answers": [
+        "weil es die Syntax erfordert",
+        "um die Zeilenzahl zu bestimmen",
+        "damit die Speicherabbildung/Berechnung der Reihen-Offsets bekannt ist",
+        "gar nicht"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "matrix_als_parameter_deklarieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie definiert man ein Makro mit Parameter, das das Quadrat berechnet?",
+      "answers": [
+        "#define QUAD = x*x",
+        "int QUAD(x){return x*x;}",
+        "#macro QUAD(x)",
+        "#define QUAD(x) ((x)*(x))"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "makro_definieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum setzt man bei Makro-Parametern Klammern, z. B. ((x)*(x))?",
+      "answers": [
+        "um falsche Ergebnisse durch Operatorpräzedenz bei Aufrufen wie QUAD(a+b) zu vermeiden",
+        "aus Stilgründen",
+        "weil es die Syntax erfordert",
+        "um den Speicher zu reduzieren"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "makro_definieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Ein wichtiger Nachteil von Makros gegenüber Funktionen ist:",
+      "answers": [
+        "Makros haben immer Typprüfung",
+        "Makros werten Argumente möglicherweise mehrfach aus (Nebeneffekte)",
+        "Makros sind immer langsamer",
+        "Makros können keine Parameter haben"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "makro_funktion_unterscheiden"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Nenne einen Vorteil von Makros gegenüber Funktionen.",
+      "answers": [
+        "Kein Funktionsaufruf-Overhead; sie werden textuell ersetzt und können typparametrisch wirken."
+      ],
+      "correct": [],
+      "skills": [
+        "makro_funktion_unterscheiden"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie initialisiert man ein Feld a mit den Werten 1,2,3,4 direkt?",
+      "answers": [
+        "int a = 1,2,3,4;",
+        "int a[4] = 1234;",
+        "int a[4] = {1,2,3,4};",
+        "a[4] = {1,2,3,4};"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "feld_initialisieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was wird aus int a[5] = {1,2}; für die restlichen Elemente?",
+      "answers": [
+        "undefiniert",
+        "1",
+        "Müllwerte",
+        "0"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "feld_initialisieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie viele ineinander verschachtelte Schleifen braucht das Matrixprodukt C = A*B (nxp mal pxm) typischerweise?",
+      "answers": [
+        "drei",
+        "zwei",
+        "eins",
+        "vier"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "matrixprodukt_implementieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Beschreibe in Worten die Grundidee zur Berechnung des Elements C[i][j] des Matrixprodukts.",
+      "answers": [
+        "C[i][j] ist die Summe über k von A[i][k]*B[k][j] (Skalarprodukt der i-ten Zeile von A mit der j-ten Spalte von B)."
+      ],
+      "correct": [],
+      "skills": [
+        "matrixprodukt_implementieren"
+      ],
+      "tags": [
+        "felder"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was beschreibt der Gültigkeitsbereich (Scope) eines Namens?",
+      "answers": [
+        "den Speicherbedarf",
+        "den Bereich des Programms, in dem der Name sichtbar/verwendbar ist",
+        "den Datentyp",
+        "die Lebensdauer des Programms"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "gueltigkeitsbereich_erklaeren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre kurz, was ein lokaler Gültigkeitsbereich (z. B. innerhalb einer Funktion) bedeutet.",
+      "answers": [
+        "Der Name ist nur innerhalb dieses Blocks/Funktion sichtbar und ist außerhalb nicht ansprechbar."
+      ],
+      "correct": [],
+      "skills": [
+        "gueltigkeitsbereich_erklaeren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was kennzeichnet eine externe (extern) Größe?",
+      "answers": [
+        "sie ist nur in einer Funktion sichtbar",
+        "sie ist immer konstant",
+        "Sie ist in mehreren Übersetzungseinheiten sichtbar",
+        "sie liegt auf dem Stack"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "intern_extern_unterscheiden"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie macht man eine globale Variable, die in einer anderen Datei definiert wurde, in der aktuellen Datei sichtbar?",
+      "answers": [
+        "mit static",
+        "mit #define",
+        "mit typedef",
+        "mit extern (z. B. extern int x;)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "intern_extern_unterscheiden"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bedeutet Verschattung (shadowing) eines Namens?",
+      "answers": [
+        "Eine lokale Variable mit gleichem Namen verdeckt die äußere innerhalb des Blocks",
+        "der Name wird gelöscht",
+        "ein Fehler tritt immer auf",
+        "der Name wird dupliziert"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "verschattung_erklaeren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welches Problem kann Verschattung begünstigen?",
+      "answers": [
+        "schnellere Ausführung",
+        "Verwechslung und schwer lesbarer Code",
+        "weniger Speicher",
+        "gar keine"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "verschattung_erklaeren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie kapselt man einen abstrakten Datentyp in C üblicherweise?",
+      "answers": [
+        "als einzelne globale Variable",
+        "als Makro",
+        "als Modul mit Header (öffentl. Schnittstelle) und Implementierungsdatei (verdeckte Daten)",
+        "als Kommentar"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "modul_abstrakter_datentyp_realisieren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Warum versteckt man die konkreten Daten einer Struktur hinter einer Schnittstelle?",
+      "answers": [
+        "Damit Nutzer nicht von der internen Darstellung abhängen; Änderungen bleiben lokal und die Invarianten geschützt."
+      ],
+      "correct": [],
+      "skills": [
+        "modul_abstrakter_datentyp_realisieren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist ein Nachteil vieler globaler Variablen?",
+      "answers": [
+        "sie sind zu schnell",
+        "sie belegen zu wenig Speicher",
+        "sie sind immer konstant",
+        "schlechte Nachvollziehbarkeit und ungewollte Kopplung"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "lokale_globale_groessen_gegenueberstellen"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wo lebt eine globale Variable (Speicherbereich) üblicherweise?",
+      "answers": [
+        "im statischen Speicherbereich (besteht während der gesamten Laufzeit)",
+        "auf dem Stack",
+        "im Heap",
+        "im Prozessorregister"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "lokale_globale_groessen_gegenueberstellen"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bewirkt static bei einer globalen Funktion oder Variablen auf Dateiebene?",
+      "answers": [
+        "sie wird sichtbar in allen Dateien",
+        "Sie ist nur in der eigenen Übersetzungseinheit sichtbar (interne Bindung)",
+        "sie wird gelöscht",
+        "sie wird konstant"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "static_attribut_verwenden"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wozu nutzt man static auf Dateiebene sinnvoll?",
+      "answers": [
+        "um die Ausführung zu beschleunigen",
+        "um den Code kürzer zu machen",
+        "um interne Hilfsfunktionen/Variablen von anderen Modulen abzuschirmen",
+        "gar nicht"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "static_attribut_verwenden"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist eine automatische (lokale) Variable?",
+      "answers": [
+        "sie lebt für immer",
+        "sie ist überall sichtbar",
+        "sie ist konstant",
+        "sie wird beim Betreten des Blocks angelegt und am Ende zerstört (Stack)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "statische_automatische_variable_unterscheiden"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was unterscheidet eine statische lokale Variable von einer automatischen?",
+      "answers": [
+        "die statische behält ihren Wert zwischen Aufrufen bei und liegt im statischen Speicher",
+        "sie ist schneller",
+        "sie ist immer 0",
+        "sie befindet sich im Heap"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "statische_automatische_variable_unterscheiden"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie deklariert man eine lokale Variable, die ihren Wert zwischen Funktionsaufrufen behält?",
+      "answers": [
+        "mit extern int z;",
+        "mit static int z;",
+        "mit const int z;",
+        "int z;"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "static_lokale_variable_erklaeren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre den Unterschied zwischen einer lokalen Variable ohne und mit static.",
+      "answers": [
+        "Ohne static wird sie bei jedem Aufruf neu angelegt und am Ende verworfen; mit static bleibt ein einziger Speicherplatz mit erhaltenem Wert über alle Aufrufe erhalten."
+      ],
+      "correct": [],
+      "skills": [
+        "static_lokale_variable_erklaeren"
+      ],
+      "tags": [
+        "struktur"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bezeichnet NULL bei einem Zeiger?",
+      "answers": [
+        "den Wert 0 des Zieltyps",
+        "eine leere Zeichenkette",
+        "einen Zeiger, der auf keine gültige Adresse zeigt",
+        "einen Zeiger auf main"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "nullzeiger_verwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum prüft man Zeiger vor der Dereferenzierung auf NULL?",
+      "answers": [
+        "um schneller zu sein",
+        "weil es Pflicht ist für jede Variable",
+        "gar nicht",
+        "um Dereferenzierung eines ungültigen Zeigers (undefiniertes Verhalten) zu vermeiden"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "nullzeiger_verwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist argv in int main(int argc, char *argv[])?",
+      "answers": [
+        "ein Feld von Zeigern auf die Kommandozeilenargumente (Zeichenketten)",
+        "ein int mit Argumentanzahl",
+        "eine Gleitkommazahl",
+        "der Rückgabewert"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "zeiger_argv_erklaeren"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über argv sind richtig?",
+      "answers": [
+        "argv ist ein Feld von Zeigern auf Zeichenketten.",
+        "argv[0] enthält den Namen des aufgerufenen Programms.",
+        "argv ist ein int mit der Argumentanzahl.",
+        "argv[1] ist das erste echte Argument nach dem Programmnamen."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "zeiger_argv_erklaeren"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie durchläuft man alle Kommandozeilenargumente argv[1..argc-1]?",
+      "answers": [
+        "mit einer Schleife über i von 0 bis argc",
+        "mit einer Schleife über i von 1 bis < argc",
+        "mit for-Schleife über Zeichen",
+        "über eine Struktur"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "argv_mit_zeigern_durchlaufen"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über den Zugriff auf Kommandozeilenargumente sind richtig?",
+      "answers": [
+        "Das erste echte Argument steht in argv[1].",
+        "Das erste Argument steht immer in argv[0].",
+        "Man sollte argc > 1 prüfen, bevor man argv[1] verwendet.",
+        "argv[0] ist der Programmname."
+      ],
+      "correct": [
+        1,
+        3,
+        4
+      ],
+      "skills": [
+        "argv_mit_zeigern_durchlaufen"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bedeutet const int *p?",
+      "answers": [
+        "p selbst darf nicht geändert werden",
+        "beide dürfen geändert werden",
+        "der Wert, auf den p zeigt, darf nicht geändert werden",
+        "p ist ungültig"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "const_bei_zeigern_unterscheiden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bedeutet int *const p?",
+      "answers": [
+        "der Wert ist konstant",
+        "beide sind konstant",
+        "nichts",
+        "p selbst ist konstant, der Wert, auf den es zeigt, darf geändert werden"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "const_bei_zeigern_unterscheiden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wenn p auf das erste Element eines int-Feldes zeigt, worauf zeigt p+1?",
+      "answers": [
+        "auf das nächste Element (Adresse um sizeof(int) erhöht)",
+        "auf das zweite Byte",
+        "auf das Feldende",
+        "auf den Wert p+1"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "zeigerarithmetik_anwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre, wie p+i bei einem Zeiger auf int-Feld funktioniert.",
+      "answers": [
+        "p+i zeigt auf das (i+1)-te Element; die Adresse ist um i*sizeof(int) Bytes erhöht."
+      ],
+      "correct": [],
+      "skills": [
+        "zeigerarithmetik_anwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welcher Ausdruck entspricht a[i] bei einem Zeiger p auf das erste Element von a?",
+      "answers": [
+        "(p*i)",
+        "*(p+i)",
+        "&(p+i)",
+        "p[i]+1"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "zeiger_feldformulierung_umwandeln"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Die Zeigerformulierung *(p+i) ist äquivalent zu welcher Feldformulierung?",
+      "answers": [
+        "p+i",
+        "*p+i",
+        "p[i]",
+        "&p[i]"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "zeiger_feldformulierung_umwandeln"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist beim Vergleich von Zeigern mit <, > sinnvoll?",
+      "answers": [
+        "sie sind nie erlaubt",
+        "sie vergleichen immer die Inhalte",
+        "sie sind nur bei char erlaubt",
+        "sie sind nur sinnvoll, wenn sie auf Elemente desselben Feldes zeigen"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "zeiger_vergleich_anwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Der Vergleich p == NULL prüft:",
+      "answers": [
+        "ob p kein gültiges Ziel hat",
+        "ob p größer ist",
+        "ob der Inhalt 0 ist",
+        "ob p auf main zeigt"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "zeiger_vergleich_anwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Schleife kopiert einen String mit Zeigern bis zum Null-Zeichen?",
+      "answers": [
+        "for(dst=src;;);",
+        "while (*dst++ = *src++);",
+        "if(dst==src);",
+        "while(&dst != &src);"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "string_mit_zeigern_kopieren"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Warum nutzt man den Wert der Zuweisung *dst = *src als Schleifenbedingung beim Kopieren?",
+      "answers": [
+        "Weil die Zuweisung den übernommenen Wert liefert; ist er 0 ('\\0'), endet der String und die Schleife wird beendet."
+      ],
+      "correct": [],
+      "skills": [
+        "string_mit_zeigern_kopieren"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist ein Vektor (Feld) von Zeigern, z. B. char *namen[3]?",
+      "answers": [
+        "ein Feld von Zeichen",
+        "ein doppeltes Feld",
+        "ein Feld, dessen Elemente Zeiger (hier auf char/strings) sind",
+        "eine Struktur"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "zeigervektoren_verwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Nenne einen typischen Einsatz eines Feldes von Zeigern auf Zeichenketten.",
+      "answers": [
+        "eine Liste von Strings unterschiedlicher Länge, z. B. für Kommandozeilenargumente oder eine Tabelle von Wochentagen."
+      ],
+      "correct": [],
+      "skills": [
+        "zeigervektoren_verwenden"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist ein Zeiger auf Zeiger (z. B. int **pp)?",
+      "answers": [
+        "ein Zeiger auf int",
+        "ein doppelt so großer int",
+        "ein Feld von int",
+        "ein Zeiger, der auf einen Zeiger zeigt (z. B. auf einen int *)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "zeiger_auf_zeiger_erklaeren"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wozu dient ein Zeiger auf Zeiger häufig?",
+      "answers": [
+        "um Zeiger als Parameter ändern zu können oder Felder von Zeigern zu durchlaufen",
+        "um Zahlen zu reduzieren",
+        "um Speicher zu verkleinern",
+        "für Gleitkommazahlen"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "zeiger_auf_zeiger_erklaeren"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welchem Typ entspricht eine als doppelter Zeiger übergebene Matrix häufig?",
+      "answers": [
+        "int *",
+        "int **",
+        "int",
+        "int[2]"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "matrix_als_zeiger_auf_zeiger_deuten"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre kurz, wie man auf ein Element m[i][j] einer als int **m übergebenen Matrix zugreift.",
+      "answers": [
+        "m[i][j] ist äquivalent zu *( *(m+i) + j ): erst Zeiger auf Zeile i, dann Element j."
+      ],
+      "correct": [],
+      "skills": [
+        "matrix_als_zeiger_auf_zeiger_deuten"
+      ],
+      "tags": [
+        "zeiger"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welcher Speicherbereich ist bei der Ausführung für lokale Variablen typisch?",
+      "answers": [
+        "der Heap",
+        "das Register",
+        "der Stack",
+        "die Festplatte"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "speichertypen_unterscheiden"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Auf welchem Speicherbereich liegt der dynamisch mit malloc angeforderte Speicher?",
+      "answers": [
+        "dem Heap",
+        "dem Codebereich",
+        "einer externen Datei",
+        "dem Stack"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "speichertypen_unterscheiden"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Headerdatei stellt malloc bereit?",
+      "answers": [
+        "<stdlib.h>",
+        "<stdio.h>",
+        "<string.h>",
+        "<ctype.h>"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "malloc_verwenden"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Größe fordert man für ein Feld von 10 int-Werten an?",
+      "answers": [
+        "malloc(10)",
+        "malloc(10 * sizeof(int))",
+        "malloc(sizeof(int))",
+        "malloc(10 / sizeof(int))"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "malloc_verwenden"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Wie lautet der Aufruf, der Speicher für einen int anfordert und das Ergebnis einem Zeiger p zuweist?",
+      "answers": [
+        "int *p = (int *)malloc(sizeof(int));"
+      ],
+      "correct": [],
+      "skills": [
+        "malloc_verwenden"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was liefert malloc zurück, wenn keine ausreichende Größe verfügbar ist?",
+      "answers": [
+        "0 als Wert eines int",
+        "den größten Speicher",
+        "NULL",
+        "einen Zeiger auf main"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "malloc_null_pruefen"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Warum muss man den Rückgabewert von malloc auf NULL prüfen?",
+      "answers": [
+        "Weil malloc bei Fehlschlag NULL liefert; ohne Prüfung würde man NULL dereferenzieren (undefiniertes Verhalten)."
+      ],
+      "correct": [],
+      "skills": [
+        "malloc_null_pruefen"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was tut free(p)?",
+      "answers": [
+        "löscht die Variable p",
+        "beendet das Programm",
+        "vergrößert den Speicher",
+        "gibt den zuvor mit malloc angeforderten Speicher wieder frei"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "free_verwenden"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen zu free sind richtig?",
+      "answers": [
+        "free ist für Stack-Variablen gedacht.",
+        "free gibt zuvor mit malloc angeforderte Speicher frei.",
+        "Doppeltes free ist undefiniertes Verhalten.",
+        "Nach free sollte man den Zeiger ggf. auf NULL setzen."
+      ],
+      "correct": [
+        2,
+        3,
+        4
+      ],
+      "skills": [
+        "free_verwenden"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist ein Speicherleck?",
+      "answers": [
+        "angeforderter Heap-Speicher, der nie freigegeben wird",
+        "ein zu kleiner Stack",
+        "ein unbenutzter Zeiger",
+        "eine fehlende Datei"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "speicherleck_erklaeren"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum sind Speicherlecks in lang laufenden Programmen problematisch?",
+      "answers": [
+        "sie machen den Code länger",
+        "der verfügbare Speicher schrumpft mit der Zeit, bis das Programm scheitert",
+        "sie sind immer harmlos",
+        "sie verhindern das Kompilieren"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "speicherleck_erklaeren"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie stellt man auf dem Heap ein Feld mit n double-Werten bereit?",
+      "answers": [
+        "(double *)malloc(n)",
+        "malloc(sizeof(n))",
+        "(double *)malloc(n * sizeof(double))",
+        "(double)malloc(n*2)"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "heap_vektor_bereitstellen"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen zur Freigabe von Heap-Speicher sind richtig?",
+      "answers": [
+        "Man verwendet free(zeiger).",
+        "Man gibt den Speicher nur einmal frei.",
+        "Man darf nicht mehr auf ihn zugreifen, nachdem er freigegeben wurde.",
+        "Statt free verwendet man bei malloc immer delete."
+      ],
+      "correct": [
+        1,
+        2,
+        3
+      ],
+      "skills": [
+        "heap_vektor_bereitstellen"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie stellt man eine Matrix auf dem Heap üblicherweise bereit?",
+      "answers": [
+        "als int [z][s]",
+        "als int einzelne Variable",
+        "als Struktur mit einem Wert",
+        "als Zeiger auf Zeiger (int **), wobei jede Zeile separat per malloc angelegt wird"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "heap_matrix_bereitstellen"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Beim Freigeben einer als int ** bereitgestellten Matrix muss man was beachten?",
+      "answers": [
+        "Man muss zuerst jede Zeile (m[i]) und danach das Zeilenfeld (m) freigeben, in umgekehrter Reihenfolge der Anlage."
+      ],
+      "correct": [],
+      "skills": [
+        "heap_matrix_bereitstellen"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wer ist üblicherweise für das Freigeben eines per malloc erzeugten und an eine Funktion übergebenen Speichers verantwortlich?",
+      "answers": [
+        "klar geregelt/vertraglich: der Teil, der laut Schnittstelle den Speicher besitzt",
+        "immer der Aufrufer",
+        "immer die Funktion",
+        "niemand"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "speicheruebergabe_verantwortung_erklaeren"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Warum muss die Verantwortung für Speicher-Freigabe in der Schnittstelle dokumentiert sein?",
+      "answers": [
+        "um doppelte free-Aufrufe oder Lecks zu vermeiden; unklar ist, wer den Speicher freigeben darf."
+      ],
+      "correct": [],
+      "skills": [
+        "speicheruebergabe_verantwortung_erklaeren"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie kann man eine Matrix auf dem Heap mit nur einem einzigen malloc-Block ablegen?",
+      "answers": [
+        "als 2D-Array automatisch",
+        "als zusammenhängender Block der Größe zeilen*spalten*sizeof(int), mit manueller Indexberechnung",
+        "als einzelner int",
+        "als verkettete Liste"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "heidenspeicher_matrix_optimieren"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Nenne einen Vorteil einer als einem zusammenhängenden Block angelegten Matrix gegenüber einem Zeiger-auf-Zeiger-Ansatz.",
+      "answers": [
+        "nur ein malloc/free, bessere Cache-Lokalität und weniger Verwaltungsaufwand."
+      ],
+      "correct": [],
+      "skills": [
+        "heidenspeicher_matrix_optimieren"
+      ],
+      "tags": [
+        "heap"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was bewirkt typedef?",
+      "answers": [
+        "definiert eine Variable",
+        "erzeugt einen neuen Datentyp intern",
+        "führt einen eigenen Namen für einen bestehenden Typ ein",
+        "löscht einen Typ"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "typedef_typname_verwenden"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche Aussagen über typedef sind richtig?",
+      "answers": [
+        "typedef führt einen eigenen Namen für einen bestehenden Typ ein.",
+        "Man kann so z. B. typedef struct { ... } Punkt; schreiben.",
+        "typedef definiert eine Laufzeitvariable.",
+        "typedef verbessert die Lesbarkeit durch kürzere Typnamen."
+      ],
+      "correct": [
+        1,
+        2,
+        4
+      ],
+      "skills": [
+        "typedef_typname_verwenden"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie deklariert man eine Struktur mit zwei int-Komponenten x und y?",
+      "answers": [
+        "int struct x,y;",
+        "struct x,y int;",
+        "typedef x,y;",
+        "struct { int x; int y; };"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "struktur_deklarieren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was enthält eine Struktur (struct) in C?",
+      "answers": [
+        "mehrere, möglicherweise verschiedene Komponenten (Member)",
+        "nur eine Zahl",
+        "nur Zeichen",
+        "nur gleiche Typen"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "struktur_deklarieren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie greift man auf die Komponente y einer Strukturvariable p zu?",
+      "answers": [
+        "p->y ist nur bei Feldern",
+        "p.y",
+        "p[y]",
+        "&p.y"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "strukturkomponente_ansprechen"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie greift man auf eine Komponente über einen Zeiger pp auf die Struktur zu?",
+      "answers": [
+        "pp.y",
+        "pp[y]",
+        "pp->y",
+        "*pp.y"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "strukturkomponente_ansprechen"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie wird eine Struktur standardmäßig an eine Funktion übergeben?",
+      "answers": [
+        "call by reference",
+        "per Makro",
+        "per globalem Namen",
+        "call by value (Kopie)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "struktur_als_parameter_verwenden"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Um die Kopie einer großen Struktur zu vermeiden, übergibt man üblicherweise:",
+      "answers": [
+        "einen Zeiger auf die Struktur (ggf. mit const)",
+        "eine globale Kopie",
+        "den Namen",
+        "nichts"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "struktur_als_parameter_verwenden"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie fordert man auf dem Heap Speicher für eine Struktur Punkt an?",
+      "answers": [
+        "(Punkt *)malloc(Punkt)",
+        "(Punkt *)malloc(sizeof(Punkt))",
+        "malloc(sizeof(Punkt *))",
+        "malloc(1)"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "struktur_auf_dem_heap_anlegen"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie greift man nach erfolgreichem malloc auf eine Komponente der Heap-Struktur zu?",
+      "answers": [
+        "mit Punkt, z. B. p.x",
+        "es ist nicht möglich",
+        "mit dem Pfeiloperator, z. B. p->x",
+        "mit &p->x"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "struktur_auf_dem_heap_anlegen"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Kann sizeof(struct ...) größer sein als die Summe der Komponentengrößen?",
+      "answers": [
+        "nein, immer gleich",
+        "nur kleiner",
+        "nicht definiert",
+        "ja, wegen Auffüllung/Padding zur Ausrichtung"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "sizeof_struktur_erklaeren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Warum kann eine Struktur größer sein als die Summe ihrer Komponenten?",
+      "answers": [
+        "Wegen Padding: Compiler fügt Lücken (Auffüll-Bytes) ein, damit Komponenten passend ausgerichtet sind."
+      ],
+      "correct": [],
+      "skills": [
+        "sizeof_struktur_erklaeren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Woraus besteht ein Knoten einer einfach verketteten Liste typischerweise?",
+      "answers": [
+        "aus einem Datenwert und einem Zeiger auf den nächsten Knoten",
+        "aus zwei Zahlen",
+        "aus einem Feld",
+        "aus einer globalen Variable"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "verkettete_liste_aufbauen"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie wird das Ende einer verketteten Liste markiert?",
+      "answers": [
+        "der letzte Knoten enthält 0",
+        "der Zeiger des letzten Knotens zeigt auf NULL",
+        "es gibt kein Ende",
+        "mit einem Sonderzeichen"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "verkettete_liste_aufbauen"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Operation fügt einen neuen Knoten am Anfang einer Liste ein?",
+      "answers": [
+        "Knoten löschen",
+        "das Ende durchsuchen ohne Änderung",
+        "neuen Knoten anlegen und dessen next auf den bisherigen Kopf zeigen lassen, Kopf aktualisieren",
+        "nur zählen"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "liste_operationen_implementieren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Was ist bei der Implementierung des Löschens eines Knotens aus einer liste wichtig?",
+      "answers": [
+        "Vorgänger-Knoten merken und dessen Zeiger am neuen next umhängen, dann den gelöschten Knoten per free freigeben."
+      ],
+      "correct": [],
+      "skills": [
+        "liste_operationen_implementieren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie unterscheidet sich eine union von einer struct?",
+      "answers": [
+        "sie sind identisch",
+        "union speichert nur ints",
+        "struct teilt den Speicher",
+        "alle union-Komponenten teilen sich denselben Speicherplatz"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "verbund_union_erklaeren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was passiert, wenn man nach einer Komponente eine andere Komponente einer union schreibt?",
+      "answers": [
+        "die frühere Komponente wird überschrieben (derselbe Speicherplatz)",
+        "beide bleiben erhalten",
+        "ein Fehler tritt garantiert auf",
+        "die union wächst"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "verbund_union_erklaeren"
+      ],
+      "tags": [
+        "strukturen"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie viele Bits braucht man mindestens, um die Zahl 200 binär darzustellen?",
+      "answers": [
+        "7",
+        "8",
+        "4",
+        "10"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "zahlen_binaer_codieren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Welche der folgenden Binär-zu-Dezimal-Zuordnungen sind richtig?",
+      "answers": [
+        "1011 entspricht 8 (Dezimal).",
+        "1001 entspricht 11 (Dezimal).",
+        "1101 entspricht 13 (Dezimal).",
+        "1011 entspricht 13 (Dezimal)."
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "zahlen_binaer_codieren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie stellt man in C üblicherweise negative ganze Zahlen dar (verbreitet)?",
+      "answers": [
+        "im Einerkomplement",
+        "mit Vorzeichenbit allein",
+        "im Zweierkomplement",
+        "als Gleitkommazahl"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "zweierkomplement_anwenden"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie bildet man das Zweierkomplement einer Binärzahl?",
+      "answers": [
+        "alle Bits invertieren und 1 addieren",
+        "nur das erste Bit setzen",
+        "alle Bits subtrahieren",
+        "alle Bits verdoppeln"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "zweierkomplement_anwenden"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was passiert, wenn das Ergebnis einer ganzzahligen Operation den Wertebereich überschreitet?",
+      "answers": [
+        "es ist undefiniertes Verhalten (signed)  bzw. wrap-around (unsigned)",
+        "das Programm fragt nach",
+        "ein garantiertes Exception-Objekt",
+        "der Compiler fängt es immer"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "ueberlauf_ganzzahlig_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie verhält sich ein unsigned int bei Überlauf?",
+      "answers": [
+        "es verhält sich wie ein float",
+        "es wickelt modulo des Wertebereichs um",
+        "es wird 0 und bleibt",
+        "es stürzt ab"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "ueberlauf_ganzzahlig_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie kann man einen ganzzahligen Überlauf bei einer Summe vorab vermeiden?",
+      "answers": [
+        "die Werte als char verwenden",
+        "einfach rechnen",
+        "vor der Addition prüfen, ob a > MAX - b ist",
+        "eine Schleife nutzen"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "ueberlauf_verhindern"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Erkläre kurz die Idee, einen Überlauf bei a+b (a,b ≥ 0) vorab zu erkennen.",
+      "answers": [
+        "Man prüft vor der Addition, ob a > INT_MAX - b; ist das wahr, wäre a+b ein Überlauf."
+      ],
+      "correct": [],
+      "skills": [
+        "ueberlauf_verhindern"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was versteht man unter Überlauf bei Gleitkommazahlen?",
+      "answers": [
+        "die Zahl wird negativ",
+        "die Mantisse wird 0",
+        "die Zahl wird ganzzahlig",
+        "der Exponent überschreitet den darstellbaren Bereich (Ergebnis wird unendlich)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "gleitkomma_ueber_unterlauf_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist Unterlauf bei Gleitkommazahlen?",
+      "answers": [
+        "das Ergebnis ist so klein, dass es gegen 0 (oder subnormal) abgerundet wird",
+        "das Ergebnis ist unendlich",
+        "das Vorzeichen kippt",
+        "ein Fehler beim Parsen"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "gleitkomma_ueber_unterlauf_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Gilt das Assoziativgesetz (a+b)+c = a+(b+c) bei Gleitkommarechnung immer exakt?",
+      "answers": [
+        "ja, immer exakt",
+        "nein, wegen Rundung kann die Reihenfolge das Ergebnis ändern",
+        "nur bei float",
+        "nur bei int"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "assoziationsgesetz_ablehnen"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Gib ein Beispiel, warum bei Gleitkommazahlen die Klammerung das Ergebnis ändern kann.",
+      "answers": [
+        "Z. B. (1e20 + 1) - 1e20 ergibt 0, weil 1 bei 1e20 in der Addition verloren geht, während 1e20 + (1 - 1e20) anders rundet."
+      ],
+      "correct": [],
+      "skills": [
+        "assoziationsgesetz_ablehnen"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Warum lässt sich 0.1 in Binär-Gleitkomma nicht exakt darstellen?",
+      "answers": [
+        "weil 0.1 eine Ganzzahl ist",
+        "weil der Typ zu klein ist",
+        "0.1 ist im Binärsystem ein unendlich periodischer Bruch und wird gerundet",
+        "er lässt sich immer exakt darstellen"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "rundungsfehler_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Weil 0.1 nicht exakt darstellbar ist, sollte man Gleitkommazahlen nicht direkt mit == vergleichen. Was ist besser?",
+      "answers": [
+        "den Vergleich trotzdem machen",
+        "auf NULL zeigen",
+        "%d verwenden",
+        "auf eine kleine Toleranz (|a-b| < eps) prüfen"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "rundungsfehler_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welche Maßnahme reduziert Rundungsfehler typischerweise?",
+      "answers": [
+        "Summation der Werte mit ähnlicher Größenordnung bzw. Aufsummieren kleiner Größen zuerst (z. B. kleine zuerst)",
+        "alle Werte verdoppeln",
+        "nur große Werte addieren",
+        "int für alles verwenden"
+      ],
+      "correct": [
+        1
+      ],
+      "skills": [
+        "rundungsfehler_reduzieren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Nenne eine Strategie, Rundungsfehler bei einer Summe vieler Werte zu verringern.",
+      "answers": [
+        "Werte nach Größe ordnen und kleine zuerst addieren, oder Kahan- bzw. Paar-Summation verwenden."
+      ],
+      "correct": [],
+      "skills": [
+        "rundungsfehler_reduzieren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Was ist Auslöschung (catastrophic cancellation)?",
+      "answers": [
+        "das Löschen von Variablen",
+        "der Verlust signifikanter Stellen, wenn zwei nahezu gleich große Zahlen subtrahiert werden",
+        "das Abrunden auf ganze Zahlen",
+        "ein Speicherfehler"
+      ],
+      "correct": [
+        2
+      ],
+      "skills": [
+        "ausloeschung_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "open_end",
+      "question": "Wie kann man Auslöschung bei der Berechnung von sqrt(x²+1)-x für große x verringern?",
+      "answers": [
+        "Umformulierung, z. B. (sqrt(x²+1)-x) als 1/(sqrt(x²+1)+x) schreiben, um zwei nahezu gleiche große Zahlen zu vermeiden."
+      ],
+      "correct": [],
+      "skills": [
+        "ausloeschung_erklaeren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Wie berechnet man bei einer Taylorreihe das nächste Glied oft effizient?",
+      "answers": [
+        "jedes Glied von vorn neu",
+        "durch Schleife über zufällige Werte",
+        "rekursiv aus dem vorherigen Glied (faktor und Potenz fortschreiben)",
+        "gar nicht"
+      ],
+      "correct": [
+        3
+      ],
+      "skills": [
+        "taylorreihe_implementieren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    },
+    {
+      "type": "single_choice",
+      "question": "Welches Problem kann bei der Taylorreihe von e^x für große negative x auftreten?",
+      "answers": [
+        "es gibt keins",
+        "es wird zu langsam",
+        "der Compiler lehnt ab",
+        "Oszillation/ungenaue Ergebnisse wegen großer Zwischenglieder (Auslöschung)"
+      ],
+      "correct": [
+        4
+      ],
+      "skills": [
+        "taylorreihe_implementieren"
+      ],
+      "tags": [
+        "arithmetik"
+      ],
+      "status": "draft",
+      "origin": "ai",
+      "source": ""
+    }
+  ]
+}

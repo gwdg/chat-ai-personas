@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call by value – warum die Variable unverändert bleibt</title>
+  <meta name="description" content="Interaktive Selbstlernseite zu call by value in C: Parameter, Kopie und Aufrufrahmen Schritt für Schritt nachvollziehen.">
+  <meta name="gaia-skill" content="call_by_value_erklaeren">
+  <meta name="gaia-format" content="lernseite">
+  <meta name="gaia-version" content="1">
+  <style>
+:root {
+  --base-100: #ffffff;
+  --base-200: #f5f6f7;
+  --base-300: #e0e3e7;
+  --line-soft: rgba(16, 24, 40, .08);
+  --ink: #20242b;
+  --muted: #667085;
+  --primary: #344054;
+  --success: #2e7d55;
+  --error: #b42318;
+  --focus: #1a5fb4;
+  --font-sans: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { font-size: 16px; color-scheme: light; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--base-200);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { margin-top: 0; }
+code, pre { font-family: var(--font-mono); }
+code {
+  font-size: .88em;
+  background: rgba(16, 24, 40, .06);
+  padding: .04em .3em;
+  border-radius: 4px;
+}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 10;
+  padding: .55rem .9rem; background: #fff; color: var(--primary);
+  border: 2px solid var(--primary); border-radius: 0 0 8px 0;
+  font-weight: 700; text-decoration: none;
+}
+.skip:focus { left: 0; }
+
+.shell { max-width: 1060px; margin: 0 auto; padding: 2rem 1.25rem 2.5rem; }
+.page-head { margin-bottom: .4rem; }
+.eyebrow {
+  margin: 0 0 .35rem; color: var(--muted);
+  font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+}
+h1 { margin: 0 0 .5rem; font-size: clamp(1.45rem, 2.6vw, 1.9rem); line-height: 1.2; letter-spacing: -.01em; }
+.lede { max-width: 62ch; margin: 0 0 .55rem; color: #475467; font-size: .95rem; }
+.prereq { margin: 0; color: var(--muted); font-size: .8rem; }
+.prereq strong { color: var(--primary); }
+
+.lab { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 1rem; margin-top: 1.1rem; }
+.panel, .card {
+  background: var(--base-100);
+  border: 1px solid var(--base-300);
+  border-radius: 12px;
+  padding: 1rem 1.1rem 1.05rem;
+}
+.panel h2, .card h2 { margin: 0 0 .6rem; font-size: 1rem; letter-spacing: -.005em; }
+.card { margin-top: 1rem; }
+.card > .lede { margin-bottom: 1rem; }
+
+/* ---------- Code ---------- */
+.code {
+  margin: 0;
+  padding: .7rem .75rem;
+  background: #1f2430;
+  color: #e6e9ef;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: .8rem;
+  line-height: 1.65;
+  tab-size: 4;
+}
+.code code { background: none; padding: 0; font-size: inherit; color: inherit; }
+.ln { display: block; padding: 0 .35rem; border-left: 2px solid transparent; border-radius: 3px; white-space: pre; }
+.ln.is-active { background: rgba(255, 255, 255, .13); border-left-color: #8ab4f8; }
+
+/* ---------- Quiz ---------- */
+.quiz { margin-top: .9rem; }
+.quiz + .quiz { margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--line-soft); }
+.q { margin: 0; font-size: .9rem; font-weight: 600; line-height: 1.45; }
+.options { display: flex; flex-direction: column; gap: .4rem; margin-top: .55rem; }
+.opt {
+  display: block;
+  width: 100%; min-height: 2.6rem;
+  padding: .5rem .65rem;
+  border: 1px solid #d5d9e0; border-radius: 8px;
+  background: #fbfbfc; color: #344054;
+  font: inherit; font-size: .86rem; line-height: 1.45; text-align: left;
+  cursor: pointer;
+}
+.opt:hover:not(:disabled) { border-color: #98a2b3; background: #f4f5f7; }
+.opt:disabled { cursor: default; }
+.opt.is-correct { border-color: rgba(46, 125, 85, .5); background: rgba(46, 125, 85, .09); font-weight: 600; }
+.opt.is-wrong { border-color: rgba(180, 35, 24, .45); background: rgba(180, 35, 24, .07); }
+.opt .mark { flex: none; margin-left: .35rem; font-weight: 700; }
+.feedback { margin: .55rem 0 0; font-size: .84rem; min-height: 1.3em; }
+.feedback.is-ok { color: #1f5338; }
+.feedback.is-bad { color: #8a1c14; }
+.retry {
+  margin-top: .45rem; padding: .2rem .1rem; border: 0; background: none;
+  color: var(--primary); font: inherit; font-size: .8rem; font-weight: 700;
+  text-decoration: underline; text-underline-offset: .15em; cursor: pointer;
+}
+
+/* ---------- Speicher ---------- */
+.frames { display: flex; flex-direction: column; gap: .4rem; }
+.frame {
+  padding: .55rem .7rem .6rem;
+  border: 1px solid var(--base-300); border-radius: 8px;
+  background: #fbfbfc;
+}
+.frame.is-empty { border-style: dashed; background: transparent; }
+.frame-title {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem;
+  font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+}
+.frame-kind { color: var(--muted); font-weight: 400; letter-spacing: 0; text-transform: none; }
+.var { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .35rem; font-family: var(--font-mono); font-size: .9rem; }
+.var-name { color: var(--muted); }
+.var-value {
+  min-width: 2.8rem; padding: .08rem .5rem;
+  border: 1px solid #c6cdd8; border-radius: 6px;
+  background: #fff; font-weight: 700; text-align: center;
+}
+.var-value.is-changed { animation: pulse .35s ease; }
+@keyframes pulse { 50% { transform: scale(1.09); } }
+.frame-note { margin: .3rem 0 0; color: var(--muted); font-size: .76rem; }
+.frame-placeholder { margin: .35rem 0 0; color: var(--muted); font-size: .8rem; font-style: italic; }
+.copy { display: flex; align-items: center; gap: .4rem; padding-left: 1rem; color: var(--muted); font-size: .76rem; }
+.copy[hidden] { display: none; }
+
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; margin-top: .85rem; }
+.btn {
+  min-height: 2.6rem; padding: .45rem .85rem;
+  border: 1px solid #c6cdd8; border-radius: 8px;
+  background: #fff; color: var(--primary);
+  font: inherit; font-size: .85rem; font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) { background: #f0f2f5; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn-primary { border-color: var(--primary); background: var(--primary); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: #1f2937; }
+.btn-quiet { border-color: var(--base-300); background: #fbfbfc; color: #475467; font-weight: 500; }
+.btn-quiet:hover:not(:disabled) { background: #f0f2f5; }
+
+.narration {
+  margin: .8rem 0 0; padding: .1rem 0 .1rem .65rem;
+  border-left: 3px solid var(--base-300);
+  color: #344054; font-size: .85rem; min-height: 3.4em;
+}
+.output {
+  display: flex; align-items: baseline; gap: .6rem;
+  margin-top: .35rem; padding: .5rem .7rem;
+  background: #0f1420; color: #d8dee9; border-radius: 8px;
+  font-size: .82rem;
+}
+.output-label { color: #9aa5b8; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.output code { background: none; padding: 0; color: inherit; }
+
+/* ---------- Abschluss ---------- */
+.takeaway p { margin: 0 0 .6rem; font-size: .9rem; }
+.takeaway p:last-child { margin-bottom: 0; }
+.next { color: #475467; font-size: .85rem !important; }
+
+.foot { margin-top: 1.4rem; color: var(--muted); font-size: .74rem; }
+.foot p { margin: 0; }
+
+@media (max-width: 860px) {
+  .lab { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .shell { padding: 1.1rem .7rem 1.8rem; }
+  .panel, .card { padding: .85rem .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  body { background: #fff; }
+  .controls, .retry, .options, .copy, .skip { display: none !important; }
+  .panel, .card, .lab { border-color: #999; break-inside: avoid; }
+  .code { background: #f4f5f7; color: #111; }
+  .ln.is-active { background: #e3e8ef; border-left-color: #555; }
+  .narration { min-height: 0; }
+}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <main class="shell" id="main" data-skill="call_by_value_erklaeren">
+    <header class="page-head">
+      <p class="eyebrow">Funktionen · Fähigkeit: call by value erklären</p>
+      <h1>Warum bleibt meine Variable unverändert?</h1>
+      <p class="lede">Ein Parameter ist eine eigene Variable. Beim Aufruf wird der Wert des Arguments hineinkopiert. Was die Funktion mit dieser Kopie macht, betrifft nur die Kopie.</p>
+      <p class="prereq"><strong>Setzt voraus:</strong> Funktionen korrekt aufrufen</p>
+    </header>
+
+    <noscript>
+      <p class="prereq">Die Schritt-für-Schritt-Ansicht braucht JavaScript. Programm, Erklärungen und Fragen sind auch ohne lesbar.</p>
+    </noscript>
+
+    <div class="lab">
+      <section class="panel" aria-labelledby="code-title">
+        <h2 id="code-title">Das Programm</h2>
+        <pre class="code" tabindex="0" role="region" aria-label="C-Programm mit dem Aufruf von verdopple"><code><span class="ln" id="l-include">#include &lt;stdio.h&gt;</span><span class="ln">&nbsp;</span><span class="ln" id="l-fn">void verdopple(int x)</span><span class="ln" id="l-brace1">{</span><span class="ln" id="l-double">    x = x * 2;</span><span class="ln" id="l-brace2">}</span><span class="ln">&nbsp;</span><span class="ln" id="l-main">int main(void)</span><span class="ln" id="l-mainbrace">{</span><span class="ln" id="l-zahl">    int zahl = 7;</span><span class="ln" id="l-call">    verdopple(zahl);</span><span class="ln" id="l-printf">    printf("%d\n", zahl);</span><span class="ln" id="l-return">    return 0;</span><span class="ln" id="l-end">}</span></code></pre>
+
+        <div class="quiz">
+          <p class="q">Was gibt das Programm aus?</p>
+          <div class="options" role="group" aria-label="Antwort auf die Frage nach der Ausgabe">
+            <button type="button" class="opt" data-correct="true" data-feedback="Richtig. verdopple ändert nur die Kopie x; zahl bleibt 7.">7</button>
+            <button type="button" class="opt" data-correct="false" data-feedback="Nicht ganz: 14 steht nur in x im Aufrufrahmen. zahl bleibt 7.">14</button>
+            <button type="button" class="opt" data-correct="false" data-feedback="Nein: zahl behält seinen Wert. Die Funktion arbeitet mit einer Kopie.">0</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+          <button type="button" class="retry" hidden>Erneut versuchen</button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="mem-title">
+        <h2 id="mem-title">Der Speicher</h2>
+
+        <div class="frames">
+          <div class="frame">
+            <div class="frame-title">main <span class="frame-kind">rufende Funktion</span></div>
+            <div class="var"><span class="var-name">zahl</span><span class="var-value" id="main-zahl">7</span></div>
+            <p class="frame-note" id="main-note">Wert in main</p>
+          </div>
+
+          <div class="copy" id="copy" hidden>
+            <span aria-hidden="true">↓</span>
+            <span>Wert wird kopiert</span>
+          </div>
+
+          <div class="frame is-empty" id="frame-callee">
+            <div class="frame-title">verdopple <span class="frame-kind">Aufrufrahmen</span></div>
+            <div class="var" id="callee-var" hidden><span class="var-name">x</span><span class="var-value" id="callee-x">7</span></div>
+            <p class="frame-placeholder" id="callee-empty">kein Aufruf aktiv</p>
+            <p class="frame-note" id="callee-note">Parameter (Kopie)</p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="btn btn-primary" id="btn-call">Aufruf starten</button>
+          <button type="button" class="btn" id="btn-double" disabled>x verdoppeln</button>
+          <button type="button" class="btn" id="btn-return" disabled>zurückkehren</button>
+          <button type="button" class="btn btn-quiet" id="btn-reset" disabled>zurücksetzen</button>
+        </div>
+
+        <p class="narration" id="narration" aria-live="polite">zahl liegt in main und hat den Wert 7. Noch wurde keine Funktion aufgerufen.</p>
+
+        <div class="output">
+          <span class="output-label">Ausgabe</span>
+          <code id="output">–</code>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="checks-title">
+      <h2 id="checks-title">Prüfe dich</h2>
+      <p class="lede">Drei Fragen – jede zielt auf denselben Punkt: Was passiert mit dem Wert, was nur mit der Kopie?</p>
+
+      <div class="quiz">
+        <p class="q">Warum bleibt <code>zahl</code> nach dem Aufruf unverändert?</p>
+        <div class="options" role="group" aria-label="Antwort auf die Frage nach dem Grund">
+          <button type="button" class="opt" data-correct="true" data-feedback="Genau. Der Parameter ist eine Kopie; die Zuweisung ändert nur diese Kopie.">Weil <code>x</code> eine Kopie des Werts ist und die Zuweisung nur diese Kopie ändert.</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Doch: verdopple wird ausgeführt – aber mit einer Kopie des Werts.">Weil eine Funktion ohne Rückgabewert ihren Rumpf nicht ausführt.</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Nein: printf liest zahl direkt. Zwischengespeichert wird nichts.">Weil <code>printf</code> den Wert von <code>zahl</code> zwischenspeichert.</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Umgekehrt: Skalare werden per Wert übergeben. Felder verhalten sich anders – darum geht es hier nicht.">Weil Zahlen in C immer per Referenz übergeben werden.</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <button type="button" class="retry" hidden>Erneut versuchen</button>
+      </div>
+
+      <div class="quiz">
+        <p class="q">Wo steht der Wert 14, nachdem <code>x = x * 2;</code> ausgeführt wurde?</p>
+        <div class="options" role="group" aria-label="Antwort auf die Frage nach dem Ort des Werts">
+          <button type="button" class="opt" data-correct="true" data-feedback="Richtig. 14 entsteht im Aufrufrahmen; zahl behält 7.">Nur in <code>x</code> im Aufrufrahmen.</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Nein: zahl bleibt 7. Nur die Kopie x wird verdoppelt.">In <code>zahl</code> und in <code>x</code>.</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Nein: In zahl steht weiterhin 7; die 14 entsteht in x.">Nur in <code>zahl</code>.</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Nein: Der Wert bleibt in x gespeichert, bis der Aufruf endet.">In keiner Variablen, weil C den Wert sofort verwirft.</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <button type="button" class="retry" hidden>Erneut versuchen</button>
+      </div>
+
+      <div class="quiz">
+        <p class="q">Das Programm ruft <code>verdopple(zahl)</code> zweimal hintereinander auf. Was gibt <code>printf</code> danach aus?</p>
+        <div class="options" role="group" aria-label="Antwort auf die Frage nach zwei Aufrufen">
+          <button type="button" class="opt" data-correct="true" data-feedback="Richtig. Jeder Aufruf bekommt erneut den Wert 7; die erste Änderung ist mit dem Aufrufrahmen verschwunden.">7</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Nein: Die 14 aus dem ersten Aufruf war nur in dessen Kopie und ist mit dem Aufrufrahmen verschwunden.">14</button>
+          <button type="button" class="opt" data-correct="false" data-feedback="Nein: Beide Aufrufe starten wieder mit dem Wert von zahl, also mit 7.">28</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <button type="button" class="retry" hidden>Erneut versuchen</button>
+      </div>
+    </section>
+
+    <section class="card takeaway" aria-labelledby="takeaway-title">
+      <h2 id="takeaway-title">Merksatz</h2>
+      <p><strong>Parameter sind lokale Variablen.</strong> Beim Aufruf wird der Wert des Arguments in den Parameter kopiert. Was die Funktion mit dieser Kopie macht, bleibt im Aufrufrahmen – die Variable in <code>main</code> merkt davon nichts.</p>
+      <p class="next"><strong>Ausblick.</strong> Soll eine Funktion den Wert der aufrufenden Variablen wirklich ändern, braucht sie die Adresse: <code>void verdopple(int *x) { *x = *x * 2; }</code> und den Aufruf <code>verdopple(&amp;zahl);</code>. Das ist der nächste Skill „Zeiger als Parameter verwenden“.</p>
+    </section>
+
+    <footer class="foot">
+      <p>Selbstlernseite zur Fähigkeit <code>call_by_value_erklaeren</code> · Thema Funktionen · C-Programmierung</p>
+    </footer>
+  </main>
+
+  <script>
+"use strict";
+
+(function () {
+  const state = { phase: 0, x: 7, doublings: 0 };
+  const startValue = 7;
+
+  const els = {
+    callee: document.getElementById("frame-callee"),
+    calleeVar: document.getElementById("callee-var"),
+    calleeEmpty: document.getElementById("callee-empty"),
+    calleeX: document.getElementById("callee-x"),
+    calleeNote: document.getElementById("callee-note"),
+    mainNote: document.getElementById("main-note"),
+    copy: document.getElementById("copy"),
+    narration: document.getElementById("narration"),
+    output: document.getElementById("output"),
+    btnCall: document.getElementById("btn-call"),
+    btnDouble: document.getElementById("btn-double"),
+    btnReturn: document.getElementById("btn-return"),
+    btnReset: document.getElementById("btn-reset"),
+  };
+
+  const lineForPhase = {
+    0: "l-zahl",
+    1: "l-call",
+    2: "l-double",
+    3: "l-printf",
+  };
+
+  function highlight(id) {
+    document.querySelectorAll(".code .ln").forEach(function (line) {
+      line.classList.toggle("is-active", line.id === id);
+    });
+  }
+
+  function narrationText() {
+    if (state.phase === 0) {
+      return "zahl liegt in main und hat den Wert 7. Noch wurde keine Funktion aufgerufen.";
+    }
+    if (state.phase === 1) {
+      return "Der Aufruf kopiert den Wert 7 in den Parameter x – in eine neue, eigene Variable.";
+    }
+    if (state.phase === 2) {
+      if (state.doublings === 1) {
+        return "x = x * 2 rechnet nur mit der Kopie: x ist jetzt 14. zahl bleibt 7.";
+      }
+      return "x ist jetzt " + state.x + ". Weiterhin gilt: zahl bleibt 7, denn x ist nur eine Kopie.";
+    }
+    return "Der Aufrufrahmen wird abgebaut, x verschwindet. printf liest zahl – und gibt 7 aus.";
+  }
+
+  function render() {
+    const inCall = state.phase === 1 || state.phase === 2;
+
+    els.callee.classList.toggle("is-empty", !inCall);
+    els.calleeVar.hidden = !inCall;
+    els.calleeEmpty.hidden = inCall;
+    els.copy.hidden = !inCall;
+    els.calleeX.textContent = String(state.x);
+    els.calleeNote.hidden = !inCall;
+    els.calleeNote.textContent = state.doublings > 0
+      ? "Parameter (Kopie) – nur hier geändert"
+      : "Parameter (Kopie)";
+    els.mainNote.textContent = inCall
+      ? "bleibt 7 – die Funktion sieht nur die Kopie"
+      : state.phase === 3 ? "unverändert" : "Wert in main";
+
+    els.btnCall.disabled = inCall;
+    els.btnDouble.disabled = !inCall;
+    els.btnReturn.disabled = !inCall;
+    els.btnReset.disabled = state.phase === 0;
+
+    els.narration.textContent = narrationText();
+    els.output.textContent = state.phase === 3 ? String(startValue) : "–";
+    highlight(lineForPhase[state.phase]);
+  }
+
+  function pulseValue() {
+    els.calleeX.classList.remove("is-changed");
+    void els.calleeX.offsetWidth;
+    els.calleeX.classList.add("is-changed");
+  }
+
+  els.btnCall.addEventListener("click", function () {
+    if (state.phase === 3) {
+      state.x = startValue;
+      state.doublings = 0;
+    }
+    state.phase = 1;
+    render();
+  });
+
+  els.btnDouble.addEventListener("click", function () {
+    if (state.phase !== 1 && state.phase !== 2) return;
+    state.phase = 2;
+    state.x *= 2;
+    state.doublings += 1;
+    render();
+    pulseValue();
+  });
+
+  els.btnReturn.addEventListener("click", function () {
+    if (state.phase !== 1 && state.phase !== 2) return;
+    state.phase = 3;
+    render();
+  });
+
+  els.btnReset.addEventListener("click", function () {
+    state.phase = 0;
+    state.x = startValue;
+    state.doublings = 0;
+    render();
+  });
+
+  /* ---------- Fragen mit Rückmeldung ---------- */
+  function addMark(button, symbol, label) {
+    const mark = document.createElement("span");
+    mark.className = "mark";
+    mark.setAttribute("aria-hidden", "true");
+    mark.textContent = symbol;
+    button.appendChild(mark);
+
+    const spoken = document.createElement("span");
+    spoken.className = "sr-only";
+    spoken.textContent = " (" + label + ")";
+    button.appendChild(spoken);
+  }
+
+  document.querySelectorAll(".quiz").forEach(function (quiz) {
+    const options = Array.prototype.slice.call(quiz.querySelectorAll(".opt"));
+    const feedback = quiz.querySelector(".feedback");
+    const retry = quiz.querySelector(".retry");
+    let locked = false;
+
+    options.forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (locked) return;
+        locked = true;
+
+        const chosenCorrect = button.dataset.correct === "true";
+        options.forEach(function (option) {
+          option.disabled = true;
+          if (option.dataset.correct === "true") option.classList.add("is-correct");
+        });
+        button.classList.add(chosenCorrect ? "is-correct" : "is-wrong");
+        addMark(button, chosenCorrect ? "✓" : "✗", chosenCorrect ? "richtig" : "nicht richtig");
+
+        if (!chosenCorrect) {
+          const right = options.find(function (option) {
+            return option.dataset.correct === "true";
+          });
+          if (right) addMark(right, "✓", "richtig");
+        }
+
+        feedback.textContent = button.dataset.feedback;
+        feedback.classList.toggle("is-ok", chosenCorrect);
+        feedback.classList.toggle("is-bad", !chosenCorrect);
+        retry.hidden = false;
+      });
+    });
+
+    retry.addEventListener("click", function () {
+      locked = false;
+      options.forEach(function (option) {
+        option.disabled = false;
+        option.classList.remove("is-correct", "is-wrong");
+        option.querySelectorAll(".mark, .sr-only").forEach(function (node) {
+          node.remove();
+        });
+      });
+      feedback.textContent = "";
+      feedback.classList.remove("is-ok", "is-bad");
+      retry.hidden = true;
+    });
+  });
+
+  render();
+})();
+  </script>
+</body>
+</html>

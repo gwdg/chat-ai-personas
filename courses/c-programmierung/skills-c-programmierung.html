@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Themen & Fähigkeiten prüfen | GAIA</title>
+  <style>
+:root {
+  --base-100: #ffffff;
+  --base-200: #f5f6f7;
+  --base-300: #e0e3e7;
+  --line-soft: rgba(16, 24, 40, .08);
+  --base-content: #20242b;
+  --muted: #667085;
+  --primary: #344054;
+  --success: #2e7d55;
+  --error: #b42318;
+  --font-sans: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 16px; color-scheme: light; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--base-200);
+  color: var(--base-content);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--primary); text-decoration: underline; text-underline-offset: .15em; }
+h1, h2, h3, h4, p { margin-top: 0; }
+code, pre { font-family: var(--font-mono); }
+.muted { color: var(--muted); }
+.icon {
+  width: 1em; height: 1em; display: inline-block; flex: none;
+  stroke: currentColor; fill: none; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round; vertical-align: -.14em;
+}
+.icon-xs { width: .8em; height: .8em; }
+
+/* ---------- Shell ---------- */
+.shell { max-width: 1120px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+.page-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1.5rem; margin: 0 0 1.1rem;
+}
+.page-head h1 { margin: 0 0 .2rem; font-size: 1.4rem; line-height: 1.2; letter-spacing: -.01em; }
+.lede { margin: 0; max-width: 62ch; color: var(--muted); font-size: .9rem; }
+.view-mark { flex: none; padding-top: .25rem; color: var(--muted); font-size: .75rem; }
+
+/* ---------- Alerts ---------- */
+.alerts { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1rem; }
+.alerts:empty { display: none; }
+.alert {
+  display: flex; gap: .55rem; padding: .6rem .8rem;
+  border: 1px solid var(--base-300); border-left-width: 3px; border-radius: 6px;
+  font-size: .8rem;
+}
+.alert-icon { margin-top: .1rem; font-size: 1.05rem; flex: none; }
+.alert-main { min-width: 0; }
+.alert-main strong { display: block; margin-bottom: .15rem; font-size: .83rem; }
+.alert ul { margin: .1rem 0 0; padding-left: 1.1rem; }
+.alert li { margin: .08rem 0; }
+.alert details { margin-top: .25rem; }
+.alert summary { cursor: pointer; font-weight: 700; }
+.alert-error { border-color: rgba(180, 35, 24, .34); background: rgba(180, 35, 24, .06); color: #8a1c14; }
+.alert-warning { border-color: rgba(161, 92, 10, .36); background: rgba(161, 92, 10, .07); color: #7a4608; }
+.alert-hint { margin: .6rem 0 0; font-size: .82rem; }
+.alert-detail { margin-top: .4rem; }
+.alert-detail pre { white-space: pre-wrap; word-break: break-word; font-size: .78rem; background: rgba(16, 24, 40, .05); padding: .45rem .55rem; border-radius: 6px; }
+.alert code { font-family: var(--font-mono); font-size: .85em; background: rgba(16, 24, 40, .06); padding: .05em .35em; border-radius: 4px; }
+
+/* ---------- Units ---------- */
+.overview { display: flex; flex-direction: column; gap: 2rem; }
+.unit-title {
+  display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap;
+  margin: 0 0 .6rem; font-size: 1.05rem; font-weight: 700; letter-spacing: -.005em;
+}
+.unit-count { color: var(--muted); font-size: .76rem; font-weight: 400; }
+
+/* ---------- Quiz ---------- */
+.q-list { display: flex; flex-direction: column; gap: .8rem; }
+.q {
+  background: var(--base-100); border: 1px solid var(--base-300);
+  border-radius: 8px; padding: .9rem 1rem .85rem;
+}
+.q-text { font-size: .9rem; font-weight: 600; line-height: 1.45; }
+.q-text p { margin: 0 0 .4rem; }
+.q-text p:last-child { margin-bottom: 0; }
+.q-text ul, .q-text ol { margin: .2em 0 .5em; padding-left: 1.3em; }
+.q-text li { margin: .05em 0; }
+.q-text code { background: rgba(16, 24, 40, .06); padding: .04em .28em; border-radius: 3px; font-size: .88em; }
+.q-text blockquote { margin: .3em 0; padding-left: .7em; border-left: 2px solid var(--base-300); color: var(--muted); }
+.q-text h3, .q-text h4, .q-text h5, .q-text h6 { margin: .55em 0 .2em; font-size: .95em; }
+
+.answer-list { list-style: none; margin: .55rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+.answer {
+  display: flex; align-items: flex-start; gap: .4rem;
+  padding: .45rem .6rem; border: 1px solid var(--base-300); border-radius: 6px;
+  background: #fbfbfc;
+  font-size: .84rem; line-height: 1.45; color: #344054;
+}
+.answer-mark {
+  flex: none; width: 1rem; height: calc(1.45 * .84rem);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--success);
+}
+.answer-mark .icon { width: .9rem; height: .9rem; }
+.answer-text { min-width: 0; overflow-wrap: anywhere; }
+.answer-text p { margin: 0; }
+.answer.is-correct {
+  border-color: rgba(46, 125, 85, .4);
+  background: rgba(46, 125, 85, .09);
+  color: #1f5338; font-weight: 600;
+}
+.answer-model {
+  border-color: rgba(37, 99, 168, .28);
+  background: rgba(37, 99, 168, .06);
+}
+
+.q-meta {
+  display: flex; flex-direction: column;
+  gap: .22rem; margin-top: .6rem;
+  font-size: .72rem; color: var(--muted);
+}
+.q-meta-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem; min-width: 0; }
+.q-meta-key { flex: none; min-width: 2.8rem; font-weight: 600; color: #344054; }
+.q-meta-value { min-width: 0; overflow-wrap: anywhere; }
+
+/* ---------- Chips ---------- */
+.chip-row { display: inline-flex; flex-wrap: wrap; gap: .22rem; min-width: 0; }
+.chip {
+  display: inline-flex; align-items: center; max-width: 100%;
+  padding: .06rem .5rem;
+  border: 1px solid #d5d9e0; border-radius: 999px;
+  background: #f4f5f7; color: #344054;
+  font-size: .69rem; font-weight: 500; line-height: 1.45; text-align: left;
+  overflow-wrap: anywhere;
+}
+.chip-ghost { border-color: var(--base-300); background: var(--base-200); color: #475467; }
+.chip.is-missing {
+  border-color: rgba(180, 35, 24, .3); background: rgba(180, 35, 24, .06);
+  color: var(--error); font-weight: 600;
+}
+
+/* ---------- Skills ---------- */
+.topic-list { display: flex; flex-direction: column; gap: .8rem; }
+.topic {
+  background: var(--base-100); border: 1px solid var(--base-300);
+  border-radius: 8px; overflow: hidden;
+}
+.topic-head {
+  padding: .8rem 1rem .65rem;
+  background: #e9ecef; border-bottom: 1px solid #d8dce1;
+}
+.topic-title-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .55rem; }
+.topic-title { margin: 0; font-size: .95rem; font-weight: 700; }
+.topic-label { margin-right: .3em; color: var(--muted); font-weight: 400; }
+.topic-count { margin-left: auto; color: var(--muted); font-size: .72rem; }
+.topic-archived, .skill-archived { color: var(--muted); font-size: .7rem; font-style: italic; }
+.topic-desc { margin: .28rem 0 0; color: var(--muted); font-size: .78rem; }
+
+.skill-list { list-style: none; margin: .3rem 0; padding: 0; }
+.skill { padding: .65rem 1rem .7rem; }
+.skill + .skill { border-top: 1px solid var(--line-soft); }
+.skill-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .5rem; }
+.skill-badge {
+  display: inline-flex; align-items: center; flex: none;
+  padding: .02rem .5rem;
+  border: 1px solid #c6cdd8; border-radius: 999px;
+  background: #eef1f5; color: #344054;
+  font-size: .66rem; font-weight: 600; line-height: 1.5;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.skill-name { font-size: .86rem; font-weight: 600; }
+.skill-name.is-archived { color: var(--muted); }
+.skill-desc { margin: .18rem 0 0; color: var(--muted); font-size: .79rem; line-height: 1.5; }
+.skill-meta { display: flex; flex-direction: column; gap: .2rem; margin: .4rem 0 0; }
+.skill-detail { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem; margin: 0; font-size: .74rem; color: var(--muted); }
+.detail-label { flex: none; min-width: 6.1rem; font-weight: 600; color: #344054; }
+.skill-empty { padding: .7rem 1rem; color: var(--muted); font-size: .78rem; font-style: italic; }
+
+.empty { padding: 2.5rem 0; color: var(--muted); font-size: .88rem; }
+.empty p { margin: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .shell { padding: 1rem .6rem 2rem; }
+  .page-head { flex-direction: column; gap: .25rem; }
+  .view-mark { padding-top: 0; }
+  .q, .skill, .topic-head { padding-left: .75rem; padding-right: .75rem; }
+  .q-meta-key { min-width: 2.6rem; }
+  .detail-label { min-width: 0; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: #fff; }
+  .view-mark { display: none !important; }
+  .shell { max-width: none; padding: 0; }
+  .q, .skill, .topic { break-inside: avoid; }
+}
+
+  </style>
+</head>
+<body>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3z"/><path d="M12 9v5"/><path d="M12 17.5h.01"/></symbol>
+</svg>
+
+  <main class="shell">
+    <div class="page-head">
+      <div>
+        <h1>Themen & Fähigkeiten</h1>
+        <p class="lede">Alle Themen mit ihren Skills, Konzepten und Voraussetzungen. Die Nummer eines Skills („Skill N“) entspricht seiner Position in <code>skills-&lt;thema&gt;.json</code>.</p>
+      </div>
+      <span class="view-mark">Prüfansicht</span>
+    </div>
+
+    <div class="alerts" id="alerts"></div>
+    <div class="overview" id="overview"></div>
+  </main>
+
+  <script>
+    /*
+      VORLAGE: Dies ist die statische Prüfansicht für Themen & Fähigkeiten.
+      Beim Erzeugen einer konkreten Ansicht ersetzt der Agent den folgenden
+      exampleData-Block durch die ECHTEN Daten aus gaia_files/skills-<thema>.json.
+      Die Render-Logik darunter bleibt unverändert.
+    */
+
+    // Hier werden die ECHTEN Daten der Fähigkeitsstruktur eingefügt. Leer = noch nichts.
+    const exampleData = {
+  "format": "gaia-skills",
+  "version": 1,
+  "topics": [
+    {
+      "key": "einleitung",
+      "unit": "Einleitung",
+      "name": "Einleitung und erste Schritte in C",
+      "description": "Grundbegriffe der Programmierung, Aufbau von C-Quellcode, das erste Hello-World-Programm, Kommentare und der Präprozessor."
+    },
+    {
+      "key": "typen_konstanten_variablen",
+      "unit": "Standarddatentypen, Konstanten und Variablen",
+      "name": "Typen, Konstanten und Variablen",
+      "description": "Binär- und Zahlendarstellung, Standarddatentypen, Konstanten, Namen und die Deklaration sowie Initialisierung von Variablen."
+    },
+    {
+      "key": "beispielprogramme",
+      "unit": "Beispielprogramme",
+      "name": "Beispielprogramme: Ein- und Ausgabe, Schleifen, Alternativen",
+      "description": "Formatierte Ein- und Ausgabe mit printf und scanf, Schleifen, Wertzuweisung, Dateiende-Erkennung, if/else, Felder und Kommandozeilenparameter."
+    },
+    {
+      "key": "ausdruecke_operatoren",
+      "unit": "Ausdrücke und Operatoren",
+      "name": "Ausdrücke und Operatoren",
+      "description": "Aufbau von Ausdrücken, arithmetische, Vergleichs- und logische Operatoren, Inkrementierung, Nebeneffekte, Typumwandlung, Cast und sizeof."
+    },
+    {
+      "key": "zeichen_strings",
+      "unit": "Zeichen und Strings",
+      "name": "Zeichen und Strings",
+      "description": "Darstellung von Strings über Felder mit Null-Zeichen, Arbeit mit Strings, Ein- und Ausgabe von Zeichen und Strings sowie Zeichenklassifizierung."
+    },
+    {
+      "key": "programmablauf",
+      "unit": "Steuerung des Programmablaufs",
+      "name": "Steuerung des Programmablaufs",
+      "description": "Anweisungen und Blöcke, if- und switch-Anweisung, Aufzählungstyp enum sowie while-, do- und for-Schleifen."
+    },
+    {
+      "key": "funktionen",
+      "unit": "Funktionen",
+      "name": "Funktionen",
+      "description": "Vereinbarung und Definition von Funktionen, Funktionswerte, Aufruf, call by value, Zeiger und Felder als Parameter, const, Rekursion und das Modulkonzept."
+    },
+    {
+      "key": "felder",
+      "unit": "Felder",
+      "name": "Felder",
+      "description": "Mehrdimensionale Felder und ihre Speicheranordnung, Felder als Parameter, Makros, Initialisierung von Feldern und der Zusammenhang von Zeigern und Feldern."
+    },
+    {
+      "key": "strukturierung",
+      "unit": "Strukturierung von Programmen",
+      "name": "Strukturierung von Programmen",
+      "description": "Gültigkeitsbereiche von Namen, interne und externe Größen, das Modulkonzept, lokale und globale Größen sowie statische und automatische Variablen."
+    },
+    {
+      "key": "zeiger",
+      "unit": "Zeiger",
+      "name": "Zeiger",
+      "description": "Parameter des Hauptprogramms, Zeiger und const, Zeigerarithmetik, Operationen mit Zeigern, Zeiger als Parameter, Zeigervektoren und Zeiger auf Zeiger."
+    },
+    {
+      "key": "heap",
+      "unit": "Speicher auf dem Heap",
+      "name": "Speicher auf dem Heap",
+      "description": "Speichertypen, Funktionen zur Heapverwaltung, Bereitstellung von Speicher, Matrizen auf dem Heap und Felder variabler Größe auf dem Heap."
+    },
+    {
+      "key": "strukturen",
+      "unit": "Strukturen",
+      "name": "Strukturen",
+      "description": "Typnamen mit typedef, Vereinbarung und Verwendung von Strukturen, Strukturen auf dem Heap, verkettete Listen und Verbunde."
+    },
+    {
+      "key": "rechnerarithmetik",
+      "unit": "Rechnerarithmetik",
+      "name": "Rechnerarithmetik",
+      "description": "Binär- und Zweierkomplementdarstellung, Überlauf und Unterlauf, Rundungsfehler, Auslöschung und numerisch bewusste Implementierung."
+    }
+  ],
+  "skills": [
+    {
+      "topic_key": "einleitung",
+      "key": "programmiersprache_syntax_semantik_unterscheiden",
+      "concept": "Programmiersprache, Syntax und Semantik",
+      "name": "Programmiersprache, Syntax und Semantik unterscheiden",
+      "description": "Du kannst Syntax als Aufbau gültiger Sätze von Semantik als deren Bedeutung abgrenzen und erklären, was eine Programmiersprache ausmacht.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "programmentwicklung_schritte_nennen",
+      "concept": "Programmentwicklung",
+      "name": "Schritte der Programmentwicklung nennen",
+      "description": "Du kannst die Schritte von der Aufgabenformulierung über Algorithmus und Codierung bis zum Übersetzen, Binden und Ausführen in der richtigen Reihenfolge angeben.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "compiler_linker_unterscheiden",
+      "concept": "Compiler und Linker",
+      "name": "Compiler und Linker unterscheiden",
+      "description": "Du kannst unterscheiden, welche Aufgabe der Compiler (Quellcode zu Objektcode) und welche der Linker (Zusammenbinden mit der Standardbibliothek) übernimmt.",
+      "prerequisites": [
+        "programmentwicklung_schritte_nennen"
+      ]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "c_standard_einordnen",
+      "concept": "C-Standard",
+      "name": "C-Standard einordnen",
+      "description": "Du kannst die Entwicklung von C (K&R, ANSI-C/C89, C99, C11) zeitlich und inhaltlich einordnen und den verwendeten Standard benennen.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "zeichensatz_erkennen",
+      "concept": "Zeichensatz von C",
+      "name": "Zulässige Zeichen im Quelltext erkennen",
+      "description": "Du kannst graphische Zeichen von white spaces unterscheiden und angeben, welche Zeichen in einer Quelltextdatei vorkommen dürfen.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "quellcode_aufbau_beschreiben",
+      "concept": "Aufbau von C-Quellcode",
+      "name": "Aufbau von C-Quellcode beschreiben",
+      "description": "Du kannst erklären, dass ein C-Quellcode aus Funktionen besteht, dass genau eine Funktion main das Hauptprogramm realisiert und dass Funktionen nicht ineinander geschachtelt werden.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "hello_world_programm_erstellen",
+      "concept": "Erstes Programm",
+      "name": "Ein Hello-World-Programm erstellen und ausführen",
+      "description": "Du kannst ein Hello-World-Programm mit include, main, printf und return schreiben, mit gcc kompilieren und ausführen.",
+      "prerequisites": [
+        "compiler_linker_unterscheiden",
+        "quellcode_aufbau_beschreiben"
+      ]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "main_funktion_erklaeren",
+      "concept": "Hauptprogramm main",
+      "name": "Der Aufbau von main erklären",
+      "description": "Du kannst den Aufbau von main erklären, einschließlich des ganzzahligen Funktionswerts und der leeren Parameterliste int main(void).",
+      "prerequisites": [
+        "quellcode_aufbau_beschreiben"
+      ]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "kommentare_verwenden",
+      "concept": "Kommentare",
+      "name": "Kommentare korrekt verwenden",
+      "description": "Du kannst Block- und Zeilenkommentare unterscheiden, ihre Verschachtelungsregeln anwenden und sinnvoll erläuternde Kommentare setzen.",
+      "prerequisites": [
+        "hello_world_programm_erstellen"
+      ]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "praeprozessor_include_erklaeren",
+      "concept": "Präprozessor",
+      "name": "Präprozessor und include-Direktive erklären",
+      "description": "Du kannst erklären, dass eine Zeile, die mit # beginnt, eine Präprozessordirektive ist und was #include <stdio.h> bewirkt.",
+      "prerequisites": [
+        "hello_world_programm_erstellen"
+      ]
+    },
+    {
+      "topic_key": "einleitung",
+      "key": "printf_und_return_erklaeren",
+      "concept": "printf und return",
+      "name": "printf und return im Hello-World erklären",
+      "description": "Du kannst erklären, dass printf eine Zeichenkette auf die Standardausgabe schreibt und die return-Anweisung einen Wert an die rufende Funktion zurückgibt.",
+      "prerequisites": [
+        "hello_world_programm_erstellen"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "dezimalzahl_in_binaerzahl_umrechnen",
+      "concept": "Binärzahlen",
+      "name": "Dezimalzahlen in Binärzahlen umrechnen",
+      "description": "Du kannst eine nichtnegative Dezimalzahl als Binärzahl im Stellenwertsystem zur Basis 2 darstellen.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "oktal_und_hexadezimal_umrechnen",
+      "concept": "Oktal- und Hexadezimalzahlen",
+      "name": "Oktal- und Hexadezimaldarstellung verwenden",
+      "description": "Du kannst Dezimalzahlen in Oktal- und Hexadezimaldarstellung umrechnen und die einfache Umwandlung zur Binärdarstellung erklären.",
+      "prerequisites": [
+        "dezimalzahl_in_binaerzahl_umrechnen"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "wertebereiche_limits_erklaeren",
+      "concept": "Wertebereiche und Mindestschranken",
+      "name": "Wertebereiche und Mindestschranken erklären",
+      "description": "Du kannst erklären, dass der Standard nur Mindestschranken für Wertebereiche vorgibt und benannte Konstanten in limits.h und float.h bereitstellt.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "ganzzahltyp_auswaehlen",
+      "concept": "Ganzzahlige Typen",
+      "name": "Geeigneten Ganzzahltyp auswählen",
+      "description": "Du kannst zwischen short, int, long, long long sowie signed und unsigned wählen und die Folgen der Wahl für den Wertebereich beurteilen.",
+      "prerequisites": [
+        "wertebereiche_limits_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "ganzzahlkonstante_schreiben",
+      "concept": "Ganzzahlige Konstanten",
+      "name": "Ganzzahlige Konstanten schreiben",
+      "description": "Du kannst ganzzahlige Konstanten dezimal, oktal und hexadezimal notieren und ihren Typ über u-, l- und ll-Suffixe festlegen.",
+      "prerequisites": [
+        "oktal_und_hexadezimal_umrechnen"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "typ_char_erklaeren",
+      "concept": "Der Typ char",
+      "name": "Den Typ char erklären",
+      "description": "Du kannst erklären, dass Zeichen als Teilmenge der ganzen Zahlen behandelt werden und wie char einer Speicherung über Ordnungszahlen dient.",
+      "prerequisites": [
+        "ganzzahltyp_auswaehlen"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "escape_sequenzen_verwenden",
+      "concept": "Escape-Sequenzen",
+      "name": "Escape-Sequenzen verwenden",
+      "description": "Du kannst übliche Escape-Sequenzen benennen (etwa Rückwärtsschrägstrich n für Zeilenumbruch, Rückwärtsschrägstrich t für Tabulator, Rückwärtsschrägstrich vor Apostroph und Anführungszeichen) und sie in Zeichen- und Stringkonstanten korrekt einsetzen.",
+      "prerequisites": [
+        "typ_char_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "zeichenkonstante_erklaeren",
+      "concept": "Zeichenkonstanten",
+      "name": "Zeichenkonstanten erklären",
+      "description": "Du kannst erklären, dass eine Zeichenkonstante die Ordnungszahl ihres Zeichens repräsentiert und dass '0' nicht die Ordnungszahl 0 ist.",
+      "prerequisites": [
+        "typ_char_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "stringkonstante_erklaeren",
+      "concept": "Zeichenkettenkonstanten",
+      "name": "Zeichenkettenkonstanten von Zeichen unterscheiden",
+      "description": "Du kannst erklären, was eine Stringkonstante ist, warum 'x' und \"x\" verschieden sind und wie lange Stringkonstanten über mehrere Zeilen gefügt werden.",
+      "prerequisites": [
+        "zeichenkonstante_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "gleitkommatyp_erklaeren",
+      "concept": "Gleitkommatypen",
+      "name": "Gleitkommatypen erklären",
+      "description": "Du kannst die Typen float, double und long double in Bezug auf Wertebereich und Dichte einordnen und konkrete Werte in float.h auffinden.",
+      "prerequisites": [
+        "wertebereiche_limits_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "gleitkommazahl_notieren",
+      "concept": "Darstellung von Gleitkommazahlen",
+      "name": "Gleitkommazahlen notieren",
+      "description": "Du kannst Gleitkommakonstanten mit Dezimalpunkt und/oder Exponententeil schreiben und ihren Typ über f-, l- und L-Suffixe festlegen.",
+      "prerequisites": [
+        "gleitkommatyp_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "symbolische_konstante_definieren",
+      "concept": "Symbolische Konstanten (#define)",
+      "name": "Symbolische Konstanten definieren",
+      "description": "Du kannst mit #define benannte Konstanten definieren, um magische Zahlen zu vermeiden, und die Textersetzung im Quellcode nachvollziehen.",
+      "prerequisites": [
+        "ganzzahlkonstante_schreiben"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "namensregeln_anwenden",
+      "concept": "Namen und Bezeichner",
+      "name": "Namensregeln für Bezeichner anwenden",
+      "description": "Du kannst gültige Bezeichner bilden, Schlüsselwörter erkennen und die Groß-/Kleinschreibung als bedeutungsunterscheidend anwenden.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "variable_deklarieren",
+      "concept": "Deklaration von Variablen",
+      "name": "Variablen deklarieren",
+      "description": "Du kannst Variablen mit Typ und Namenliste deklarieren und erklären, welche Informationen der Compiler daraus ableitet.",
+      "prerequisites": [
+        "namensregeln_anwenden"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "variable_initialisieren",
+      "concept": "Initialisierung",
+      "name": "Variablen initialisieren und zuweisen",
+      "description": "Du kannst Variablen bei der Deklaration Anfangswerte zuweisen und erklären, dass ohne Anfangswert kein wohldefinierter Wert vorliegt.",
+      "prerequisites": [
+        "variable_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "typen_konstanten_variablen",
+      "key": "namenskonventionen_anwenden",
+      "concept": "Konventionen",
+      "name": "Namenskonventionen anwenden",
+      "description": "Du kannst sprechende und der Konvention folgende Namen wählen (Kleinbuchstaben für Variablen, Großbuchstaben für Konstanten) und kurze Bezeichner begründet einsetzen.",
+      "prerequisites": [
+        "variable_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "printf_formatbeschreiber_verwenden",
+      "concept": "Formatierte Ausgabe",
+      "name": "printf mit Formatbeschreibern verwenden",
+      "description": "Du kannst mit printf formatierte Ausgaben erzeugen und passende Kennbuchstaben wie %d, %u, %o, %x, %f, %e, %c und %s zuordnen.",
+      "prerequisites": [
+        "stringkonstante_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "scanf_adressoperator_verwenden",
+      "concept": "Formatierte Eingabe und Adressoperator",
+      "name": "scanf mit dem Adressoperator verwenden",
+      "description": "Du kannst scanf formatierte Werte einlesen und erklären, warum den Argumenten der Adressoperator & vorangestellt werden muss.",
+      "prerequisites": [
+        "printf_formatbeschreiber_verwenden"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "eingabeformat_auswaehlen",
+      "concept": "Kennbuchstaben für Eingabeformate",
+      "name": "Passendes Eingabeformat auswählen",
+      "description": "Du kannst die Kennbuchstaben und Modifizierer von scanf (z. B. h, l, L) korrekt dem Variablentyp zuordnen.",
+      "prerequisites": [
+        "scanf_adressoperator_verwenden"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "while_schleife_anwenden",
+      "concept": "while-Schleife",
+      "name": "while-Schleife anwenden",
+      "description": "Du kannst eine while-Schleife schreiben und erklären, dass vor jedem Durchlauf die Abbruchbedingung ausgewertet wird.",
+      "prerequisites": [
+        "wertzuweisung_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "wertzuweisung_erklaeren",
+      "concept": "Wertzuweisung",
+      "name": "Die Wertzuweisung erklären",
+      "description": "Du kannst erklären, dass die Wertzuweisung den rechten Ausdruck berechnet und in der linken Variablen speichert und keine Gleichung im mathematischen Sinn ist.",
+      "prerequisites": [
+        "variable_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "eof_erkennen",
+      "concept": "End of File (EOF)",
+      "name": "Das Dateiende mit scanf erkennen",
+      "description": "Du kannst den Funktionswert von scanf auswerten und mit der Konstanten EOF vergleichen, um bis zum Ende der Eingabe zu lesen.",
+      "prerequisites": [
+        "scanf_adressoperator_verwenden"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "if_else_anwenden",
+      "concept": "if-Anweisung",
+      "name": "if-else-Anweisungen verwenden",
+      "description": "Du kannst mit if und optionalem else aus Alternativen auswählen und geschachtelte Verzweigungen korrekt formulieren.",
+      "prerequisites": [
+        "vergleichsoperator_verwenden"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "vergleichsoperator_verwenden",
+      "concept": "Vergleichsoperatoren",
+      "name": "Vergleichsoperatoren verwenden",
+      "description": "Du kannst Vergleichsoperatoren wie ==, !=, <, <=, > und >= anwenden und den Unterschied zwischen == und = beachten.",
+      "prerequisites": []
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "feld_deklarieren",
+      "concept": "Felder (Vektoren)",
+      "name": "Eindimensionale Felder deklarieren",
+      "description": "Du kannst einen Vektor deklarieren, dessen Komponentenzahl angeben und die Größe über eine benannte Konstante festlegen.",
+      "prerequisites": [
+        "variable_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "feldkomponenten_ansprechen",
+      "concept": "Feldkomponenten",
+      "name": "Feldkomponenten über Indizes ansprechen",
+      "description": "Du kannst einzelne Komponenten eines Vektors über Indizes ansprechen und berücksichtigen, dass die Numerierung bei 0 beginnt.",
+      "prerequisites": [
+        "feld_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "skalarprodukt_berechnen",
+      "concept": "Skalarprodukt",
+      "name": "Das Skalarprodukt zweier Vektoren berechnen",
+      "description": "Du kannst das Skalarprodukt zweier double-Vektoren in einer Schleife berechnen und ausgeben.",
+      "prerequisites": [
+        "feldkomponenten_ansprechen",
+        "while_schleife_anwenden"
+      ]
+    },
+    {
+      "topic_key": "beispielprogramme",
+      "key": "kommandozeile_auslesen",
+      "concept": "Kommandozeilenparameter",
+      "name": "Kommandozeilenparameter auslesen",
+      "description": "Du kannst das Hauptprogramm mit argc und argv schreiben und Parameter wie einen Radius über argv und Konvertierungsfunktionen auswerten.",
+      "prerequisites": [
+        "main_funktion_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "ausdruck_aufbauen",
+      "concept": "Aufbau von Ausdrücken",
+      "name": "Einfache Ausdrücke aufbauen",
+      "description": "Du kannst Ausdrücke aus Operanden, Operatoren und runden Klammern zusammensetzen.",
+      "prerequisites": [
+        "variable_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "arithmetische_operatoren_anwenden",
+      "concept": "Arithmetische Operatoren",
+      "name": "Arithmetische Operatoren anwenden",
+      "description": "Du kannst Addition, Subtraktion, Multiplikation, Division und Modulo anwenden und die Ergebnisse ganzzahliger und nicht ganzzahliger Division unterscheiden.",
+      "prerequisites": [
+        "ausdruck_aufbauen"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "operatorpraezedenz_anwenden",
+      "concept": "Punktrechnung und Präzedenz",
+      "name": "Operatorpräzedenz anwenden",
+      "description": "Du kannst die Hierarchie der Operatoren anwenden, Punktrechnung vor Strichrechnung setzen und Reihenfolgen mit Klammern steuern.",
+      "prerequisites": [
+        "arithmetische_operatoren_anwenden"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "inkrement_dekrement_unterscheiden",
+      "concept": "Inkrementierung und Dekrementierung",
+      "name": "Präfix- und Postfix-Inkrementierung unterscheiden",
+      "description": "Du kannst ++ und -- in Präfix- und Postfix-Schreibweise anwenden und die unterschiedlichen Ausdruckswerte erklären.",
+      "prerequisites": [
+        "arithmetische_operatoren_anwenden"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "logische_operatoren_anwenden",
+      "concept": "Logische Operatoren",
+      "name": "Logische Operatoren anwenden",
+      "description": "Du kannst die Operatoren &&, || und ! anwenden, Wahrheitstafeln nachvollziehen und Werte als wahr oder falsch interpretieren.",
+      "prerequisites": [
+        "vergleichsoperator_verwenden"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "lazy_evaluation_erklaeren",
+      "concept": "Faule Auswertung",
+      "name": "Faule Auswertung logischer Ausdrücke erklären",
+      "description": "Du kannst erklären, wann die Auswertung eines logischen Ausdrucks vorzeitig beendet wird und wie sich das auf Nebeneffekte auswirkt.",
+      "prerequisites": [
+        "logische_operatoren_anwenden"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "zusammengesetzte_zuweisung_verwenden",
+      "concept": "Zusammengesetzte Zuweisungsoperatoren",
+      "name": "Zusammengesetzte Zuweisungen verwenden",
+      "description": "Du kannst zusammengesetzte Zuweisungsoperatoren wie +=, -=, *=, /= und %= korrekt als Kurzform einer Wertzuweisung einsetzen.",
+      "prerequisites": [
+        "wertzuweisung_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "kommaoperator_anwenden",
+      "concept": "Kommaoperator",
+      "name": "Den Kommaoperator anwenden",
+      "description": "Du kannst mit dem Kommaoperator mehrere Ausdrücke verbinden und erklären, dass der Wert des Gesamtausdrucks der des letzten Teilausdrucks ist.",
+      "prerequisites": [
+        "ausdruck_aufbauen"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "nebenwirkung_erklaeren",
+      "concept": "Nebeneffekte",
+      "name": "Nebeneffekte erkennen und bewerten",
+      "description": "Du kannst Nebeneffekte als Nebenprodukt der Auswertung eines Ausdrucks erkennen und kritisch beurteilen, wann ihre Reihenfolge nicht festgelegt ist.",
+      "prerequisites": [
+        "inkrement_dekrement_unterscheiden"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "implizite_typumwandlung_erklaeren",
+      "concept": "Implizite Typumwandlung",
+      "name": "Implizite Typumwandlung erklären",
+      "description": "Du kannst erklären, wie Operanden unterschiedlicher Typen vor einer Verknüpfung umgewandelt werden und dass char und short nach int aufgewertet werden.",
+      "prerequisites": [
+        "ganzzahltyp_auswaehlen",
+        "gleitkommatyp_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "castoperator_anwenden",
+      "concept": "Castoperatoren",
+      "name": "Castoperatoren gezielt einsetzen",
+      "description": "Du kannst mit einem Cast eine gezielte Typumwandlung erzwingen, um etwa eine ungewollte ganzzahlige Division zu vermeiden.",
+      "prerequisites": [
+        "implizite_typumwandlung_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "ausdruecke_operatoren",
+      "key": "sizeof_operator_anwenden",
+      "concept": "sizeof-Operator",
+      "name": "Den sizeof-Operator anwenden",
+      "description": "Du kannst den Speicherbedarf von Typen und Ausdrücken mit sizeof ermitteln, die Maßgabe sizeof(char) == 1 und den Typ size_t erklären.",
+      "prerequisites": [
+        "implizite_typumwandlung_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "null_zeichen_erklaeren",
+      "concept": "Null-Zeichen",
+      "name": "Das Null-Zeichen erklären",
+      "description": "Du kannst erklären, dass Strings als Felder von char realisiert sind und durch ein abschließendes Null-Zeichen \\0 gekennzeichnet werden.",
+      "prerequisites": [
+        "feld_deklarieren",
+        "zeichenkonstante_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "stringvariable_deklarieren",
+      "concept": "Stringvariablen",
+      "name": "Stringvariablen deklarieren",
+      "description": "Du kannst Stringvariablen deklarieren und beim Dimensionieren das abschließende Null-Zeichen mitzählen oder die Länge vom Compiler bestimmen lassen.",
+      "prerequisites": [
+        "null_zeichen_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "string_laenge_bestimmen",
+      "concept": "Arbeiten mit Strings",
+      "name": "Die Länge eines Strings bestimmen",
+      "description": "Du kannst die Länge eines Strings über das Null-Zeichen ermitteln und einen String mit einer Schleife durchlaufen.",
+      "prerequisites": [
+        "stringvariable_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "string_kopieren",
+      "concept": "Kopieren von Strings",
+      "name": "Einen String korrekt kopieren",
+      "description": "Du kannst einen String in ein ausreichend großes Zielfeld kopieren und das Null-Zeichen am Ende korrekt setzen.",
+      "prerequisites": [
+        "string_laenge_bestimmen"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "getchar_putchar_verwenden",
+      "concept": "Ein- und Ausgabe von Zeichen",
+      "name": "getchar und putchar verwenden",
+      "description": "Du kannst Zeichen von der Standardeingabe lesen und auf die Standardausgabe schreiben, inklusive der Beachtung des EOF-Werts.",
+      "prerequisites": [
+        "zeichenkonstante_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "string_ein_ausgabe_verwenden",
+      "concept": "Ein- und Ausgabe von Strings",
+      "name": "Strings mit %s und Schleifen ein- und ausgeben",
+      "description": "Du kannst Strings mit dem Formatbeschreiber %s bzw. zeichenweise einlesen und ausgeben und die Grenzen sicherer Eingabe beurteilen.",
+      "prerequisites": [
+        "stringvariable_deklarieren",
+        "getchar_putchar_verwenden"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "zeichen_klassifizieren",
+      "concept": "Zeichenklassifizierung (ctype.h)",
+      "name": "Zeichen mit ctype.h klassifizieren",
+      "description": "Du kannst Funktionen wie isalpha, isdigit, isspace, tolower und toupper anwenden, um Zeichen zu klassifizieren und umzuwandeln.",
+      "prerequisites": [
+        "getchar_putchar_verwenden"
+      ]
+    },
+    {
+      "topic_key": "zeichen_strings",
+      "key": "zuordnung_zeichen_zahl_erklaeren",
+      "concept": "Zeichenordnung und Ordnungszahlen",
+      "name": "Die Zuordnung von Zeichen zu Ordnungszahlen erklären",
+      "description": "Du kannst erklären, dass Zeichenkonstanten wie '0' nicht ihre Ziffernordnung, sondern eine vom Zeichensatz abhängige Ordnungszahl repräsentieren.",
+      "prerequisites": [
+        "zeichenkonstante_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "anweisung_und_block_unterscheiden",
+      "concept": "Anweisungen und Blöcke",
+      "name": "Anweisungen und Blöcke unterscheiden",
+      "description": "Du kannst Ausdrucksanweisungen und leere Anweisungen schreiben und mehrere Anweisungen zu einem Block zusammenfassen.",
+      "prerequisites": [
+        "ausdruck_aufbauen"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "if_mit_else_zuordnen",
+      "concept": "Schachtelung von if und dangling-else",
+      "name": "else korrekt dem if zuordnen",
+      "description": "Du kannst erklären, wie der Compiler ein else dem passenden if zuordnet, und geschachtelte if-Anweisungen durch Blöcke eindeutig machen.",
+      "prerequisites": [
+        "if_else_anwenden"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "enum_aufzaehlungstyp_verwenden",
+      "concept": "Aufzählungstyp enum",
+      "name": "Den Aufzählungstyp enum verwenden",
+      "description": "Du kannst enum-Typen deklarieren, Konstanten automatisch oder explizit nummerieren und Variablen dieses Typs verwenden.",
+      "prerequisites": [
+        "ganzzahltyp_auswaehlen"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "switch_anweisung_verwenden",
+      "concept": "switch-Anweisung",
+      "name": "Die switch-Anweisung verwenden",
+      "description": "Du kannst mit switch aus mehreren Ganzzahlwerten auswählen, case und default einsetzen und Fallstricke wie fehlendes break erklären.",
+      "prerequisites": [
+        "enum_aufzaehlungstyp_verwenden"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "switch_break_anwenden",
+      "concept": "break in switch",
+      "name": "Durchbruchverhalten von switch mit break steuern",
+      "description": "Du kannst mit break die switch-Anweisung gezielt beenden und das Durchrutschen in folgende case-Zweige erklären oder bewusst nutzen.",
+      "prerequisites": [
+        "switch_anweisung_verwenden"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "while_schleife_schreiben",
+      "concept": "while-Schleife",
+      "name": "while-Schleifen für Wiederholungen schreiben",
+      "description": "Du kannst while-Schleifen so schreiben, dass die Abbruchbedingung vor jedem Durchlauf geprüft und der Schleifenzähler korrekt aktualisiert wird.",
+      "prerequisites": [
+        "while_schleife_anwenden"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "do_while_schleife_verwenden",
+      "concept": "do-Schleife",
+      "name": "do-while-Schleifen verwenden",
+      "description": "Du kannst eine do-while-Schleife schreiben und den Unterschied zur while-Schleife erklären, dass der Rumpf mindestens einmal ausgeführt wird.",
+      "prerequisites": [
+        "while_schleife_schreiben"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "for_schleife_verwenden",
+      "concept": "for-Schleife",
+      "name": "for-Schleifen mit Zählvariable verwenden",
+      "description": "Du kannst for-Schleifen mit Initialisierungs-, Bedingungs- und Aktualisierungsteil schreiben und auf Feldern einsetzen.",
+      "prerequisites": [
+        "while_schleife_schreiben"
+      ]
+    },
+    {
+      "topic_key": "programmablauf",
+      "key": "schleifenart_auswaehlen",
+      "concept": "Wahl der Schleifenanweisung",
+      "name": "Die passende Schleifenart auswählen",
+      "description": "Du kannst begründet zwischen while-, do-while- und for-Schleife wählen, etwa for bei bekannter Durchlaufanzahl und do bei mindestens einem Durchlauf.",
+      "prerequisites": [
+        "do_while_schleife_verwenden",
+        "for_schleife_verwenden"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "funktion_deklarieren_definieren",
+      "concept": "Deklaration und Definition von Funktionen",
+      "name": "Funktionen deklarieren und definieren",
+      "description": "Du kannst Funktionsprototypen deklarieren, Funktionen definieren und den Unterschied zwischen Deklaration und Definition erklären.",
+      "prerequisites": [
+        "namensregeln_anwenden"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "funktionswert_mit_return_zurueckgeben",
+      "concept": "Funktionswerte und return",
+      "name": "Einen Funktionswert mit return zurückgeben",
+      "description": "Du kannst den Rückgabetyp einer Funktion festlegen, mit return einen Wert liefern und Funktionen ohne Wert mit void kennzeichnen.",
+      "prerequisites": [
+        "funktion_deklarieren_definieren"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "funktion_aufrufen",
+      "concept": "Aufruf von Funktionen",
+      "name": "Funktionen korrekt aufrufen",
+      "description": "Du kannst Funktionen mit passender Anzahl und passenden Typen von Argumenten aufrufen und ihren Rückgabewert verwenden.",
+      "prerequisites": [
+        "funktion_deklarieren_definieren"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "call_by_value_erklaeren",
+      "concept": "call by value",
+      "name": "call by value erklären",
+      "description": "Du kannst erklären, dass Parameter wie lokale Variablen arbeiten, in die Werte der Argumente kopiert werden, und dass Änderungen am Parameter die Umwelt nicht verändern.",
+      "prerequisites": [
+        "funktion_aufrufen"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "zeiger_parameter_verwenden",
+      "concept": "Zeiger als Parameter",
+      "name": "Zeiger als Parameter verwenden",
+      "description": "Du kannst über Zeigerparameter Werte der rufenden Funktion verändern und call by reference in C nachbilden.",
+      "prerequisites": [
+        "call_by_value_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "feld_parameter_erklaeren",
+      "concept": "Felder als Parameter",
+      "name": "Felder als Parameter erklären",
+      "description": "Du kannst erklären, dass für Felder nur die Anfangsadresse übergeben wird, und Funktionen für Felder mit oder ohne Längenparameter deklarieren.",
+      "prerequisites": [
+        "zeiger_parameter_verwenden",
+        "feldkomponenten_ansprechen"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "const_parameter_verwenden",
+      "concept": "Das Attribut const",
+      "name": "const bei Parameter verwenden",
+      "description": "Du kannst Parameter mit const kennzeichnen, um versehentliche Änderungen an übergebenen Feldern zu verhindern.",
+      "prerequisites": [
+        "feld_parameter_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "rekursive_funktion_entwerfen",
+      "concept": "Rekursion",
+      "name": "Rekursive Funktionen entwerfen",
+      "description": "Du kannst eine rekursive Funktion mit Basisfall und rekursivem Schritt schreiben, etwa zur Fakultät, und ihre Terminierung begründen.",
+      "prerequisites": [
+        "funktionswert_mit_return_zurueckgeben"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "rekursion_iteration_vergleichen",
+      "concept": "Rekursion versus Iteration",
+      "name": "Rekursion und Iteration vergleichen",
+      "description": "Du kannst eine rekursiv formulierte Aufgabe auch iterativ mit einer Schleife lösen und beurteilen, welche Form im Einzelfall angemessen ist.",
+      "prerequisites": [
+        "rekursive_funktion_entwerfen",
+        "for_schleife_verwenden"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "modul_header_implementation_trennen",
+      "concept": "Modulkonzept",
+      "name": "Modul in Header und Implementation trennen",
+      "description": "Du kannst ein Modul verstehen, indem du Deklarationen in eine Headerdatei (.h) und Definitionen in eine Implementation (.c) legst und beide Binde-Ebene des Linkers berücksichtigst.",
+      "prerequisites": [
+        "funktion_deklarieren_definieren"
+      ]
+    },
+    {
+      "topic_key": "funktionen",
+      "key": "separat_kompilieren",
+      "concept": "Separate Compilation",
+      "name": "Module separat kompilieren und binden",
+      "description": "Du kannst mehrere Quelldateien getrennt zu Objektdateien kompilieren und mit dem Linker zu einem ausführbaren Programm zusammenbinden.",
+      "prerequisites": [
+        "modul_header_implementation_trennen"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_mehrdimensional_deklarieren",
+      "concept": "Mehrdimensionale Felder",
+      "name": "Mehrdimensionale Felder deklarieren",
+      "description": "Du kannst zweidimensionale Felder beziehungsweise Matrizen deklarieren und auf ihre Elemente mit mehreren Indizes zugreifen.",
+      "prerequisites": [
+        "feld_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_variabler_groesse_verwenden",
+      "concept": "Variable Length Arrays",
+      "name": "Felder variabler Größe verwenden",
+      "description": "Du kannst lokale Felder verwenden, deren Größe erst zur Laufzeit feststeht, und ihre Grenzen kennen (lokal, ab C99).",
+      "prerequisites": [
+        "feld_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_speicheranordnung_erklaeren",
+      "concept": "Speicheranordnung von Feldern",
+      "name": "Die Speicheranordnung von Feldern erklären",
+      "description": "Du kannst erklären, dass Felder zusammenhängend im Speicher liegen und wie bei Matrizen die Speicherabbildungsfunktion Zeilenindex und Zeilenlänge verknüpft.",
+      "prerequisites": [
+        "feld_mehrdimensional_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "speicherabbildungsfunktion_berechnen",
+      "concept": "Speicherabbildungsfunktion",
+      "name": "Die Speicherabbildungsfunktion einer Matrix berechnen",
+      "description": "Du kannst den Abstand eines Matrixelements vom Feldanfang über Zeilenindex, Zeilenlänge und Spaltenindex berechnen.",
+      "prerequisites": [
+        "feld_speicheranordnung_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "indexueberschreitung_beurteilen",
+      "concept": "Indexüberschreitung",
+      "name": "Folgen der Indexüberschreitung beurteilen",
+      "description": "Du kannst erklären, dass C keine Feldgrenzen kontrolliert, und die möglichen Folgen einer Indexüberschreitung kritisch einschätzen.",
+      "prerequisites": [
+        "feldkomponenten_ansprechen"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_als_parameter_uebergeben",
+      "concept": "Felder als Parameter",
+      "name": "Felder mit Längenparameter an Funktionen übergeben",
+      "description": "Du kannst Felder an Funktionen übergeben und erklären, warum die Länge meist als weiterer Parameter mitgegeben werden muss.",
+      "prerequisites": [
+        "feld_parameter_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "matrix_als_parameter_deklarieren",
+      "concept": "Mehrdimensionale Felder als Parameter",
+      "name": "Matrizen als Parameter deklarieren",
+      "description": "Du kannst im Funktionsprototyp mehrdimensionale Felder deklarieren und die Längenangaben aller Dimensionen außer der ersten angeben.",
+      "prerequisites": [
+        "feld_als_parameter_uebergeben"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "makro_definieren",
+      "concept": "Makros (#define)",
+      "name": "Makros mit Parametern definieren",
+      "description": "Du kannst Makros mit Parametern definieren und ihre Textersetzung nachvollziehen, einschließlich der Notwendigkeit von Klammern.",
+      "prerequisites": [
+        "symbolische_konstante_definieren"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "makro_funktion_unterscheiden",
+      "concept": "Makros versus Funktionen",
+      "name": "Makros und Funktionen unterscheiden",
+      "description": "Du kannst Unterschiede zwischen Makros und Funktionen (Typenlosigkeit, mehrfacher Code, fehlende Sprünge, Nebeneffekte bei Argumenten) erklären.",
+      "prerequisites": [
+        "makro_definieren",
+        "funktion_aufrufen"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "feld_initialisieren",
+      "concept": "Initialisierung von Feldern",
+      "name": "Felder initialisieren",
+      "description": "Du kannst eindimensionale und mehrdimensionale Felder mit Anfangswerten initialisieren und das Nullsetzen fehlender Komponenten erklären.",
+      "prerequisites": [
+        "feld_mehrdimensional_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "felder",
+      "key": "matrixprodukt_implementieren",
+      "concept": "Matrixprodukt",
+      "name": "Ein Matrixprodukt implementieren",
+      "description": "Du kannst das Produkt zweier Matrizen berechnen und dabei die Speicherabbildungsfunktion beziehungsweise geeignete Parametrisierung anwenden.",
+      "prerequisites": [
+        "speicherabbildungsfunktion_berechnen"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "gueltigkeitsbereich_erklaeren",
+      "concept": "Gültigkeitsbereiche von Namen",
+      "name": "Gültigkeitsbereiche von Namen erklären",
+      "description": "Du kannst erklären, dass Namen innerhalb eines Blocks deklariert werden können und nur dort bekannt sind, während externe Namen ab ihrer Deklaration gelten.",
+      "prerequisites": [
+        "variable_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "intern_extern_unterscheiden",
+      "concept": "Interne und externe Größen",
+      "name": "Interne und externe Größen unterscheiden",
+      "description": "Du kannst interne Größen (innerhalb einer Funktion definiert) von externen Größen (außerhalb definiert) unterscheiden und die Konsequenzen für die Sichtbarkeit erklären.",
+      "prerequisites": [
+        "gueltigkeitsbereich_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "verschattung_erklaeren",
+      "concept": "Verschattung",
+      "name": "Verschattung von Namen erklären",
+      "description": "Du kannst erklären, wie eine Deklaration innerhalb eines Blocks gleichnamige Größen außerhalb verschattet, und daraus resultierende Fehler erkennen.",
+      "prerequisites": [
+        "gueltigkeitsbereich_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "modul_abstrakter_datentyp_realisieren",
+      "concept": "Modulkonzept und abstrakter Datentyp",
+      "name": "Einen abstrakten Datentyp als Modul realisieren",
+      "description": "Du kannst einen Stapelspeicher oder ähnliche Datentypen als Modul mit Header und Implementation aufbauen und die zentralen Operationen bereitstellen.",
+      "prerequisites": [
+        "modul_header_implementation_trennen"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "lokale_globale_groessen_gegenueberstellen",
+      "concept": "Lokale und globale Größen",
+      "name": "Lokale und globale Größen einander gegenüberstellen",
+      "description": "Du kannst die Vor- und Nachteile lokaler gegenüber globaler (externer) Variablen abwägen und begründen, warum externe Variablen sparsam einzusetzen sind.",
+      "prerequisites": [
+        "intern_extern_unterscheiden"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "static_attribut_verwenden",
+      "concept": "Attribut static",
+      "name": "Das Attribut static zur Lokalisierung verwenden",
+      "description": "Du kannst externe Größen und Hilfsfunktionen mit static versehen, um sie innerhalb eines Moduls zu verstecken.",
+      "prerequisites": [
+        "lokale_globale_groessen_gegenueberstellen"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "statische_automatische_variable_unterscheiden",
+      "concept": "Statische und automatische Variablen",
+      "name": "Statische und automatische Variablen unterscheiden",
+      "description": "Du kannst den Unterschied erklären zwischen statischen Variablen (fester Speicherplatz über die Laufzeit) und automatischen Variablen (Speicher nur während des Blocks).",
+      "prerequisites": [
+        "intern_extern_unterscheiden"
+      ]
+    },
+    {
+      "topic_key": "strukturierung",
+      "key": "static_lokale_variable_erklaeren",
+      "concept": "static bei lokalen Variablen",
+      "name": "Lokale Variablen mit static erklären",
+      "description": "Du kannst erklären, wie eine lokale Variable mit static ihren Wert zwischen Aufrufen behält, und solche Fälle von automatischen Variablen unterscheiden.",
+      "prerequisites": [
+        "statische_automatische_variable_unterscheiden"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "nullzeiger_verwenden",
+      "concept": "Nullzeiger NULL",
+      "name": "Den Nullzeiger NULL verwenden",
+      "description": "Du kannst Zeigervariablen als ohne Wert mit NULL markieren und erklären, dass man immer NULL statt der Zahl 0 verwenden sollte.",
+      "prerequisites": [
+        "zeiger_parameter_verwenden"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_argv_erklaeren",
+      "concept": "Parameter von main (argc, argv)",
+      "name": "argc und argv des Hauptprogramms erklären",
+      "description": "Du kannst erklären, dass main beim Aufruf argc und argv erhält, wobei argv ein Vektor von Zeigern auf die Einträge der Aufrufzeile ist.",
+      "prerequisites": [
+        "main_funktion_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "argv_mit_zeigern_durchlaufen",
+      "concept": "argv und Zeigerarithmetik",
+      "name": "Aufrufzeilen-Einträge über argv durchlaufen",
+      "description": "Du kannst die Einträge der Aufrufzeile über Indizes oder Nullzeiger beziehungsweise Zeigerarithmetik auflisten.",
+      "prerequisites": [
+        "zeiger_argv_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "const_bei_zeigern_unterscheiden",
+      "concept": "Zeiger und const",
+      "name": "Die Position von const bei Zeigern unterscheiden",
+      "description": "Du kannst unterscheiden, ob const links oder rechts vom Stern steht, und damit angeben, ob die referenzierten Werte oder die Zeigervariable konstant sind.",
+      "prerequisites": [
+        "nullzeiger_verwenden"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeigerarithmetik_anwenden",
+      "concept": "Zeigerarithmetik",
+      "name": "Zeigerarithmetik auf Feldern anwenden",
+      "description": "Du kannst über Zeiger mit Inkrementierung und Addition Feldkomponenten adressieren und *(v+7) als Zugriff auf v[7] verstehen.",
+      "prerequisites": [
+        "feldkomponenten_ansprechen"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_feldformulierung_umwandeln",
+      "concept": "Zeiger- und Feldformulierungen",
+      "name": "Feld- und Zeigerformulierungen ineinander umwandeln",
+      "description": "Du kannst äquivalente Feld- und Zeigerschreibweisen unterscheiden und wiedergeben, etwa bei Funktionen wie der Summe eines Vektors.",
+      "prerequisites": [
+        "zeigerarithmetik_anwenden"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_vergleich_anwenden",
+      "concept": "Zeigervergleich",
+      "name": "Zeiger vergleichen",
+      "description": "Du kannst Zeiger auf Komponenten desselben Vektors vergleichen und das Ergebnis wie einen Indexvergleich interpretieren.",
+      "prerequisites": [
+        "zeigerarithmetik_anwenden"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "string_mit_zeigern_kopieren",
+      "concept": "Zeiger als Parameter (II)",
+      "name": "Strings mit Zeigern kopieren",
+      "description": "Du kannst einen String kompakt mit Zeigern kopieren, etwa in der Form while (*s++ = *t++);",
+      "prerequisites": [
+        "zeiger_parameter_verwenden",
+        "string_kopieren"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeigervektoren_verwenden",
+      "concept": "Zeigervektoren",
+      "name": "Vektoren von Zeigern verwenden",
+      "description": "Du kannst einen Vektor von Zeigern auf Strings verwenden, um Speicher zu sparen, und die Unterscheidung zu einem zweidimensionalen Zeichenfeld erklären.",
+      "prerequisites": [
+        "stringkonstante_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "zeiger_auf_zeiger_erklaeren",
+      "concept": "Zeiger auf Zeiger",
+      "name": "Zeiger auf Zeiger erklären",
+      "description": "Du kannst erklären, was ein Zeiger auf einen Zeiger (etwa char **) bedeutet und wie er für Vektoren von Zeigern eingesetzt wird.",
+      "prerequisites": [
+        "zeigervektoren_verwenden"
+      ]
+    },
+    {
+      "topic_key": "zeiger",
+      "key": "matrix_als_zeiger_auf_zeiger_deuten",
+      "concept": "Mehrdimensionale Felder und Zeiger",
+      "name": "Matrizen als Zeiger auf Zeiger deuten",
+      "description": "Du kannst erklären, dass mehrdimensionale Felder Zeigern auf Zeiger entsprechen und wie sich daraus äquivalente Indexierungsformen ableiten.",
+      "prerequisites": [
+        "zeiger_auf_zeiger_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "speichertypen_unterscheiden",
+      "concept": "Speichertypen (statisch, Stack, Heap)",
+      "name": "Statischen, Stack- und Heap-Speicher unterscheiden",
+      "description": "Du kannst statischen Speicher, automatische Variablen auf dem Stack und den Heap voneinander abgrenzen und ihre Lebensdauer erklären.",
+      "prerequisites": [
+        "statische_automatische_variable_unterscheiden"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "malloc_verwenden",
+      "concept": "malloc",
+      "name": "Speicher mit malloc anfordern",
+      "description": "Du kannst mit malloc zusammenhängenden Speicher anfordern, die benötigte Größe angeben und den Wert in einer passenden Zeigervariablen speichern.",
+      "prerequisites": [
+        "speichertypen_unterscheiden",
+        "sizeof_operator_anwenden"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "malloc_null_pruefen",
+      "concept": "Fehlerprüfung bei malloc",
+      "name": "Den Rückgabewert von malloc auf NULL prüfen",
+      "description": "Du kannst erklären, dass malloc NULL liefern kann, wenn kein Speicher verfügbar ist, und die Rückgabe vor der Verwendung prüfen.",
+      "prerequisites": [
+        "malloc_verwenden"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "free_verwenden",
+      "concept": "free",
+      "name": "Heap-Speicher mit free freigeben",
+      "description": "Du kannst zuvor mit malloc beschafften Speicher mit free wieder freigeben und erklären, dass free(NULL) nichts bewirkt.",
+      "prerequisites": [
+        "malloc_verwenden"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "speicherleck_erklaeren",
+      "concept": "Speicherleck",
+      "name": "Speicherlecks erklären und vermeiden",
+      "description": "Du kannst erklären, wie un-freed heap-Speicher zu einem Speicherleck führt, und die Verantwortung für die Freigabe korrekt zuordnen.",
+      "prerequisites": [
+        "free_verwenden"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "heap_vektor_bereitstellen",
+      "concept": "Vektoren auf dem Heap",
+      "name": "Vektoren auf dem Heap bereitstellen",
+      "description": "Du kannst einen Vektor zur Laufzeit auf dem Heap bereitstellen, füllen und nach der Nutzung wieder freigeben.",
+      "prerequisites": [
+        "malloc_verwenden"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "heap_matrix_bereitstellen",
+      "concept": "Matrizen auf dem Heap",
+      "name": "Matrizen auf dem Heap bereitstellen",
+      "description": "Du kannst eine Matrix auf dem Heap als Zeiger auf Zeiger (Vektor von Zeilen) bereitstellen, indizieren und in umgekehrter Reihenfolge freigeben.",
+      "prerequisites": [
+        "heap_vektor_bereitstellen",
+        "matrix_als_zeiger_auf_zeiger_deuten"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "speicheruebergabe_verantwortung_erklaeren",
+      "concept": "Speicherübergabe",
+      "name": "Verantwortung bei der Speicherübergabe erklären",
+      "description": "Du kannst erklären, dass eine Funktion Speicher übergeben kann und dann die rufende Funktion für die Freigabe verantwortlich ist (z. B. beim String-Kopieren).",
+      "prerequisites": [
+        "speicherleck_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "heap",
+      "key": "heidenspeicher_matrix_optimieren",
+      "concept": "Optimierung der Matrixbereitstellung",
+      "name": "Matrixbereitstellung auf dem Heap optimieren",
+      "description": "Du kannst beurteilen, warum ein einziger malloc-Aufruf für die gesamte Matrix mit anschließender Aufteilung günstiger sein kann als viele Einzelaufrufe.",
+      "prerequisites": [
+        "heap_matrix_bereitstellen"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "typedef_typname_verwenden",
+      "concept": "typedef",
+      "name": "Eigene Typnamen mit typedef definieren",
+      "description": "Du kannst mit typedef Typen benennen und erklären, dass dabei keine neuen Typen, sondern nur Namen entstehen.",
+      "prerequisites": [
+        "namensregeln_anwenden"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "struktur_deklarieren",
+      "concept": "Vereinbarung von Strukturen",
+      "name": "Strukturtypen deklarieren",
+      "description": "Du kannst Strukturtypen mit struct deklarieren, Komponenten unterschiedlicher Typen zusammenfassen und Variablen des Strukturtyps definieren.",
+      "prerequisites": [
+        "typedef_typname_verwenden"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "strukturkomponente_ansprechen",
+      "concept": "Zugriff auf Strukturkomponenten",
+      "name": "Strukturkomponenten mit Punkt und Pfeil ansprechen",
+      "description": "Du kannst auf Komponenten einer Struktur über die Variable (. ) und über einen Zeiger ( ->) zugreifen.",
+      "prerequisites": [
+        "struktur_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "struktur_als_parameter_verwenden",
+      "concept": "Strukturen als Parameter",
+      "name": "Strukturen als Parameter und Funktionswerte verwenden",
+      "description": "Du kannst Strukturen als Parameter übergeben und zurückgeben und die Überlegung anstellen, stattdessen einen Zeiger auf die Struktur zu übergeben.",
+      "prerequisites": [
+        "struktur_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "struktur_auf_dem_heap_anlegen",
+      "concept": "Strukturen auf dem Heap",
+      "name": "Strukturen auf dem Heap anlegen",
+      "description": "Du kannst Speicher für eine Struktur mit sizeof und malloc auf dem Heap bereitstellen und über einen Zeiger darauf zugreifen.",
+      "prerequisites": [
+        "malloc_verwenden",
+        "strukturkomponente_ansprechen"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "sizeof_struktur_erklaeren",
+      "concept": "sizeof und Speicherlayout von Strukturen",
+      "name": "Das Speicherlayout von Strukturen erklären",
+      "description": "Du kannst erklären, dass Strukturkomponenten nicht lückenlos aufeinanderfolgen müssen und sizeof daher Lücken berücksichtigt.",
+      "prerequisites": [
+        "struktur_auf_dem_heap_anlegen"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "verkettete_liste_aufbauen",
+      "concept": "Verkettete Listen",
+      "name": "Eine einfach verkettete Liste aufbauen",
+      "description": "Du kannst eine verkettete Liste mit Strukturen und Zeigern definieren und Elemente einfügen, ausgeben und wieder freigeben.",
+      "prerequisites": [
+        "struktur_auf_dem_heap_anlegen"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "liste_operationen_implementieren",
+      "concept": "Operationen auf verketteten Listen",
+      "name": "Standardoperationen auf Listen implementieren",
+      "description": "Du kannst Operationen wie Einfügen, Suchen und Entfernen an einer verketteten Liste korrekt implementieren und Speicher freigeben.",
+      "prerequisites": [
+        "verkettete_liste_aufbauen"
+      ]
+    },
+    {
+      "topic_key": "strukturen",
+      "key": "verbund_union_erklaeren",
+      "concept": "Verbunde (union)",
+      "name": "Verbunde (union) von Strukturen abgrenzen",
+      "description": "Du kannst erklären, dass bei einem Verbund alle Komponenten an derselben Adresse beginnen und dass sein Gebrauch fehleranfällig ist.",
+      "prerequisites": [
+        "struktur_deklarieren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "zahlen_binaer_codieren",
+      "concept": "Binärdarstellung ganzer Zahlen",
+      "name": "Ganze Zahlen binär codieren",
+      "description": "Du kannst vorzeichenlose ganze Zahlen als Binärzahlen fester Länge codieren und zwischen Dezimal- und Binärdarstellung umrechnen.",
+      "prerequisites": [
+        "dezimalzahl_in_binaerzahl_umrechnen"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "zweierkomplement_anwenden",
+      "concept": "Zweierkomplement",
+      "name": "Negative Zahlen im Zweierkomplement darstellen",
+      "description": "Du kannst vorzeichenbehaftete Zahlen im Zweierkomplement codieren und decodieren.",
+      "prerequisites": [
+        "zahlen_binaer_codieren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "ueberlauf_ganzzahlig_erklaeren",
+      "concept": "Überlauf bei ganzen Zahlen",
+      "name": "Ganzzahligen Überlauf erklären",
+      "description": "Du kannst erklären, dass ganzzahliger Überlauf zu falschen Werten weiterrechnet und dass das Ergebnis von der Interpretation als signed oder unsigned abhängt.",
+      "prerequisites": [
+        "zweierkomplement_anwenden"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "ueberlauf_verhindern",
+      "concept": "Überlauf verhindern",
+      "name": "Ganzzahligen Überlauf vorab verhindern",
+      "description": "Du kannst vor einer riskanten Rechnung prüfen, ob ein Überlauf droht, etwa über einen Vergleich mit INT_MAX, statt erst danach zu testen.",
+      "prerequisites": [
+        "ueberlauf_ganzzahlig_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "gleitkomma_ueber_unterlauf_erklaeren",
+      "concept": "Überlauf und Unterlauf bei Gleitkommazahlen",
+      "name": "Überlauf und Unterlauf bei Gleitkommazahlen erklären",
+      "description": "Du kannst erklären, was bei Gleitkommazahlen Überlauf, Unterlauf und das Runden in eine Lücke bedeuten und wie üblich darauf reagiert wird.",
+      "prerequisites": [
+        "gleitkommatyp_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "assoziationsgesetz_ablehnen",
+      "concept": "Assoziativ- und Kommutativgesetz",
+      "name": "Gesetze bei Gleitkommarechnung hinterfragen",
+      "description": "Du kannst beurteilen, dass Assoziativ- und Kommutativgesetz für Gleitkommazahlen nicht gelten und dass die Auswertungsreihenfolge das Ergebnis verändert.",
+      "prerequisites": [
+        "gleitkomma_ueber_unterlauf_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "rundungsfehler_erklaeren",
+      "concept": "Rundungsfehler",
+      "name": "Rundungsfehler bei Gleitkommazahlen erklären",
+      "description": "Du kannst erklären, dass Rundungsfehler bereits bei der Umwandlung von Dezimaldarstellung in Binärdarstellung entstehen und sich anhäufen können.",
+      "prerequisites": [
+        "gleitkomma_ueber_unterlauf_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "rundungsfehler_reduzieren",
+      "concept": "Fehlerarmes Rechnen",
+      "name": "Rundungsfehler durch geeignete Formulierung reduzieren",
+      "description": "Du kannst Ausdrücke so formulieren, dass der Einfluss von Rundungsfehlern sinkt, etwa durch direkte Berechnung von Tabellierungspunkten statt fortlaufender Schrittweite.",
+      "prerequisites": [
+        "rundungsfehler_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "ausloeschung_erklaeren",
+      "concept": "Auslöschung",
+      "name": "Auslöschung erklären und bewerten",
+      "description": "Du kannst erklären, dass beim Subtrahieren beinahe gleich großer Zahlen führende Nullen entstehen, die nach Rundung zu stark verfälschten Ergebnissen führen können.",
+      "prerequisites": [
+        "rundungsfehler_erklaeren"
+      ]
+    },
+    {
+      "topic_key": "rechnerarithmetik",
+      "key": "taylorreihe_implementieren",
+      "concept": "Implementation der Taylorreihe",
+      "name": "Die Exponentialfunktion über die Taylorreihe implementieren",
+      "description": "Du kannst die Taylorreihe für exp so implementieren, dass Summanden rekursiv aus dem Vorgänger berechnet werden, negative Exponenten über die Reziproke behandelt und eine geeignete Abbruchbedingung verwendet wird.",
+      "prerequisites": [
+        "ausloeschung_erklaeren",
+        "for_schleife_verwenden"
+      ]
+    }
+  ]
+};
+
+    // Kopfdaten der Ansicht.
+    const reviewInfo = {
+      topic: "C-Programmierung",
+      title: "Fähigkeiten prüfen – Grundlagen der C-Programmierung"
+    };
+  </script>
+  <script>
+"use strict";
+
+/* =========================================================================
+   GAIA Prüfansicht – gemeinsame Helfer
+   Reine Anzeige: keine Bearbeitung, keine Netzwerkzugriffe.
+   ========================================================================= */
+
+const $ = (selector, root = document) => root.querySelector(selector);
+const isObj = value => value !== null && typeof value === "object" && !Array.isArray(value);
+const asArray = value => (Array.isArray(value) ? value : []);
+const str = value => (value === null || value === undefined ? "" : String(value));
+
+function esc(value) {
+  return str(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[char]));
+}
+
+function icon(name, cls = "") {
+  return `<svg class="icon ${cls}" aria-hidden="true" focusable="false"><use href="#${name}"></use></svg>`;
+}
+
+/* Zeigt eine nicht ausblendbare, erklärende Fehlermeldung an, wenn die
+   eingebetteten Daten (exampleData) fehlen oder nicht lesbar sind. Dies
+   passiert z. B., wenn beim Einfügen der Daten ein JavaScript-Syntaxfehler
+   entsteht – ohne diesen Check würde die Seite dann still leer bleiben. */
+function reportFatal(message, detail) {
+  const container = $("#alerts");
+  if (!container) return;
+  const detailHtml = detail
+    ? `<details class="alert-detail"><summary>Technischer Hinweis</summary><pre>${esc(detail)}</pre></details>`
+    : "";
+  container.innerHTML =
+    `<div class="alert alert-error" role="alert">
+       <span class="alert-icon">${icon("i-alert")}</span>
+       <div class="alert-main">
+         <strong>Ansicht konnte nicht erzeugt werden.</strong>
+         <p>${esc(message)}</p>
+         ${detailHtml}
+         <p class="alert-hint">Bitte prüfe, ob die Daten korrekt in den <code>exampleData</code>-Block
+         dieser HTML-Ansicht eingefügt sind (Datei auf Basis von
+         <code>vorlagen/skill_overview.html</code> erzeugen und die Render-Logik
+         unverändert lassen).</p>
+       </div>
+     </div>`;
+}
+
+function issueItem(issue) {
+  return `<li>${esc(issue.message)}</li>`;
+}
+
+function renderIssues(container, issues) {
+  if (!container) return;
+  const blocks = [];
+  if (issues.errors.length) {
+    const items = issues.errors;
+    const shown = items.slice(0, 8);
+    const rest = items.slice(8);
+    blocks.push(`<div class="alert alert-error">
+      <span class="alert-icon">${icon("i-alert")}</span>
+      <div class="alert-main"><strong>${items.length} Fehler</strong><ul>${shown.map(issueItem).join("")}</ul>
+      ${rest.length ? `<details><summary>${rest.length} weitere anzeigen</summary><ul>${rest.map(issueItem).join("")}</ul></details>` : ""}</div>
+    </div>`);
+  }
+  if (issues.warnings.length) {
+    const items = issues.warnings;
+    const shown = items.slice(0, 8);
+    const rest = items.slice(8);
+    blocks.push(`<div class="alert alert-warning">
+      <span class="alert-icon">${icon("i-alert")}</span>
+      <div class="alert-main"><strong>${items.length} Hinweise</strong><ul>${shown.map(issueItem).join("")}</ul>
+      ${rest.length ? `<details><summary>${rest.length} weitere anzeigen</summary><ul>${rest.map(issueItem).join("")}</ul></details>` : ""}</div>
+    </div>`);
+  }
+  container.innerHTML = blocks.join("");
+}
+
+function emptyState(text) {
+  return `<div class="empty"><p>${text}</p></div>`;
+}
+
+function setDocumentTitle() {
+  document.title = `${reviewInfo.title || "Prüfansicht"}${reviewInfo.topic ? ` – ${reviewInfo.topic}` : ""} | GAIA`;
+}
+
+  </script>
+  <script>
+"use strict";
+
+/* =========================================================================
+   SEITE: Themen & Fähigkeiten – statische Prüfansicht
+   ========================================================================= */
+
+function findCycles(skills) {
+  const byKey = new Map();
+  skills.forEach(skill => {
+    if (isObj(skill) && str(skill.key)) byKey.set(skill.key, skill);
+  });
+  const state = new Map();
+  const cycles = [];
+
+  const visit = (key, path) => {
+    const status = state.get(key);
+    if (status === "done") return;
+    if (status === "active") {
+      const start = path.indexOf(key);
+      cycles.push(path.slice(start).concat(key));
+      return;
+    }
+    state.set(key, "active");
+    const skill = byKey.get(key);
+    asArray(skill?.prerequisites).forEach(requirement => {
+      if (requirement !== key && byKey.has(requirement)) visit(requirement, path.concat(key));
+    });
+    state.set(key, "done");
+  };
+
+  byKey.forEach((_skill, key) => visit(key, []));
+  return cycles;
+}
+
+/* ---------- Prüfung ---------- */
+function validateSkills(data) {
+  const errors = [];
+  const warnings = [];
+  const addError = message => errors.push({ message });
+  const addWarning = message => warnings.push({ message });
+
+  if (!isObj(data)) {
+    addError("Die Datei enthält kein JSON-Objekt.");
+    return { errors, warnings };
+  }
+  if (data.format !== "gaia-skills") {
+    addError(`Format ist „${str(data.format) || "–"}“, erwartet wird „gaia-skills“.`);
+  }
+  if (data.version !== 1) {
+    addWarning(`Version ist „${str(data.version) || "–"}“; die Vorlage erwartet Version 1.`);
+  }
+  if (!Array.isArray(data.topics)) addError("Das Feld „topics“ fehlt oder ist keine Liste.");
+  if (!Array.isArray(data.skills)) addError("Das Feld „skills“ fehlt oder ist keine Liste.");
+  if (!Array.isArray(data.topics) || !Array.isArray(data.skills)) return { errors, warnings };
+
+  /* Erst alle Schlüssel sammeln, damit Voraussetzungen auch vorwärts verweisen dürfen. */
+  const topicKeys = new Map();
+  data.topics.forEach((topic, index) => {
+    const where = `Thema ${index + 1}`;
+    if (!isObj(topic)) {
+      addError(`${where}: Eintrag ist kein Objekt.`);
+      return;
+    }
+    const key = str(topic.key);
+    if (!key.trim()) {
+      addError(`${where}: Der Schlüssel „key“ fehlt.`);
+    } else if (topicKeys.has(key)) {
+      addError(`${where}: Doppelter Themen-Schlüssel „${key}“ (auch Thema ${topicKeys.get(key)}).`);
+    } else {
+      topicKeys.set(key, index + 1);
+    }
+    if (!str(topic.unit).trim()) addWarning(`${where} („${key || "–"}“): Die Einheit „unit“ fehlt.`);
+    if (!str(topic.name).trim()) addError(`${where} („${key || "–"}“): Der Anzeigename „name“ fehlt.`);
+  });
+
+  const skillKeys = new Map();
+  data.skills.forEach((skill, index) => {
+    const where = `Skill ${index + 1}`;
+    if (!isObj(skill)) {
+      addError(`${where}: Eintrag ist kein Objekt.`);
+      return;
+    }
+    const key = str(skill.key);
+    if (!key.trim()) {
+      addError(`${where}: Der Schlüssel „key“ fehlt.`);
+    } else if (skillKeys.has(key)) {
+      addError(`${where}: Doppelter Skill-Schlüssel „${key}“ (auch Skill ${skillKeys.get(key)}).`);
+    } else {
+      skillKeys.set(key, index + 1);
+    }
+  });
+
+  data.skills.forEach((skill, index) => {
+    if (!isObj(skill)) return;
+    const where = `Skill ${index + 1}`;
+    const key = str(skill.key);
+    if (!str(skill.topic_key).trim()) {
+      addError(`${where} („${key || "–"}“): Das Feld „topic_key“ fehlt.`);
+    } else if (!topicKeys.has(skill.topic_key)) {
+      addError(`${where} („${key || "–"}“): „topic_key“ verweist auf ein unbekanntes Thema „${skill.topic_key}“.`);
+    }
+    if (!str(skill.name).trim()) addError(`${where} („${key || "–"}“): Der Anzeigename „name“ fehlt.`);
+    if (!str(skill.concept).trim()) addWarning(`${where} („${key || "–"}“): Das zugrundeliegende Konzept „concept“ fehlt.`);
+
+    if (skill.prerequisites !== undefined && !Array.isArray(skill.prerequisites)) {
+      addError(`${where} („${key || "–"}“): „prerequisites“ ist keine Liste.`);
+    }
+    const seen = new Set();
+    asArray(skill.prerequisites).forEach(requirement => {
+      const value = str(requirement);
+      if (!value.trim()) {
+        addError(`${where} („${key || "–"}“): Eine Voraussetzung ist leer.`);
+        return;
+      }
+      if (seen.has(value)) addWarning(`${where} („${key || "–"}“): Voraussetzung „${value}“ ist doppelt.`);
+      seen.add(value);
+      if (value === key) addError(`${where} („${key}“): Ein Skill kann nicht Voraussetzung für sich selbst sein.`);
+      else if (!skillKeys.has(value)) addError(`${where} („${key || "–"}“): Voraussetzung „${value}“ existiert nicht.`);
+    });
+  });
+
+  findCycles(data.skills).forEach(cycle => {
+    addError(`Zyklische Voraussetzungen: ${cycle.join(" → ")}.`);
+  });
+
+  const reportedTopics = new Set();
+  data.topics.forEach(topic => {
+    const key = str(topic.key);
+    if (!key || reportedTopics.has(key)) return;
+    reportedTopics.add(key);
+    if (!data.skills.some(skill => isObj(skill) && skill.topic_key === key)) {
+      addWarning(`Thema „${key}“ enthält noch keine Skills.`);
+    }
+  });
+
+  const unassigned = data.skills.filter(skill => isObj(skill) && str(skill.key) && !topicKeys.has(skill.topic_key));
+  if (unassigned.length) {
+    addWarning(`${unassigned.length} Skill${unassigned.length === 1 ? "" : "s"} ohne gültiges Thema.`);
+  }
+
+  return { errors, warnings };
+}
+
+/* ---------- Darstellung ---------- */
+function prerequisiteText(skill) {
+  const values = asArray(skill.prerequisites).filter(Boolean);
+  if (!values.length) return '<span class="muted">Keine</span>';
+  const chips = values.map(key => {
+    const target = state.skillsByKey.get(key);
+    const missing = !target;
+    const label = missing ? key : target.name || key;
+    return `<span class="chip chip-ghost${missing ? " is-missing" : ""}">${esc(label)}</span>`;
+  }).join("");
+  return `<span class="chip-row">${chips}</span>`;
+}
+
+const state = {
+  skillsByKey: new Map(),
+};
+
+function renderSkillItem(skill, number) {
+  const archived = Boolean(skill.archived);
+  return `<li class="skill">
+    <div class="skill-head">
+      <span class="skill-badge">Skill ${number || "–"}</span>
+      <span class="skill-name${archived ? " is-archived" : ""}">${esc(skill.name || "Ohne Namen")}</span>
+      ${archived ? '<span class="skill-archived">archiviert</span>' : ""}
+    </div>
+    ${skill.description ? `<p class="skill-desc">${esc(skill.description)}</p>` : ""}
+    <div class="skill-meta">
+      ${skill.concept ? `<p class="skill-detail"><span class="detail-label">Konzept</span><span>${esc(skill.concept)}</span></p>` : ""}
+      <p class="skill-detail"><span class="detail-label">Voraussetzungen</span><span>${prerequisiteText(skill)}</span></p>
+    </div>
+  </li>`;
+}
+
+function renderTopic(topic, skills, numberBySkill) {
+  const archived = Boolean(topic.archived);
+  return `<section class="topic">
+    <div class="topic-head">
+      <div class="topic-title-line">
+        <h3 class="topic-title"><span class="topic-label">Thema:</span> ${esc(topic.name || "Ohne Namen")}</h3>
+        ${archived ? '<span class="topic-archived">archiviert</span>' : ""}
+        <span class="topic-count">${skills.length} ${skills.length === 1 ? "Skill" : "Skills"}</span>
+      </div>
+      ${topic.description ? `<p class="topic-desc">${esc(topic.description)}</p>` : ""}
+    </div>
+    ${skills.length
+      ? `<ul class="skill-list">${skills.map(skill => renderSkillItem(skill, numberBySkill.get(skill))).join("")}</ul>`
+      : '<div class="skill-empty">Noch keine Skills in diesem Thema.</div>'}
+  </section>`;
+}
+
+function renderOverview(data) {
+  const root = $("#overview");
+  const topics = asArray(data.topics).filter(isObj);
+  const skills = asArray(data.skills).filter(isObj);
+
+  // Position im skills[]-Array der JSON-Datei (1-basiert) – wie in den
+  // Validierungsmeldungen, damit Rückmeldungen wie „Skill 14 prüfen“ eindeutig sind.
+  const numberBySkill = new Map();
+  asArray(data.skills).forEach((skill, index) => {
+    if (isObj(skill)) numberBySkill.set(skill, index + 1);
+  });
+
+  if (!topics.length && !skills.length) {
+    root.innerHTML = emptyState("Für dieses Thema sind noch keine Skills hinterlegt.");
+    return;
+  }
+
+  const topicsByUnit = new Map();
+  topics.forEach(topic => {
+    const unit = str(topic.unit) || "Ohne Einheit";
+    if (!topicsByUnit.has(unit)) topicsByUnit.set(unit, []);
+    topicsByUnit.get(unit).push({
+      topic,
+      skills: skills.filter(skill => skill.topic_key === topic.key),
+    });
+  });
+
+  const units = Array.from(topicsByUnit.keys()).filter(unit => unit !== "Ohne Einheit");
+  if (topicsByUnit.has("Ohne Einheit")) units.push("Ohne Einheit");
+
+  let html = units.map(unit => {
+    const entries = topicsByUnit.get(unit);
+    const skillCount = entries.reduce((total, entry) => total + entry.skills.length, 0);
+    return `<section class="unit">
+      <h2 class="unit-title">${esc(unit)}<span class="unit-count">${entries.length} ${entries.length === 1 ? "Thema" : "Themen"} · ${skillCount} ${skillCount === 1 ? "Skill" : "Skills"}</span></h2>
+      <div class="topic-list">${entries
+        .map(entry => renderTopic(entry.topic, entry.skills, numberBySkill))
+        .join("")}</div>
+    </section>`;
+  }).join("");
+
+  const knownTopicKeys = new Set(topics.map(topic => topic.key));
+  const unassigned = skills.filter(skill => !knownTopicKeys.has(skill.topic_key));
+  if (unassigned.length) {
+    html += `<section class="unit">
+      <h2 class="unit-title">Ohne gültiges Thema<span class="unit-count">${unassigned.length} ${unassigned.length === 1 ? "Skill" : "Skills"}</span></h2>
+      <div class="topic-list">
+        <section class="topic">
+          <div class="topic-head">
+            <div class="topic-title-line">
+              <h3 class="topic-title"><span class="topic-label">Thema:</span> Nicht zugeordnet</h3>
+            </div>
+            <p class="topic-desc">Skills ohne vorhandenes Thema</p>
+          </div>
+          <ul class="skill-list">${unassigned.map(skill => renderSkillItem(skill, numberBySkill.get(skill))).join("")}</ul>
+        </section>
+      </div>
+    </section>`;
+  }
+
+  root.innerHTML = html;
+}
+
+/* ---------- Start ---------- */
+function initSkillsPage() {
+  // Besteht ein JavaScript-Syntaxfehler im eingebetteten exampleData-Block, ist die
+  // Variable nicht deklariert (ReferenceError beim Zugriff). Das wird hier
+  // abgefangen, damit statt einer leeren Seite eine erklärende Meldung erscheint.
+  let data;
+  try {
+    data = isObj(exampleData) ? exampleData : null;
+  } catch (err) {
+    reportFatal(
+      "Die eingebetteten Fähigkeiten-Daten konnten nicht gelesen werden.",
+      err && err.message ? err.message : String(err)
+    );
+    return;
+  }
+  if (!data) {
+    reportFatal(
+      "Im exampleData-Block dieser Ansicht sind keine gültigen Daten vorhanden.",
+      "exampleData ist undefined oder kein Objekt."
+    );
+    return;
+  }
+
+  const skills = asArray(data.skills).filter(isObj);
+  const issues = validateSkills(data);
+  state.skillsByKey = new Map(skills.filter(skill => skill.key).map(skill => [skill.key, skill]));
+  setDocumentTitle();
+  renderIssues($("#alerts"), issues);
+  renderOverview(data);
+}
+
+initSkillsPage();
+
+  </script>
+  <script>
+/* Unabhängige Absicherung: Wenn der Daten- oder der Render-Block einen
+   JavaScript-Fehler hatte (z. B. Syntaxfehler im eingebetteten exampleData),
+   bleibt #overview leer. Dieses eigenständige Skript zeigt dann eine klare
+   Meldung – es hängt von keiner anderen Funktion der Seite ab. */
+window.addEventListener("DOMContentLoaded", () => {
+  try {
+    const overview = document.querySelector("#overview");
+    if (overview && !overview.innerHTML.trim()) {
+      overview.innerHTML =
+        '<div class="alert alert-error" role="alert">' +
+          '<div class="alert-main">' +
+            "<strong>Ansicht konnte nicht erzeugt werden.</strong>" +
+            "<p>Die Ansicht blieb leer – sehr wahrscheinlich liegt ein " +
+            "JavaScript-Fehler in den eingebetteten Daten (exampleData) oder " +
+            "in der Render-Logik vor. Öffne die Browser-Konsole (Entwicklertools) " +
+            "für die genaue Fehlermeldung.</p>" +
+          "</div>" +
+        "</div>";
+    }
+  } catch (err) {
+    /* Auch im Fehlerfall nichts weiter tun – die Seite darf nicht weiter gestört werden. */
+  }
+});
+  </script>
+</body>
+</html>

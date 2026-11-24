@@ -15,6 +15,7 @@ a human/agent responsibility.
 |---|---|
 | `arcanas/` | Personas that use a knowledge base (Arcana/RAG). |
 | `business/` | Job postings, legal document checks, SWOT analysis. |
+| `courses/` | Course personas with skills, quiz and learning pages. |
 | `design/` | Design and icon-search helpers. |
 | `development/` | Coding and software-engineering helpers. |
 | `examples/` | Small, playful example personas. |
@@ -35,6 +36,7 @@ a human/agent responsibility.
 | Job Posting Writer | `business/job-posting.json` | business | Creates an inclusive, structured job posting from key points | `deepseek-v4.1-flash-1017` (DeepSeek V4.1 Flash) |
 | Legal Document Check | `business/legal-check.json` | business | Answers questions about a legal document without inventing facts | `deepseek-v4.1-flash-1017` (DeepSeek V4.1 Flash) |
 | SWOT Analysis | `business/swot-analysis.json` | business | Produces a reconciled SWOT analysis with an assessment and prioritized actions | `deepseek-v4.1-flash-1017` (DeepSeek V4.1 Flash) |
+| C-Programmierung | `courses/c-programmierung.json` | courses | C course with 13 topics, 137 skills, 279 quiz questions and self-learning pages | `deepseek-v4.1-flash-1017` (DeepSeek V4.1 Flash) |
 | Icon Finder | `design/icon-finder.json` | design | Turns a context into concepts and effective icon search keywords | `deepseek-v4.1-flash-1017` (DeepSeek V4.1 Flash) |
 | Coding Assistant | `development/coding-assistant.json` | development | Senior developer for code, debugging, refactoring, and design questions | `deepseek-v4.1-flash-1017` (DeepSeek V4.1 Flash) |
 | Boy Scout | `examples/10-year-old.json` | examples | A 10yo boy scout with limited knowledge | `meta-llama-3.1-8b-instruct` (Meta Llama 3.1 8B Instruct) |

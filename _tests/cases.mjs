@@ -447,4 +447,17 @@ export const cases = [
         "The reply extracts the warranty duration (24 months), the exclusions (misuse and normal wear), and the claim requirement (proof of purchase). It cites the relevant passages as evidence and adds no outside facts or assumptions.",
     },
   },
+  {
+    id: "c-programmierung-call-by-value",
+    persona: "courses/c-programmierung.json",
+    name: "C course tutor explains call by value",
+    input: "Warum bleibt eine Variable unverändert, wenn ich sie an eine Funktion übergebe?",
+    expect: {
+      mustIncludeAny: ["Kopie", "kopiert", "call by value", "Call by Value"],
+      mustNotInclude: ["C++", "Referenz &"],
+      maxChars: 2200,
+      rubric:
+        "The answer is in German and explains that C passes arguments by value: the parameter is a local variable that receives a copy of the argument, so assigning to the parameter does not change the caller's variable. It uses a small C example or names the call frame. It does not describe C++ references as the C behaviour and does not invent course dates or exam rules.",
+    },
+  },
 ];

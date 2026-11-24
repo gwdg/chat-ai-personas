@@ -41,6 +41,7 @@ The repository is organized as follows:
 chat-ai-personas/
 ├── arcanas/            RAG personas with an Arcana knowledge base
 ├── business/           job postings, legal checks, SWOT
+├── courses/            course personas with skills, quiz and learning pages
 ├── design/             icon and design helpers
 ├── development/        coding helpers
 ├── examples/           small, playful example personas
@@ -60,6 +61,10 @@ chat-ai-personas/
 
 - `arcanas/`: Personas that use a knowledge base (RAG).
 - `business/`: Job postings, legal document checks, SWOT analysis.
+- `courses/`: Course personas. `courses/<id>.json` is the persona; its
+  `course` block points at the skills/quiz JSON, the review pages and the
+  self-learning pages in `courses/<id>/`. Selecting such a persona opens the
+  course page instead of a plain chat.
 - `design/`: Design and icon-search helpers.
 - `development/`: Coding and software-engineering helpers.
 - `examples/`: Small, playful example personas.
